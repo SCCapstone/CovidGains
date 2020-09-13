@@ -1,9 +1,8 @@
 //
 //  AppDelegate.swift
-//  capestone
+//  CovidGains
 //
-//  Created by Maitri Patel on 9/12/20.
-//  Copyright © 2020 Maitri Patel. All rights reserved.
+//  Created by Maitri Patel on 9/13/20.
 //
 
 import UIKit
