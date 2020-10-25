@@ -32,7 +32,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="yDV-jm-BHt"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Expiration" id="2uf-UZ-oOS"/>
+                    <tabBarItem key="tabBarItem" title="Expiration" selectedImage="clock" catalog="system" id="2uf-UZ-oOS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BGu-zi-pyV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -48,7 +48,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="IPz-BK-Bbf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Recipe" id="JZM-qW-9iB"/>
+                    <tabBarItem key="tabBarItem" title="Recipe" selectedImage="list.bullet" catalog="system" id="JZM-qW-9iB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oax-EZ-xoP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -64,7 +64,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="IV2-mi-jNV"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Budget" id="oLd-e1-X16"/>
+                    <tabBarItem key="tabBarItem" title="Budget" selectedImage="dollarsign.circle" catalog="system" id="oLd-e1-X16"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q3v-Wg-w16" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -80,7 +80,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="aXe-5v-edi"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="qwm-Fb-zHI"/>
+                    <tabBarItem key="tabBarItem" title="Home" selectedImage="house" catalog="system" id="qwm-Fb-zHI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCl-uo-sJa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -107,4 +107,10 @@
             <point key="canvasLocation" x="871" y="114"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="clock" catalog="system" width="128" height="121"/>
+        <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
+        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
+    </resources>
 </document>
