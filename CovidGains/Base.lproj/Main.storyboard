@@ -62,7 +62,7 @@
             </objects>
             <point key="canvasLocation" x="-1690" y="243"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Home-->
         <scene sceneID="LqZ-pa-Rcv">
             <objects>
                 <tableViewController id="lf6-b2-wdb" sceneMemberID="viewController">
@@ -85,13 +85,13 @@
                             <outlet property="delegate" destination="lf6-b2-wdb" id="YQa-ip-XFF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="FjS-xu-56P"/>
+                    <navigationItem key="navigationItem" title="Home" id="FjS-xu-56P"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQ1-RL-CbY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="413" y="-769"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Expiration-->
         <scene sceneID="2ep-sH-FPI">
             <objects>
                 <tableViewController id="7th-zQ-ZOK" sceneMemberID="viewController">
@@ -114,13 +114,13 @@
                             <outlet property="delegate" destination="7th-zQ-ZOK" id="bVq-NU-ifh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="6X0-HY-6pj"/>
+                    <navigationItem key="navigationItem" title="Expiration" id="6X0-HY-6pj"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdC-j7-zbD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="507" y="25"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Recipe-->
         <scene sceneID="u6s-CT-NTt">
             <objects>
                 <tableViewController id="ShA-lb-eGO" sceneMemberID="viewController">
@@ -143,13 +143,13 @@
                             <outlet property="delegate" destination="ShA-lb-eGO" id="qQg-WS-fgo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Mhh-Hh-hYY"/>
+                    <navigationItem key="navigationItem" title="Recipe" id="Mhh-Hh-hYY"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Un4-sv-GpL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="564" y="903"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Budget-->
         <scene sceneID="Gvk-D2-vGC">
             <objects>
                 <tableViewController id="Maj-Az-TY6" sceneMemberID="viewController">
@@ -172,7 +172,7 @@
                             <outlet property="delegate" destination="Maj-Az-TY6" id="2k3-s3-fOX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="i8j-Ot-HaB"/>
+                    <navigationItem key="navigationItem" title="Budget" id="i8j-Ot-HaB"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wna-Mb-OWP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -212,11 +212,11 @@
             </objects>
             <point key="canvasLocation" x="-404" y="903"/>
         </scene>
-        <!--Expriation-->
+        <!--Expiration-->
         <scene sceneID="8vM-5i-yXK">
             <objects>
                 <navigationController id="SFx-N8-emY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Expriation" selectedImage="clock" catalog="system" id="cXA-g1-dbA"/>
+                    <tabBarItem key="tabBarItem" title="Expiration" selectedImage="clock" catalog="system" id="cXA-g1-dbA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="R24-3H-bDq">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
