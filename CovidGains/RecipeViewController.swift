@@ -11,7 +11,7 @@ class RecipeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-// Conflit for Maitri Patel
+// This is Maitri's comment
     }
     
 
