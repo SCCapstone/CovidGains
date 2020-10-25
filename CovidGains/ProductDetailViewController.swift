@@ -23,7 +23,7 @@ class ProductDetailViewController: UIViewController {
             pName = productName.text!
         }
     }
-    //
+    // 
     
     /*
     // MARK: - Navigation
