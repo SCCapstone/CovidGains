@@ -5,6 +5,7 @@
 //  Created by KIM, JEEJUN on 10/25/20.
 //
 
+//Test to have a merge commit on github
 import SwiftUI
 
 struct BudgetViewController: View {
