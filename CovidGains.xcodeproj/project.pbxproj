@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4682C70B2545FAEC00721158 /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4682C70A2545FAEC00721158 /* BudgetViewController.swift */; };
 		64391BFC2545E492005C36CC /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64391BFB2545E492005C36CC /* ProductListViewController.swift */; };
 		64391BFE2545E49A005C36CC /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64391BFD2545E49A005C36CC /* ProductDetailViewController.swift */; };
 		D87BD88A2545F3520078692C /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87BD8892545F3520078692C /* RecipeViewController.swift */; };
@@ -16,11 +15,9 @@
 		D8CCC897250ED1D10005C4B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CCC896250ED1D10005C4B3 /* ViewController.swift */; };
 		D8CCC89A250ED1D10005C4B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8CCC898250ED1D10005C4B3 /* Main.storyboard */; };
 		D8CCC89C250ED1D30005C4B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8CCC89B250ED1D30005C4B3 /* Assets.xcassets */; };
-		FFF8A55C2545FB3800BABE35 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8A55B2545FB3800BABE35 /* NotesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4682C70A2545FAEC00721158 /* BudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewController.swift; sourceTree = "<group>"; };
 		64391BFB2545E492005C36CC /* ProductListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		64391BFD2545E49A005C36CC /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		D87BD8892545F3520078692C /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
@@ -31,7 +28,6 @@
 		D8CCC899250ED1D10005C4B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8CCC89B250ED1D30005C4B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8CCC8A0250ED1D30005C4B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FFF8A55B2545FB3800BABE35 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,11 +63,9 @@
 				D8CCC892250ED1D10005C4B3 /* AppDelegate.swift */,
 				D8CCC894250ED1D10005C4B3 /* SceneDelegate.swift */,
 				D8CCC896250ED1D10005C4B3 /* ViewController.swift */,
-				4682C70A2545FAEC00721158 /* BudgetViewController.swift */,
 				64391BFB2545E492005C36CC /* ProductListViewController.swift */,
 				64391BFD2545E49A005C36CC /* ProductDetailViewController.swift */,
 				D87BD8892545F3520078692C /* RecipeViewController.swift */,
-				FFF8A55B2545FB3800BABE35 /* NotesViewController.swift */,
 				D8CCC898250ED1D10005C4B3 /* Main.storyboard */,
 				D8CCC89B250ED1D30005C4B3 /* Assets.xcassets */,
 				D8CCC8A0250ED1D30005C4B3 /* Info.plist */,
@@ -110,7 +104,6 @@
 				TargetAttributes = {
 					D8CCC88E250ED1D10005C4B3 = {
 						CreatedOnToolsVersion = 11.7;
-						LastSwiftMigration = 1170;
 					};
 				};
 			};
@@ -150,10 +143,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8CCC897250ED1D10005C4B3 /* ViewController.swift in Sources */,
-				4682C70B2545FAEC00721158 /* BudgetViewController.swift in Sources */,
 				D8CCC893250ED1D10005C4B3 /* AppDelegate.swift in Sources */,
 				D87BD88A2545F3520078692C /* RecipeViewController.swift in Sources */,
-				FFF8A55C2545FB3800BABE35 /* NotesViewController.swift in Sources */,
 				64391BFE2545E49A005C36CC /* ProductDetailViewController.swift in Sources */,
 				64391BFC2545E492005C36CC /* ProductListViewController.swift in Sources */,
 				D8CCC895250ED1D10005C4B3 /* SceneDelegate.swift in Sources */,
@@ -292,7 +283,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CovidGains/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -301,8 +291,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.covidgains.CovidGains;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "CovidGains/CovidGains-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -312,7 +300,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CovidGains/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -321,7 +308,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.covidgains.CovidGains;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "CovidGains/CovidGains-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
