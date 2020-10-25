@@ -5,7 +5,7 @@
       location = "group:../../../../Desktop/Hello World 2/Hello World 2/ProductDetailViewController.swift">
    </FileRef>
    <FileRef
-      location = "group:../../../../Desktop/Hello World 2/Hello World 2/ProductListViewController.swift">
+      location = "group:../CovidGains/ProductListViewController.swift">
    </FileRef>
    <FileRef
       location = "self:">
