@@ -11,7 +11,7 @@ class RecipeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//This is nishat's conflict
+
     }
     
 
