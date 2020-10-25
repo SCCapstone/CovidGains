@@ -63,4 +63,8 @@ Explain how to run the automated tests.
 
 # Authors
 
-Your names and emails
+Praful Chunchu - prafulchunchu@gmail.com
+Maitri Patel - maitri.patel293@gmail.com
+Nishat Tabassum - 
+Jeejun Kim -
+Robert Carey - 
