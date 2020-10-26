@@ -65,4 +65,4 @@ Praful Chunchu - prafulchunchu@gmail.com
 Maitri Patel - maitri.patel293@gmail.com
 Nishat Tabassum - 
 Jeejun Kim -
-Robert Carey - 
+Robert Carey - rtcarey@email.sc.edu
