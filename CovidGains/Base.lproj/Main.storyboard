@@ -62,35 +62,6 @@
             </objects>
             <point key="canvasLocation" x="-1690" y="243"/>
         </scene>
-        <!--Home-->
-        <scene sceneID="LqZ-pa-Rcv">
-            <objects>
-                <tableViewController id="lf6-b2-wdb" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="996-V1-Rbh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="9J9-pZ-Tae">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9J9-pZ-Tae" id="dF4-6t-UZs">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="lf6-b2-wdb" id="r3v-r0-1lq"/>
-                            <outlet property="delegate" destination="lf6-b2-wdb" id="YQa-ip-XFF"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Home" id="FjS-xu-56P"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WQ1-RL-CbY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="413" y="-769"/>
-        </scene>
         <!--Expiration-->
         <scene sceneID="2ep-sH-FPI">
             <objects>
@@ -132,7 +103,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="NDe-eu-zjE" kind="relationship" relationship="rootViewController" id="F4k-fV-xOX"/>
+                        <segue destination="i9u-6g-9ZA" kind="relationship" relationship="rootViewController" id="X5K-uI-NgK"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="giV-6l-Lbm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -163,14 +134,14 @@
                     <view key="view" contentMode="scaleToFill" id="e2T-3F-i4N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="BH5-Gd-TZb"/>
                     </view>
                     <navigationItem key="navigationItem" title="Recipe" id="ZfG-4c-FCg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xJR-ih-AmV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="506" y="903"/>
+            <point key="canvasLocation" x="470" y="903"/>
         </scene>
         <!--Expiration-->
         <scene sceneID="8vM-5i-yXK">
@@ -199,7 +170,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="lf6-b2-wdb" kind="relationship" relationship="rootViewController" id="wqO-y4-Gpy"/>
+                        <segue destination="yYF-dN-JXA" kind="relationship" relationship="rootViewController" id="ibt-Z4-vn0"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="72A-Xg-6Qb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -207,20 +178,46 @@
             <point key="canvasLocation" x="-404" y="-769"/>
         </scene>
         <!--Budget-->
-        <scene sceneID="Wfj-lY-NLo">
+        <scene sceneID="clw-qC-yuH">
             <objects>
-                <viewController id="NDe-eu-zjE" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Q1o-5I-Dzu">
+                <viewController id="i9u-6g-9ZA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DXn-IV-x9L">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="uku-Xq-chU"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="QBP-P9-OQD"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Budget" id="AnV-EH-Q3o"/>
+                    <navigationItem key="navigationItem" title="Budget" id="6Rr-Kj-etw"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7hz-gd-UIH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gQR-Ll-udG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="506" y="1714"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="ilO-9D-jf4">
+            <objects>
+                <viewController id="yYF-dN-JXA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ErH-Ly-Cq3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4As-Qa-wk2">
+                                <rect key="frame" x="32" y="142" width="351" height="614"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="S3N-6h-ylu"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="Xdm-jk-k6J"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DAg-dK-uUF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="537.68115942028987" y="-769.41964285714278"/>
         </scene>
     </scenes>
     <resources>
