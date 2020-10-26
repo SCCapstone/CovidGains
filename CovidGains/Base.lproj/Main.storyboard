@@ -114,69 +114,13 @@
                             <outlet property="delegate" destination="7th-zQ-ZOK" id="bVq-NU-ifh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Expiration" id="6X0-HY-6pj"/>
+                    <navigationItem key="navigationItem" title="Expiration" id="6X0-HY-6pj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rY6-3D-95w"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdC-j7-zbD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="507" y="25"/>
-        </scene>
-        <!--Recipe-->
-        <scene sceneID="u6s-CT-NTt">
-            <objects>
-                <tableViewController id="ShA-lb-eGO" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vfs-Nq-Wjm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="f9X-Sf-Q3g">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f9X-Sf-Q3g" id="5Xc-n5-FBF">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ShA-lb-eGO" id="1ar-hV-MPW"/>
-                            <outlet property="delegate" destination="ShA-lb-eGO" id="qQg-WS-fgo"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Recipe" id="Mhh-Hh-hYY"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Un4-sv-GpL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="564" y="903"/>
-        </scene>
-        <!--Budget-->
-        <scene sceneID="Gvk-D2-vGC">
-            <objects>
-                <tableViewController id="Maj-Az-TY6" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5nb-rb-UZb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="4yF-oX-5Sg">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4yF-oX-5Sg" id="pc6-9t-vKf">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Maj-Az-TY6" id="WvM-X8-96f"/>
-                            <outlet property="delegate" destination="Maj-Az-TY6" id="2k3-s3-fOX"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Budget" id="i8j-Ot-HaB"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wna-Mb-OWP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="564" y="1714"/>
         </scene>
         <!--Budget-->
         <scene sceneID="Fwn-mc-OTo">
@@ -188,7 +132,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Maj-Az-TY6" kind="relationship" relationship="rootViewController" id="cJu-Lw-OwD"/>
+                        <segue destination="NDe-eu-zjE" kind="relationship" relationship="rootViewController" id="F4k-fV-xOX"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="giV-6l-Lbm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -205,12 +149,28 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="ShA-lb-eGO" kind="relationship" relationship="rootViewController" id="mSb-yS-ebf"/>
+                        <segue destination="BLd-U4-0KY" kind="relationship" relationship="rootViewController" id="thP-ep-qlg"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="exa-9d-fyP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-404" y="903"/>
+        </scene>
+        <!--Recipe-->
+        <scene sceneID="bhN-HN-0us">
+            <objects>
+                <viewController id="BLd-U4-0KY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e2T-3F-i4N">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="BH5-Gd-TZb"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Recipe" id="ZfG-4c-FCg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xJR-ih-AmV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="506" y="903"/>
         </scene>
         <!--Expiration-->
         <scene sceneID="8vM-5i-yXK">
@@ -245,6 +205,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="72A-Xg-6Qb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-404" y="-769"/>
+        </scene>
+        <!--Budget-->
+        <scene sceneID="Wfj-lY-NLo">
+            <objects>
+                <viewController id="NDe-eu-zjE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q1o-5I-Dzu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="uku-Xq-chU"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Budget" id="AnV-EH-Q3o"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7hz-gd-UIH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="506" y="1714"/>
         </scene>
     </scenes>
     <resources>
