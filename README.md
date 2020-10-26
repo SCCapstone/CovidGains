@@ -36,13 +36,17 @@ Click on the play button on top left, it will simulate the app on set virtual io
 
 # Deployment
 
-Webapps need a deployment section that explains how to get it deployed on the 
-Internet. These should be detailed enough so anyone can re-deploy if needed
-. Note that you **do not put passwords in git**. 
 
-Mobile apps will also sometimes need some instructions on how to build a
-"release" version, maybe how to sign it, and how to run that binary in an
-emulator or in a physical phone.
+The app is deployed locally.  To run it on a physical iOS phone, simply
+connect iOS device into Mac, using a lightning cable.  
+Open the project on Xcode, and go to Windows > Devices and Simulators.
+This will let you select your device and select connect via network checkbox
+this will pair your device.
+Run the project.
+
+To run the binary on emulator without a physical device.  Select emulator, and 
+select the generation of ios phone to run it.
+
 
 # Testing
 
