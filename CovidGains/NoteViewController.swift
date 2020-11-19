@@ -11,8 +11,6 @@ class NoteViewController: UIViewController {
         super.viewDidLoad()
         titelLabel.text = noteTitle
         noteLabel.text = note
-
-        // Do any additional setup after loading the view.
     }
     
 }
