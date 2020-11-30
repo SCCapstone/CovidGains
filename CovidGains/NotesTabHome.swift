@@ -3,8 +3,6 @@
 //  CovidGains
 //
 //  Created by Maitri Patel on 11/18/20.
-//
-
 import UIKit
 
 class NotesTabHome: UIViewController, UITableViewDelegate, UITableViewDataSource  {
@@ -19,8 +17,6 @@ class NotesTabHome: UIViewController, UITableViewDelegate, UITableViewDataSource
         super.viewDidLoad()
         table.delegate = self
         table.dataSource = self
-
-        // Do any additional setup after loading the view.
     }
     
     
@@ -70,6 +66,10 @@ class NotesTabHome: UIViewController, UITableViewDelegate, UITableViewDataSource
         vc.note = model.note
         navigationController?.pushViewController(vc, animated: true)
     }
-    
-
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            self.models.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }
