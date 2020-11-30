@@ -3,8 +3,6 @@
 //  CovidGains
 //
 //  Created by Maitri Patel on 9/13/20.
-//
-
 import UIKit
 
 @UIApplicationMain
