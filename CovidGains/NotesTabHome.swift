@@ -19,7 +19,7 @@ class NotesTabHome: UIViewController, UITableViewDelegate, UITableViewDataSource
         table.dataSource = self
     }
     
-    
+    //when clicked + button on the top right
     @IBAction func newNotesButton(_ sender: Any) {
         guard let vc = storyboard?.instantiateViewController(identifier: "new") as? EntryViewController else{
             return
@@ -33,6 +33,7 @@ class NotesTabHome: UIViewController, UITableViewDelegate, UITableViewDataSource
             self.label.isHidden = true
             self.table.isHidden = false
         }
+        
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -49,11 +50,11 @@ class NotesTabHome: UIViewController, UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
+    //when clicked on the already written note
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let model  = models[indexPath.row]
-        
         
         //note controller
         guard let vc = storyboard?.instantiateViewController(identifier: "note")as? NoteViewController else{
@@ -64,8 +65,13 @@ class NotesTabHome: UIViewController, UITableViewDelegate, UITableViewDataSource
         vc.title = "Note"
         vc.noteTitle = model.title
         vc.note = model.note
+        
+        
+        
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    //to delete the note
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             self.models.remove(at: indexPath.row)

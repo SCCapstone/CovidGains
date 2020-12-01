@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "C71E7976-8BC3-4911-8277-6B553B7D6978"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "28ABD8E8-D001-4475-9495-14478B1F3B2D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CovidGains/NoteViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "3"
+            endingLineNumber = "3"
+            landmarkName = "NoteViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "28ABD8E8-D001-4475-9495-14478B1F3B2D - df5e0961cae6a696"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CovidGains.NoteViewController.__deallocating_deinit"
+                  moduleName = "CovidGains"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maitripatel/Desktop/Fall/490/CovidGains/CovidGains/NoteViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "28ABD8E8-D001-4475-9495-14478B1F3B2D - 2c5d187d5ddfeb52"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CovidGains.NoteViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; CovidGains.NoteViewController"
+                  moduleName = "CovidGains"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maitripatel/Desktop/Fall/490/CovidGains/CovidGains/NoteViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "28ABD8E8-D001-4475-9495-14478B1F3B2D - 771764ed1dbb9792"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CovidGains.NoteViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; CovidGains.NoteViewController"
+                  moduleName = "CovidGains"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maitripatel/Desktop/Fall/490/CovidGains/CovidGains/NoteViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "4"
+                  endingLineNumber = "4"
+                  offsetFromSymbolStart = "257">
+               </Location>
+               <Location
+                  uuid = "28ABD8E8-D001-4475-9495-14478B1F3B2D - 4fdeb38aabc8485a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CovidGains.NoteViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;CovidGains.NoteViewController&gt;"
+                  moduleName = "CovidGains"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maitripatel/Desktop/Fall/490/CovidGains/CovidGains/NoteViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "28ABD8E8-D001-4475-9495-14478B1F3B2D - 95c1f48c85085d56"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CovidGains.NoteViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;CovidGains.NoteViewController&gt;"
+                  moduleName = "CovidGains"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maitripatel/Desktop/Fall/490/CovidGains/CovidGains/NoteViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "4"
+                  endingLineNumber = "4"
+                  offsetFromSymbolStart = "198">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
