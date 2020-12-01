@@ -19,11 +19,15 @@ class ProductDetailViewController: UIViewController {
 
     
     var pName: String = ""
+    var strDate: String = ""
+    
+    
     @IBOutlet weak var productName: UITextField!
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "doneSegue" {
-            pName = productName.text!.lowercased()
+            pName = productName.text!.lowercased()  //pname == apple
             var i = 0
             for item in produce {
                 if item == pName {
