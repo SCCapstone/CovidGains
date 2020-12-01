@@ -49,7 +49,7 @@ class EntryViewController: UIViewController {
           fileManager.createFile(atPath: tempUrl, contents: noteField.text)
           fileManager.replaceItem(at: completeUrl, withItemAt: tempUrl)
           fileManager.rempveItem(at:tempUrl)
-        } else
+        } else 
           fileManager.createFile(atPath: completeUrl, contents: noteField.text)
 
     }
