@@ -18,7 +18,6 @@ class ProductDetailViewController: UIViewController {
     }
 
     
-    // TODO add produce type detection for num of days
     var pName: String = ""
     @IBOutlet weak var productName: UITextField!
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
