@@ -15,7 +15,7 @@ class ProductListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        products = ["Apple","Bannana","Strawberry"]
+        products = []
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

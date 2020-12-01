@@ -62,16 +62,16 @@
             </objects>
             <point key="canvasLocation" x="-1690" y="243"/>
         </scene>
-        <!--Expiration-->
+        <!--ProductListViewController-->
         <scene sceneID="2ep-sH-FPI">
             <objects>
-                <tableViewController id="7th-zQ-ZOK" sceneMemberID="viewController">
+                <tableViewController title="ProductListViewController" id="7th-zQ-ZOK" customClass="ProductListViewController" customModule="CovidGains" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dQZ-1C-v6N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="beb-iW-KpP">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" id="beb-iW-KpP">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="beb-iW-KpP" id="BIv-ZN-sYd">
@@ -86,12 +86,62 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Expiration" id="6X0-HY-6pj">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rY6-3D-95w"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rY6-3D-95w">
+                            <connections>
+                                <segue destination="bmk-vz-q0n" kind="presentation" id="JvH-zE-HjS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdC-j7-zbD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="507" y="25"/>
+        </scene>
+        <!--ProductDetailViewController-->
+        <scene sceneID="1aD-8M-xxp">
+            <objects>
+                <viewController title="ProductDetailViewController" id="bmk-vz-q0n" customClass="ProductDetailViewController" customModule="CovidGains" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lj3-Wf-MNy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zl6-9j-e0D">
+                                <rect key="frame" x="0.0" y="61" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Product Details" id="Zel-Pi-wNO">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="m5i-Oa-hWw">
+                                            <connections>
+                                                <segue destination="rpg-mb-NNy" kind="unwind" identifier="cancelSegue" unwindAction="cancelWithSegue:" id="NnY-39-rHg"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Wvu-Ru-jDx">
+                                            <connections>
+                                                <action selector="done:" destination="bmk-vz-q0n" id="X6X-xd-NT9"/>
+                                                <segue destination="rpg-mb-NNy" kind="unwind" identifier="doneSegue" unwindAction="doneWithSegue:" id="R1y-k1-nOu"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D0r-4B-Ymj">
+                                <rect key="frame" x="74" y="204" width="269" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Xpe-UG-8FN"/>
+                    </view>
+                    <connections>
+                        <outlet property="productName" destination="D0r-4B-Ymj" id="MF8-rZ-3uU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VCe-xQ-oun" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="rpg-mb-NNy" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1273.913043478261" y="24.776785714285712"/>
         </scene>
         <!--Budget-->
         <scene sceneID="Fwn-mc-OTo">
