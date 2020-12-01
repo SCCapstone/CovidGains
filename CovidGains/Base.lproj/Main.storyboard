@@ -79,7 +79,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="6aF-ew-DuE" kind="showDetail" id="kiM-2s-tnF"/>
+                                    <segue destination="6aF-ew-DuE" kind="showDetail" identifier="showDetails" id="kiM-2s-tnF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -112,7 +112,7 @@
                                 <rect key="frame" x="0.0" y="61" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Product Details" id="Zel-Pi-wNO">
+                                    <navigationItem title="Product Name" id="Zel-Pi-wNO">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="m5i-Oa-hWw">
                                             <connections>
                                                 <segue destination="rpg-mb-NNy" kind="unwind" identifier="cancelSegue" unwindAction="cancelWithSegue:" id="NnY-39-rHg"/>
@@ -133,10 +133,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="hRN-bk-bMn">
-                                <rect key="frame" x="1" y="298" width="414" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Xpe-UG-8FN"/>
@@ -207,10 +203,10 @@
             </objects>
             <point key="canvasLocation" x="548" y="1604"/>
         </scene>
-        <!--View Controller-->
+        <!--ItemAttributeViewController-->
         <scene sceneID="Z2J-xy-Uof">
             <objects>
-                <viewController id="6aF-ew-DuE" sceneMemberID="viewController">
+                <viewController title="ItemAttributeViewController" id="6aF-ew-DuE" customClass="ItemAttributeViewContoller" customModule="CovidGains" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zta-H4-pQf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,7 +215,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="A7W-gI-V7t">
+                                    <navigationItem title="Details" id="A7W-gI-V7t">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="UV6-7q-gpQ">
                                             <connections>
                                                 <segue destination="j0N-9H-mX0" kind="unwind" unwindAction="cancelWithSegue:" id="iPY-9m-I3d"/>
@@ -228,6 +224,16 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSb-3e-RrP">
+                                <rect key="frame" x="106" y="68" width="203" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ofG-1L-ijx"/>
@@ -236,7 +242,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vsp-sS-Xlj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="j0N-9H-mX0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1612" y="953"/>
+            <point key="canvasLocation" x="1611.5942028985507" y="952.90178571428567"/>
         </scene>
         <!--Expiration-->
         <scene sceneID="8vM-5i-yXK">

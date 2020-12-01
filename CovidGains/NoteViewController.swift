@@ -10,8 +10,8 @@ class NoteViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        titelLabel.text = noteTitle
-        noteLabel.text = note
+        titelLabel.text = noteTitle //
+        noteLabel.text = note //
     }
 
 }
