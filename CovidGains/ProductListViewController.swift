@@ -12,10 +12,11 @@ class ProductListViewController: UITableViewController {
     var products = [String]()
     var newProduct: String = ""
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         products = []
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
