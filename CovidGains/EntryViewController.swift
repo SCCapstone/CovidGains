@@ -1,10 +1,11 @@
 import UIKit
 import CoreData
-import FileManager
+import Foundation
 
 class EntryViewController: UIViewController {
 
     var listItems = [NSManagedObject]()
+    let fileManager = fileManager()
 
     @IBOutlet weak var titleField: UITextField!
 
@@ -43,13 +44,13 @@ class EntryViewController: UIViewController {
         }
 
         let completeUrl = URL(fileURLWithPath: "./docs/"+noteField.title+".txt")
-        if (FileManager.fileExist(atPath:completeUrl)) {
+        if (fileManager.fileExist(atPath:completeUrl)) {
           let tempUrl = URL(fileURLWithPath: "./docs/temp.txt")
-          FileManager.createFile(atPath: tempUrl, contents: noteField.text)
-          FileManager.replaceItem(at: completeUrl, withItemAt: tempUrl)
-          FileManager.rempveItem(at:tempUrl)
+          fileManager.createFile(atPath: tempUrl, contents: noteField.text)
+          fileManager.replaceItem(at: completeUrl, withItemAt: tempUrl)
+          fileManager.rempveItem(at:tempUrl)
         } else
-          FileManager.createFile(atPath: completeUrl, contents: noteField.text)
+          fileManager.createFile(atPath: completeUrl, contents: noteField.text)
 
     }
 
