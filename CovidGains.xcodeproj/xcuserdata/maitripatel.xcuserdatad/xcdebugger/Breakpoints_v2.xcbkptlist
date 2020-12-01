@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "28ABD8E8-D001-4475-9495-14478B1F3B2D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CovidGains/NoteViewController.swift"
@@ -60,8 +60,8 @@
                   urlString = "file:///Users/maitripatel/Desktop/Fall/490/CovidGains/CovidGains/NoteViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "4"
-                  endingLineNumber = "4"
+                  startingLineNumber = "5"
+                  endingLineNumber = "5"
                   offsetFromSymbolStart = "257">
                </Location>
                <Location
@@ -90,8 +90,8 @@
                   urlString = "file:///Users/maitripatel/Desktop/Fall/490/CovidGains/CovidGains/NoteViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "4"
-                  endingLineNumber = "4"
+                  startingLineNumber = "5"
+                  endingLineNumber = "5"
                   offsetFromSymbolStart = "198">
                </Location>
             </Locations>
