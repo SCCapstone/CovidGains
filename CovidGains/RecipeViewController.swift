@@ -11,7 +11,14 @@ class RecipeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        dishes = ["stir fry", "burger", "pizza", "spaghetti", "alfredo", "sandwich", "macaroni"]
+        dishes["stir fry"] = {"pepper", "onion", "rice", "chicken}
+        dishes["burger"] = {"lettuce", "onion", "ground beef"}
+        dishes["pizza"] = {"pepperoni", "cheese", "flour", "tomato"}
+        dishes["spaghetti"] = {"meatball", "pasta"}
+        dishes["alfredo"] = {"chicken", "pasta"}
+        dishes["sandwich"] = {"lettuce", "tomato", "ham", "bacon"]
+        dishes["macaroni"] = {"pasta", "milk", "butter", "cheese"}
     }
     
 
