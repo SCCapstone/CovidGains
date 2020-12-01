@@ -16,7 +16,9 @@ class ProductDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     var pName: String = ""
+    
     @IBOutlet weak var productName: UITextField!
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "doneSegue" {
