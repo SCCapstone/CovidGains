@@ -20,10 +20,15 @@ class ItemAttributeViewContoller: UIViewController {
     var pName: String = ""
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        
-    }
+     
+     }
+    */
     
     
 
