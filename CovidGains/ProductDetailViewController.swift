@@ -22,12 +22,15 @@ class ProductDetailViewController: UIViewController {
     var pName: String = ""
     @IBOutlet weak var productName: UITextField!
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "doneSegue" {
             pName = productName.text!.lowercased()
+            var i = 0
             for item in produce {
                 if item == pName {
-                    print("found")
+                    pName += " (" + String(expirT[i]) + " days)"
                 }
+                i += 1
             }
         }
         
