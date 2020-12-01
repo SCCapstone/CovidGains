@@ -44,13 +44,15 @@ class EntryViewController: UIViewController {
         }
 
         let completeUrl = URL(fileURLWithPath: "./docs/"+textField.text+".txt")
+        let completeUrlString = "./docs/"+textField.text+".txt"
         if (fileManager.fileExist(atPath:completeUrl)) {
           let tempUrl = URL(fileURLWithPath: "./docs/temp.txt")
-          fileManager.createFile(atPath: tempUrl, contents: noteField.text)
+          let tempUrlString = "./docs/temp.txt"
+          fileManager.createFile(atPath: tempUrlString, contents: noteField.text)
           fileManager.replaceItem(at: completeUrl, withItemAt: tempUrl)
           fileManager.removeItem(at:tempUrl)
         } else{
-          fileManager.createFile(atPath: completeUrl, contents: noteField.text)
+          fileManager.createFile(atPath: completeUrlString, contents: noteField.text)
         }
 
     }
