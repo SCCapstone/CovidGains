@@ -154,7 +154,7 @@
         <scene sceneID="Fwn-mc-OTo">
             <objects>
                 <navigationController id="vRA-ZJ-gaj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Budget" selectedImage="dollarsign.circle" catalog="system" id="FZr-Ku-uou"/>
+                    <tabBarItem key="tabBarItem" title="Budget" image="dollarsign.circle" catalog="system" selectedImage="dollarsign.circle" id="FZr-Ku-uou"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AAO-vU-SAy">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -171,7 +171,7 @@
         <scene sceneID="OVa-wc-9dA">
             <objects>
                 <navigationController id="Uu8-nG-DS5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Recipe" selectedImage="list.dash" catalog="system" id="vGX-SX-ldg"/>
+                    <tabBarItem key="tabBarItem" title="Recipe" image="list.dash" catalog="system" selectedImage="list.dash" id="vGX-SX-ldg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4hF-V4-HYO">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -262,7 +262,7 @@
         <scene sceneID="8vM-5i-yXK">
             <objects>
                 <navigationController id="SFx-N8-emY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Expiration" selectedImage="clock" catalog="system" id="cXA-g1-dbA"/>
+                    <tabBarItem key="tabBarItem" title="Expiration" image="clock" catalog="system" selectedImage="clock" id="cXA-g1-dbA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="R24-3H-bDq">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -279,7 +279,7 @@
         <scene sceneID="M3h-7f-IKq">
             <objects>
                 <navigationController id="trE-Cn-k12" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Notes" selectedImage="house" catalog="system" id="l3Z-tU-eJz"/>
+                    <tabBarItem key="tabBarItem" title="Notes" image="house" catalog="system" selectedImage="house" id="l3Z-tU-eJz"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2gE-T3-bUH">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
