@@ -51,6 +51,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D8A30D79257722260011EDB7 /* coreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = coreData;
+			sourceTree = "<group>";
+		};
 		D8CCC886250ED1D10005C4B3 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +77,7 @@
 		D8CCC891250ED1D10005C4B3 /* CovidGains */ = {
 			isa = PBXGroup;
 			children = (
+				D8A30D79257722260011EDB7 /* coreData */,
 				D8DDAE1E25660E5E004ABB60 /* NotesTabHome.swift */,
 				D8DDAE1A2565FA51004ABB60 /* NoteViewController.swift */,
 				D8DDAE1C2565FA74004ABB60 /* EntryViewController.swift */,
