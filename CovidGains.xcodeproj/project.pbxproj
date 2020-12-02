@@ -10,6 +10,7 @@
 		64391BFC2545E492005C36CC /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64391BFB2545E492005C36CC /* ProductListViewController.swift */; };
 		64391BFE2545E49A005C36CC /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64391BFD2545E49A005C36CC /* ProductDetailViewController.swift */; };
 		645A42122576BC8D003E3DFD /* ItemAttributeViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A42112576BC8D003E3DFD /* ItemAttributeViewContoller.swift */; };
+		649C6B2D25780B3B00F9B7C1 /* DataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649C6B2C25780B3B00F9B7C1 /* DataCollectionViewCell.swift */; };
 		D87BD88A2545F3520078692C /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87BD8892545F3520078692C /* RecipeViewController.swift */; };
 		D8CCC893250ED1D10005C4B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CCC892250ED1D10005C4B3 /* AppDelegate.swift */; };
 		D8CCC895250ED1D10005C4B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CCC894250ED1D10005C4B3 /* SceneDelegate.swift */; };
@@ -26,6 +27,7 @@
 		64391BFB2545E492005C36CC /* ProductListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		64391BFD2545E49A005C36CC /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		645A42112576BC8D003E3DFD /* ItemAttributeViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAttributeViewContoller.swift; sourceTree = "<group>"; };
+		649C6B2C25780B3B00F9B7C1 /* DataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionViewCell.swift; sourceTree = "<group>"; };
 		D87BD8892545F3520078692C /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		D8CCC88F250ED1D10005C4B3 /* CovidGains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidGains.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CCC892250ED1D10005C4B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				D87BD8892545F3520078692C /* RecipeViewController.swift */,
+				649C6B2C25780B3B00F9B7C1 /* DataCollectionViewCell.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				D8DDAE1D2565FA74004ABB60 /* EntryViewController.swift in Sources */,
 				645A42122576BC8D003E3DFD /* ItemAttributeViewContoller.swift in Sources */,
 				64391BFC2545E492005C36CC /* ProductListViewController.swift in Sources */,
+				649C6B2D25780B3B00F9B7C1 /* DataCollectionViewCell.swift in Sources */,
 				D8DDAE1F25660E5E004ABB60 /* NotesTabHome.swift in Sources */,
 				D8CCC895250ED1D10005C4B3 /* SceneDelegate.swift in Sources */,
 				D8DD73DE257553F30047EDDB /* noteSaving.xcdatamodeld in Sources */,
