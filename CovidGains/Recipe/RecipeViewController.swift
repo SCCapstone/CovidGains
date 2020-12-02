@@ -12,7 +12,7 @@ class RecipeViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var imageArr = ["Broccoli Pesto Pasta", "Mashed Potatoes", "Lemon Chicken", "Pasta with Chickpea Sauce", "Mac and Cheese", "Smoky Potatoes", "Greek Spaghetti", "Nutty Rice", "Pizza", "Alfraedo Chicken"]
+    var imageArr = ["Broccoli Pesto Pasta", "Mashed Potatoes", "Lemon Chicken", "Pasta with Chickpea Sauce", "Mac and Cheese", "Smoky Potatoes", "Greek Spaghetti", "Nutty Rice", "Meatball", "Alfraedo Chicken"]
     
     
     override func viewDidLoad() {
