@@ -54,8 +54,44 @@
 		D8A30D79257722260011EDB7 /* coreData */ = {
 			isa = PBXGroup;
 			children = (
+				D8DD73DC257553F30047EDDB /* noteSaving.xcdatamodeld */,
 			);
 			path = coreData;
+			sourceTree = "<group>";
+		};
+		D8A30DB025776DBF0011EDB7 /* Budget */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Budget;
+			sourceTree = "<group>";
+		};
+		D8A30DB125776DCA0011EDB7 /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				D87BD8892545F3520078692C /* RecipeViewController.swift */,
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
+		D8A30DB225776DD20011EDB7 /* Expiry */ = {
+			isa = PBXGroup;
+			children = (
+				64391BFB2545E492005C36CC /* ProductListViewController.swift */,
+				64391BFD2545E49A005C36CC /* ProductDetailViewController.swift */,
+				645A42112576BC8D003E3DFD /* ItemAttributeViewContoller.swift */,
+			);
+			path = Expiry;
+			sourceTree = "<group>";
+		};
+		D8A30DB325776DE50011EDB7 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				D8DDAE1E25660E5E004ABB60 /* NotesTabHome.swift */,
+				D8DDAE1A2565FA51004ABB60 /* NoteViewController.swift */,
+				D8DDAE1C2565FA74004ABB60 /* EntryViewController.swift */,
+			);
+			path = Notes;
 			sourceTree = "<group>";
 		};
 		D8CCC886250ED1D10005C4B3 = {
@@ -77,19 +113,15 @@
 		D8CCC891250ED1D10005C4B3 /* CovidGains */ = {
 			isa = PBXGroup;
 			children = (
+				D8A30DB325776DE50011EDB7 /* Notes */,
+				D8A30DB225776DD20011EDB7 /* Expiry */,
+				D8A30DB125776DCA0011EDB7 /* Recipe */,
+				D8A30DB025776DBF0011EDB7 /* Budget */,
 				D8A30D79257722260011EDB7 /* coreData */,
-				D8DDAE1E25660E5E004ABB60 /* NotesTabHome.swift */,
-				D8DDAE1A2565FA51004ABB60 /* NoteViewController.swift */,
-				D8DDAE1C2565FA74004ABB60 /* EntryViewController.swift */,
 				D8CCC892250ED1D10005C4B3 /* AppDelegate.swift */,
 				D8CCC894250ED1D10005C4B3 /* SceneDelegate.swift */,
 				D8CCC896250ED1D10005C4B3 /* ViewController.swift */,
-				64391BFB2545E492005C36CC /* ProductListViewController.swift */,
-				64391BFD2545E49A005C36CC /* ProductDetailViewController.swift */,
-				645A42112576BC8D003E3DFD /* ItemAttributeViewContoller.swift */,
-				D87BD8892545F3520078692C /* RecipeViewController.swift */,
 				D8CCC898250ED1D10005C4B3 /* Main.storyboard */,
-				D8DD73DC257553F30047EDDB /* noteSaving.xcdatamodeld */,
 				D8CCC89B250ED1D30005C4B3 /* Assets.xcassets */,
 				D8CCC8A0250ED1D30005C4B3 /* Info.plist */,
 			);
