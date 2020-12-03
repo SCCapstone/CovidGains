@@ -468,11 +468,11 @@
             </objects>
             <point key="canvasLocation" x="-252" y="1582"/>
         </scene>
-        <!--Item-->
+        <!--Notes-->
         <scene sceneID="sGD-ed-oAJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pKK-jy-4cu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="house" catalog="system" id="59N-3h-wLL"/>
+                    <tabBarItem key="tabBarItem" title="Notes" image="house" catalog="system" id="59N-3h-wLL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CbC-NH-jdb">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
