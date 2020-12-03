@@ -157,7 +157,6 @@
         <!--Item Attribute View Contoller-->
         <scene sceneID="uD2-iP-sSl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u4D-js-oCN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ItemAttributeViewContoller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HTw-ax-2b2" customClass="ItemAttributeViewContoller" customModule="CovidGains" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D4k-by-2Io">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -187,9 +186,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="a7L-Tf-WjJ"/>
                     <connections>
-                        <outlet property="prodName" destination="yEI-bN-NZ0" id="bPQ-jM-aeW"/>
+                        <outlet property="prodName" destination="yEI-bN-NZ0" id="cYc-PZ-bUw"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u4D-js-oCN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1612" y="941"/>
         </scene>
