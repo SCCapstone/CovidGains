@@ -20,7 +20,7 @@ class ProductDetailViewController: UIViewController {
     
     var prodStr: String = ""
     var strDate: String = ""
-    
+    var justProd: String = ""
     
     @IBOutlet weak var productName: UITextField!
     
@@ -28,10 +28,13 @@ class ProductDetailViewController: UIViewController {
         
         if segue.identifier == "doneSegue" {
             prodStr = productName.text!.lowercased()
+            justProd = prodStr
+            prodStr = prodStr.replacingOccurrences(of: "\\s+$", with: "", options: .regularExpression)
             var i = 0
             for item in produce {
                 if item == prodStr {
                     prodStr += " (" + String(expirT[i]) + " days)"
+                    
                 }
                 i += 1
             }

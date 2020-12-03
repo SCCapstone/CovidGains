@@ -80,7 +80,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="HTw-ax-2b2" kind="show" id="Mmc-tj-Trh"/>
+                                    <segue destination="HTw-ax-2b2" kind="presentation" identifier="prodDet" trigger="accessoryAction" id="7bm-wk-ARW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -159,39 +159,31 @@
             <objects>
                 <viewController storyboardIdentifier="ItemAttributeViewContoller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HTw-ax-2b2" customClass="ItemAttributeViewContoller" customModule="CovidGains" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D4k-by-2Io">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEI-bN-NZ0">
-                                <rect key="frame" x="160" y="112" width="94" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAx-Db-IoO">
-                                <rect key="frame" x="177" y="160" width="60" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lkc-hS-krj">
+                                <rect key="frame" x="165.5" y="37" width="83" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="LAx-Db-IoO" firstAttribute="top" secondItem="yEI-bN-NZ0" secondAttribute="bottom" id="9Kx-w8-bPW"/>
-                            <constraint firstItem="5wP-uZ-ODA" firstAttribute="bottom" secondItem="LAx-Db-IoO" secondAttribute="bottom" constant="623" id="PoO-OX-5PF"/>
-                            <constraint firstItem="yEI-bN-NZ0" firstAttribute="centerX" secondItem="D4k-by-2Io" secondAttribute="centerX" id="XFo-tZ-a7T"/>
-                            <constraint firstItem="LAx-Db-IoO" firstAttribute="centerX" secondItem="D4k-by-2Io" secondAttribute="centerX" id="rJz-pc-Cgl"/>
+                            <constraint firstItem="Lkc-hS-krj" firstAttribute="top" secondItem="5wP-uZ-ODA" secondAttribute="top" constant="37" id="GH2-zc-R5Q"/>
+                            <constraint firstItem="Lkc-hS-krj" firstAttribute="centerX" secondItem="D4k-by-2Io" secondAttribute="centerX" id="Qg1-6u-uEi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5wP-uZ-ODA"/>
                     </view>
                     <navigationItem key="navigationItem" id="a7L-Tf-WjJ"/>
                     <connections>
-                        <outlet property="prodName" destination="yEI-bN-NZ0" id="cYc-PZ-bUw"/>
+                        <outlet property="prodName" destination="Lkc-hS-krj" id="Mut-a3-VLb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u4D-js-oCN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2861" y="242"/>
+            <point key="canvasLocation" x="1612" y="911"/>
         </scene>
         <!--Recipe View Controller-->
         <scene sceneID="0SU-pZ-5bg">
@@ -268,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Yk-wf-ybR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="548" y="1081"/>
+            <point key="canvasLocation" x="577" y="1582"/>
         </scene>
         <!--Detailed View Controller-->
         <scene sceneID="KPb-UJ-evV">
@@ -331,7 +323,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVB-bm-6tO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1546" y="1081"/>
+            <point key="canvasLocation" x="1612" y="1582"/>
         </scene>
         <!--Budget-->
         <scene sceneID="Fwn-mc-OTo">
@@ -348,7 +340,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="giV-6l-Lbm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-375" y="1961"/>
+            <point key="canvasLocation" x="-251" y="2273"/>
         </scene>
         <!--Notes-->
         <scene sceneID="0Yh-Wm-IfI">
@@ -455,7 +447,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQR-Ll-udG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="548" y="1961"/>
+            <point key="canvasLocation" x="577" y="2274"/>
         </scene>
         <!--Item-->
         <scene sceneID="gFO-hX-ays">
@@ -474,7 +466,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r3I-Hy-Sow" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-375" y="1082"/>
+            <point key="canvasLocation" x="-252" y="1582"/>
         </scene>
         <!--Notes-->
         <scene sceneID="sGD-ed-oAJ">
