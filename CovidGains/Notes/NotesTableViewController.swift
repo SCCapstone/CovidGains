@@ -10,19 +10,12 @@ import UIKit
 class NotesTableViewController: UITableViewController, EditNoteDelegate {
     
     var notes = [[String:String]]()
-    //var notes = [["title": "New Note", "body": "Please Work!!!"]]
     var selectedIndex = -1
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.readNotes()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        //self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     
@@ -93,7 +86,19 @@ class NotesTableViewController: UITableViewController, EditNoteDelegate {
             
         }
     }
+    func delteNotes() {
+        //
+    }
     
+    
+    //Deleting the product by sliding left
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            self.notes.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        self.tableView.reloadData()
+    }
     
     /*
     // Override to support conditional editing of the table view.
