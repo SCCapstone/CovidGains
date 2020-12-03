@@ -15,10 +15,15 @@ class DetailedViewController: UIViewController {
     
     @IBOutlet weak var steps: UITextView!
     
-    
+    var name = "" 
+    var ingre = ""
+    var st = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        lbl.text = name
+        ingredients.text = ingre
+        steps.text = st
+        
         // Do any additional setup after loading the view.
     }
 

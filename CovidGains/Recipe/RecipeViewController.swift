@@ -14,6 +14,9 @@ class RecipeViewController: UIViewController {
     
     var imageArr = ["Broccoli Pesto Pasta", "Mashed Potatoes", "Lemon Chicken", "Pasta with Chickpea Sauce", "Mac and Cheese", "Smoky Potatoes", "Greek Spaghetti", "Nutty Rice", "Meatball", "Alfraedo Chicken"]
     
+    var ingr = ["Ingr1", "Ingr2", "Ingr3", "Ingr4", "Ingr", "Ingr", "Ingr", "Ingr", "Ingr", "Ingr"]
+    
+    var direct = ["Step1", "Step2", "Step3", "Step4", "Step", "Step", "Step", "Step", "Step", "Step"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +47,13 @@ extension RecipeViewController: UICollectionViewDataSource, UICollectionViewDele
         
         return cell!
     }
-}
-
-extension ViewController:  UICollectionViewDelegateFlowLayout{
-     
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailedViewController") as? DetailedViewController
+        vc?.name = imageArr[indexPath.row]
+        vc?.ingre = ingr[indexPath.row]
+        vc?.st = direct[indexPath.row]
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
 }
