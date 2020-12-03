@@ -59,7 +59,6 @@ class ProductListViewController: UITableViewController {
     @IBAction func done(segue:UIStoryboardSegue) {
          let productDetailVC = segue.source as! ProductDetailViewController
          newProduct = productDetailVC.prodStr
-            
          products.append(newProduct)
          tableView.reloadData()
         
