@@ -186,7 +186,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="a7L-Tf-WjJ"/>
                     <connections>
-                        <outlet property="prodName" destination="yEI-bN-NZ0" id="bPQ-jM-aeW"/>
+                        <outlet property="prodName" destination="yEI-bN-NZ0" id="cYc-PZ-bUw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u4D-js-oCN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

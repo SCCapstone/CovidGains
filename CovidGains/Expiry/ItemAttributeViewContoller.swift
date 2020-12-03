@@ -13,6 +13,7 @@ class ItemAttributeViewContoller: UIViewController {
     var datestr: String = ""
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     
+  
     @IBOutlet weak var prodName: UILabel!
     
     override func viewDidLoad() {
