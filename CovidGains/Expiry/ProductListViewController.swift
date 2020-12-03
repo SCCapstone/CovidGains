@@ -48,6 +48,7 @@ class ProductListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let attribvc = storyboard?.instantiateViewController(withIdentifier: "ItemAttributeViewContoller") as? ItemAttributeViewContoller
         attribvc?.pName = products[indexPath.row]
+        //print(products[indexPath.row])
         self.navigationController?.pushViewController(attribvc!, animated: true)
     }
     
@@ -59,6 +60,7 @@ class ProductListViewController: UITableViewController {
     @IBAction func done(segue:UIStoryboardSegue) {
          let productDetailVC = segue.source as! ProductDetailViewController
          newProduct = productDetailVC.prodStr
+        
          products.append(newProduct)
          tableView.reloadData()
         
@@ -115,7 +117,10 @@ class ProductListViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetails" {
+        if segue.identifier == "prodDet" {
+            let productDetailVC = segue.source as! ProductDetailViewController
+            newProduct = productDetailVC.prodStr
+            
         }
     }
     */

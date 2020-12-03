@@ -8,8 +8,7 @@
 import UIKit
 
 class ItemAttributeViewContoller: UIViewController {
-    var prods = [String]()
-    var pName: String = ""
+    var pName =  ""
     var datestr: String = ""
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     
@@ -17,6 +16,7 @@ class ItemAttributeViewContoller: UIViewController {
     @IBOutlet weak var prodName: UILabel!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         prodName.text = pName
         
