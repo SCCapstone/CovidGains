@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,9 +14,9 @@
 		649C6B2D25780B3B00F9B7C1 /* DataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649C6B2C25780B3B00F9B7C1 /* DataCollectionViewCell.swift */; };
 		D80CBB6325799EDE00841B25 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D80CBB6225799EDE00841B25 /* Podfile */; };
 		D87BD88A2545F3520078692C /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87BD8892545F3520078692C /* RecipeViewController.swift */; };
+		D890620E2579ACBB0062A2DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D890620D2579ACBB0062A2DC /* GoogleService-Info.plist */; };
 		D893521B2579620E005F2F4C /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D893521A2579620E005F2F4C /* NotesTableViewController.swift */; };
 		D893521D2579688B005F2F4C /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D893521C2579688B005F2F4C /* EditNoteViewController.swift */; };
-		D893522325799938005F2F4C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D893522225799938005F2F4C /* GoogleService-Info.plist */; };
 		D8A30DBC25785C830011EDB7 /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A30DBB25785C830011EDB7 /* DetailedViewController.swift */; };
 		D8CCC893250ED1D10005C4B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CCC892250ED1D10005C4B3 /* AppDelegate.swift */; };
 		D8CCC895250ED1D10005C4B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CCC894250ED1D10005C4B3 /* SceneDelegate.swift */; };
@@ -35,9 +35,9 @@
 		D29E1844A857054081D81DAE /* Pods-CovidGains.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidGains.release.xcconfig"; path = "Target Support Files/Pods-CovidGains/Pods-CovidGains.release.xcconfig"; sourceTree = "<group>"; };
 		D80CBB6225799EDE00841B25 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		D87BD8892545F3520078692C /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		D890620D2579ACBB0062A2DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D893521A2579620E005F2F4C /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
 		D893521C2579688B005F2F4C /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
-		D893522225799938005F2F4C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8A30DBB25785C830011EDB7 /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 		D8CCC88F250ED1D10005C4B3 /* CovidGains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidGains.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CCC892250ED1D10005C4B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +117,7 @@
 		D8CCC886250ED1D10005C4B3 = {
 			isa = PBXGroup;
 			children = (
+				D890620D2579ACBB0062A2DC /* GoogleService-Info.plist */,
 				D80CBB6225799EDE00841B25 /* Podfile */,
 				D8CCC891250ED1D10005C4B3 /* CovidGains */,
 				D8CCC890250ED1D10005C4B3 /* Products */,
@@ -147,7 +148,6 @@
 				D8CCC898250ED1D10005C4B3 /* Main.storyboard */,
 				D8CCC89B250ED1D30005C4B3 /* Assets.xcassets */,
 				D8CCC8A0250ED1D30005C4B3 /* Info.plist */,
-				D893522225799938005F2F4C /* GoogleService-Info.plist */,
 			);
 			path = CovidGains;
 			sourceTree = "<group>";
@@ -158,7 +158,6 @@
 				7EA0B37E93DC36D2EADDC86C /* Pods-CovidGains.debug.xcconfig */,
 				D29E1844A857054081D81DAE /* Pods-CovidGains.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -222,9 +221,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8CCC89C250ED1D30005C4B3 /* Assets.xcassets in Resources */,
+				D890620E2579ACBB0062A2DC /* GoogleService-Info.plist in Resources */,
 				D8CCC89A250ED1D10005C4B3 /* Main.storyboard in Resources */,
 				D80CBB6325799EDE00841B25 /* Podfile in Resources */,
-				D893522325799938005F2F4C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
