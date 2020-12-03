@@ -18,7 +18,7 @@ class ProductDetailViewController: UIViewController {
     }
 
     
-    var pName: String = ""
+    var prodStr: String = ""
     var strDate: String = ""
     
     
@@ -27,11 +27,11 @@ class ProductDetailViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "doneSegue" {
-            pName = productName.text!.lowercased()  //pname == apple
+            prodStr = productName.text!.lowercased()
             var i = 0
             for item in produce {
-                if item == pName {
-                    pName += " (" + String(expirT[i]) + " days)"
+                if item == prodStr {
+                    prodStr += " (" + String(expirT[i]) + " days)"
                 }
                 i += 1
             }

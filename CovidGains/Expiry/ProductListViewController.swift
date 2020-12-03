@@ -7,11 +7,9 @@ import UIKit
 
 
 class ProductListViewController: UITableViewController {
-    
-    
+        
     var products = [String]()
     var newProduct: String = ""
-    var prodDetail: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         products = []
@@ -39,12 +37,20 @@ class ProductListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath)
-
         // Configure the cell...
         cell.textLabel?.text = products[indexPath.row]
         
         return cell
     }
+    
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let attribvc = storyboard?.instantiateViewController(withIdentifier: "ItemAttributeViewContoller") as? ItemAttributeViewContoller
+        attribvc?.pName = products[indexPath.row]
+        self.navigationController?.pushViewController(attribvc!, animated: true)
+    }
+    
     
     @IBAction func cancel(segue:UIStoryboardSegue) {
       
@@ -52,7 +58,7 @@ class ProductListViewController: UITableViewController {
 
     @IBAction func done(segue:UIStoryboardSegue) {
          let productDetailVC = segue.source as! ProductDetailViewController
-         newProduct = productDetailVC.pName
+         newProduct = productDetailVC.prodStr
             
          products.append(newProduct)
          tableView.reloadData()
@@ -67,6 +73,8 @@ class ProductListViewController: UITableViewController {
         }
     }
     
+    
+  
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -112,8 +120,5 @@ class ProductListViewController: UITableViewController {
         }
     }
     */
-    
-    
-    
 
 }
