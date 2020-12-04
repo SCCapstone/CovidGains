@@ -663,6 +663,17 @@
                                     <constraint firstAttribute="width" constant="350" id="IWU-lE-uGc"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sa-7c-WtV">
+                                <rect key="frame" x="32" y="117" width="71" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title=" Back" image="arrow.uturn.backward" catalog="system">
+                                    <color key="titleColor" systemColor="linkColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="F9q-Jo-qbi" kind="presentation" modalPresentationStyle="fullScreen" id="Ily-om-KAh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QLD-sG-EFo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -734,6 +745,7 @@
                             <constraint firstItem="UB7-Yk-aNM" firstAttribute="leading" secondItem="apG-IL-xe5" secondAttribute="leading" id="izg-OJ-27c"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="99V-qS-yxB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jhe-Gw-LzO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -786,6 +798,17 @@
                                     <constraint firstAttribute="width" constant="350" id="P5q-ls-hcQ"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hD-5y-obV">
+                                <rect key="frame" x="32" y="117" width="71" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title=" Back" image="arrow.uturn.backward" catalog="system">
+                                    <color key="titleColor" systemColor="linkColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="F9q-Jo-qbi" kind="presentation" modalPresentationStyle="fullScreen" id="pKU-yb-QNc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dkl-14-k0N"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -794,7 +817,11 @@
                             <constraint firstItem="IqG-Ax-qSq" firstAttribute="centerY" secondItem="MY4-So-qTY" secondAttribute="centerY" id="omB-Rb-5W6"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="t8W-IP-DJ4"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="Rto-nN-dc3"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="emailTextfield" destination="UbG-JK-u6w" id="0E1-TU-A3S"/>
                         <outlet property="passwordTextfield" destination="1yB-Pg-mQD" id="Luh-ae-WcZ"/>
@@ -825,9 +852,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RQM-ZD-xP9"/>
+        <segue reference="Ily-om-KAh"/>
+        <segue reference="RMf-nj-Mlz"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="arrow.uturn.backward" catalog="system" width="128" height="112"/>
         <image name="clock" catalog="system" width="128" height="121"/>
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
         <image name="house" catalog="system" width="128" height="106"/>
