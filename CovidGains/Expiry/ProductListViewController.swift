@@ -88,7 +88,7 @@ class ProductListViewController: UITableViewController {
         
         products.append(newProduct)
         let user = Auth.auth().currentUser?.email
-        db.collection("Product Details").addDocument(data: ["User":user,"Product Name":newProduct]) { (	error) in
+        db.collection("Product Details").addDocument(data: ["User":user,"Product Name":newProduct, "Date":Date().timeIntervalSince1970]) { (	error) in
             if let e = error {
                 print("there was an issue saving data to firestore, \(e)")
             } else {
