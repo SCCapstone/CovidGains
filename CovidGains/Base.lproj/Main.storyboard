@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EMK-uo-3Uq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F9q-Jo-qbi">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -460,7 +460,7 @@
             <objects>
                 <viewController id="EMK-uo-3Uq" customClass="RegisterViewController" customModule="CovidGains" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JDr-Wa-KXA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qrM-aV-o3I">
@@ -482,13 +482,14 @@
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <action selector="registerPressed:" destination="EMK-uo-3Uq" eventType="touchUpInside" id="WZR-4k-mtR"/>
-                                    <segue destination="QS3-fT-gKR" kind="presentation" identifier="RegisterToGrosh" id="RMf-nj-Mlz"/>
+                                    <segue destination="QS3-fT-gKR" kind="show" identifier="RegisterToGrosh" id="RMf-nj-Mlz"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QLD-sG-EFo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Juo-n5-LFa"/>
                     <connections>
                         <outlet property="emailTextfield" destination="qrM-aV-o3I" id="OaG-kL-bML"/>
                         <outlet property="passwordTextfield" destination="eEZ-lD-mxY" id="pw5-Gl-yFG"/>
@@ -498,7 +499,90 @@
             </objects>
             <point key="canvasLocation" x="-2991.304347826087" y="241.74107142857142"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="QBW-dj-3gd">
+            <objects>
+                <viewController id="F9q-Jo-qbi" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Bx-4S-OuN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgt-hz-GlT">
+                                <rect key="frame" x="0.0" y="673" width="414" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <state key="normal" title="Register"/>
+                                <connections>
+                                    <segue destination="EMK-uo-3Uq" kind="show" id="Woo-ce-WZQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THk-4G-Dra">
+                                <rect key="frame" x="0.0" y="764" width="414" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <segue destination="Gze-K2-tYb" kind="show" id="fIu-8E-7Hq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="apG-IL-xe5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jhe-Gw-LzO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4253.623188405797" y="241.74107142857142"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="tz1-9L-RLh">
+            <objects>
+                <viewController id="Gze-K2-tYb" customClass="LoginViewController" customModule="CovidGains" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MY4-So-qTY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UbG-JK-u6w">
+                                <rect key="frame" x="111" y="206" width="193" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1yB-Pg-mQD">
+                                <rect key="frame" x="111" y="292" width="193" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFk-ix-Sa8">
+                                <rect key="frame" x="98" y="389" width="218" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginPressed:" destination="Gze-K2-tYb" eventType="touchUpInside" id="hnQ-oG-LlG"/>
+                                    <action selector="registerPressed:" destination="EMK-uo-3Uq" eventType="touchUpInside" id="ztJ-Qr-ymF"/>
+                                    <segue destination="QS3-fT-gKR" kind="show" identifier="LoginToGrosh" id="RQM-ZD-xP9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dkl-14-k0N"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Rto-nN-dc3"/>
+                    <connections>
+                        <outlet property="emailTextfield" destination="UbG-JK-u6w" id="0E1-TU-A3S"/>
+                        <outlet property="passwordTextfield" destination="1yB-Pg-mQD" id="Luh-ae-WcZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kU0-L2-38b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2991" y="964"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="RMf-nj-Mlz"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="clock" catalog="system" width="128" height="121"/>
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
@@ -515,6 +599,9 @@
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

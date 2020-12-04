@@ -22,7 +22,7 @@ class RegisterViewController: UIViewController{
             
                 if let e = error
                 {
-                    print(e)
+                    print(e.localizedDescription)
                 }
                 else{
                     self.performSegue(withIdentifier: "RegisterToGrosh", sender: self)
