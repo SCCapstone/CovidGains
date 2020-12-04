@@ -556,10 +556,24 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rft-oL-DJ5">
+                                <rect key="frame" x="275" y="694.5" width="100" height="40"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetbutton:" destination="I1e-h5-QmM" eventType="touchUpInside" id="Ijy-GO-r2g"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Rad-It-9MD" firstAttribute="bottom" secondItem="Rft-oL-DJ5" secondAttribute="bottom" constant="80" id="3GU-QF-aR2"/>
                             <constraint firstItem="0hM-75-vg1" firstAttribute="centerX" secondItem="tOz-PR-hUK" secondAttribute="centerX" id="Ato-NX-EcK"/>
+                            <constraint firstItem="Rad-It-9MD" firstAttribute="trailing" secondItem="Rft-oL-DJ5" secondAttribute="trailing" constant="10" id="bzb-pN-PMY"/>
+                            <constraint firstItem="Rft-oL-DJ5" firstAttribute="top" secondItem="0hM-75-vg1" secondAttribute="bottom" constant="10" id="roJ-gI-ipU"/>
+                            <constraint firstItem="Rft-oL-DJ5" firstAttribute="leading" secondItem="Rad-It-9MD" secondAttribute="leading" constant="275" id="tar-7c-gpZ"/>
                             <constraint firstItem="0hM-75-vg1" firstAttribute="centerY" secondItem="tOz-PR-hUK" secondAttribute="centerY" id="tbC-k5-VLx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rad-It-9MD"/>

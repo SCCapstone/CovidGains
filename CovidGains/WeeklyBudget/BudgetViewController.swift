@@ -39,6 +39,16 @@ class BudgetViewController: UIViewController, UITextFieldDelegate{
         let outputValue = Double(firstValue! + secondValue! + thirdValue! + fourthValue! + fifthValue!)
         priceLabel.text = " $ \(outputValue) "
     }
+    @IBAction func resetbutton(_ sender: UIButton) {
+        beveragesTextField.text = ""
+        cannedTextField.text = ""
+        dairyTextField.text = ""
+        meatTextField.text = ""
+        produceTextField.text = ""
+        priceLabel.text = ""
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.beveragesTextField.delegate = self
