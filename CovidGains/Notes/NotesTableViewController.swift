@@ -138,14 +138,27 @@ class NotesTableViewController: UITableViewController, EditNoteDelegate {
     
     @IBAction func logOut(_ sender: UIBarButtonItem) {
         
+        //print("Logging out")
+        let LogOut = storyboard?.instantiateViewController(identifier: "MainScreen") as? ViewController
+        
+        guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else{
+            return
+        }
+
+
         do {
             try Auth.auth().signOut()
-            navigationController?.popToRootViewController(animated: true)
-            
+            //navigationController?.popToRootViewController(animated: true)
+                    sceneDelegate.window?.rootViewController = LogOut
+
         } catch let signOutError as NSError {
           print ("Error signing out: %@", signOutError)
         }
     }
+    
+    
+    
+    
     
 
 
