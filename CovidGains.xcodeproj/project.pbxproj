@@ -78,13 +78,6 @@
 			path = coreData;
 			sourceTree = "<group>";
 		};
-		D8A30DB025776DBF0011EDB7 /* Budget */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Budget;
-			sourceTree = "<group>";
-		};
 		D8A30DB125776DCA0011EDB7 /* Recipe */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +133,7 @@
 				D8A30DB325776DE50011EDB7 /* Notes */,
 				D8A30DB225776DD20011EDB7 /* Expiry */,
 				D8A30DB125776DCA0011EDB7 /* Recipe */,
-				D8A30DB025776DBF0011EDB7 /* Budget */,
+				FF153EE52579E8D400C9185F /* Budget */,
 				D8A30D79257722260011EDB7 /* coreData */,
 				D8CCC892250ED1D10005C4B3 /* AppDelegate.swift */,
 				D8CCC894250ED1D10005C4B3 /* SceneDelegate.swift */,
@@ -159,6 +152,13 @@
 				D29E1844A857054081D81DAE /* Pods-CovidGains.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FF153EE52579E8D400C9185F /* Budget */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Budget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
