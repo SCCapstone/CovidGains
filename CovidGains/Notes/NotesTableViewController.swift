@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class NotesTableViewController: UITableViewController, EditNoteDelegate {
     
@@ -134,6 +135,18 @@ class NotesTableViewController: UITableViewController, EditNoteDelegate {
         return true
     }
     */
+    
+    @IBAction func logOut(_ sender: UIBarButtonItem) {
+        
+        do {
+            try Auth.auth().signOut()
+            navigationController?.popToRootViewController(animated: true)
+            
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
+    }
+    
 
 
 

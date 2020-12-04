@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 
 protocol EditNoteDelegate {
@@ -57,4 +58,5 @@ class EditNoteViewController: UIViewController, UITextViewDelegate {
     }
     */
 
+    
 }
