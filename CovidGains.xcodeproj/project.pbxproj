@@ -26,6 +26,7 @@
 		D8CCC89A250ED1D10005C4B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8CCC898250ED1D10005C4B3 /* Main.storyboard */; };
 		D8CCC89C250ED1D30005C4B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8CCC89B250ED1D30005C4B3 /* Assets.xcassets */; };
 		D8DD73DE257553F30047EDDB /* noteSaving.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8DD73DC257553F30047EDDB /* noteSaving.xcdatamodeld */; };
+		E1C8D7CA257AA28800F6833C /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8D7C9257AA28800F6833C /* BudgetViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		D8CCC8A0250ED1D30005C4B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8DD73DD257553F30047EDDB /* noteSaving.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = noteSaving.xcdatamodel; sourceTree = "<group>"; };
 		DBB4CF8CE13FA0D31D30D5E6 /* Pods_CovidGains.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CovidGains.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1C8D7C9257AA28800F6833C /* BudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,12 +144,12 @@
 		D8CCC891250ED1D10005C4B3 /* CovidGains */ = {
 			isa = PBXGroup;
 			children = (
+				E1C8D7C8257AA27600F6833C /* WeeklyBudget */,
 				3F0173642579E7CE006CC316 /* userAuthentication */,
 				D890620F2579ADC40062A2DC /* GoogleService-Info.plist */,
 				D8A30DB325776DE50011EDB7 /* Notes */,
 				D8A30DB225776DD20011EDB7 /* Expiry */,
 				D8A30DB125776DCA0011EDB7 /* Recipe */,
-				FF153EE52579E8D400C9185F /* Budget */,
 				D8A30D79257722260011EDB7 /* coreData */,
 				D8CCC892250ED1D10005C4B3 /* AppDelegate.swift */,
 				D8CCC894250ED1D10005C4B3 /* SceneDelegate.swift */,
@@ -159,6 +161,14 @@
 			path = CovidGains;
 			sourceTree = "<group>";
 		};
+		E1C8D7C8257AA27600F6833C /* WeeklyBudget */ = {
+			isa = PBXGroup;
+			children = (
+				E1C8D7C9257AA28800F6833C /* BudgetViewController.swift */,
+			);
+			path = WeeklyBudget;
+			sourceTree = "<group>";
+		};
 		FF142B31233B71BEF1DC3474 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,13 +176,6 @@
 				D29E1844A857054081D81DAE /* Pods-CovidGains.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		FF153EE52579E8D400C9185F /* Budget */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Budget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +300,7 @@
 				D8CCC893250ED1D10005C4B3 /* AppDelegate.swift in Sources */,
 				D87BD88A2545F3520078692C /* RecipeViewController.swift in Sources */,
 				64391BFE2545E49A005C36CC /* ProductDetailViewController.swift in Sources */,
+				E1C8D7CA257AA28800F6833C /* BudgetViewController.swift in Sources */,
 				645A42122576BC8D003E3DFD /* ItemAttributeViewContoller.swift in Sources */,
 				64391BFC2545E492005C36CC /* ProductListViewController.swift in Sources */,
 				649C6B2D25780B3B00F9B7C1 /* DataCollectionViewCell.swift in Sources */,
