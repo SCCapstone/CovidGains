@@ -9,8 +9,10 @@ import Firebase
 class ProductListViewController: UITableViewController {
         
     var products = [String]()
+    var docIDs = [String]()
     var newProduct: String = ""
     let db = Firestore.firestore()
+    var ref: DocumentReference? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -88,10 +90,15 @@ class ProductListViewController: UITableViewController {
         
         products.append(newProduct)
         let user = Auth.auth().currentUser?.email
-        db.collection("Product Details").addDocument(data: ["User":user,"Product Name":newProduct, "Date":Date().timeIntervalSince1970]) { (	error) in
+        ref = db.collection("Product Details").addDocument(data: ["User":user,"Product Name":newProduct, "Date":Date().timeIntervalSince1970]) { (	error) in
             if let e = error {
                 print("there was an issue saving data to firestore, \(e)")
             } else {
+                let docid = (self.ref!.documentID)
+                self.docIDs.append(docid)
+                
+                print(docid)
+                
                 print("Successfully saved data")
             }
         }
@@ -103,12 +110,15 @@ class ProductListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             self.products.remove(at: indexPath.row)
+            db.collection("Product Details").document(docIDs[indexPath.row]).delete()
             tableView.deleteRows(at: [indexPath], with: .fade)
+            docIDs.remove(at: indexPath.row)
+            
         }
     }
     
     
-  
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
