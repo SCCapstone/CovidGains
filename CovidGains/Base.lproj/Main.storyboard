@@ -418,7 +418,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="vxg-Nz-c3k">
                                         <rect key="frame" x="0.0" y="73" width="330" height="40"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="40" text="Beverages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zsr-3p-IEh">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="40" text="Apple" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zsr-3p-IEh">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="130" id="VpV-gU-rFd"/>
@@ -440,12 +440,12 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="IH9-G4-AvS">
                                         <rect key="frame" x="0.0" y="145" width="330" height="40"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="40" text="Canned Goods" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aG3-aF-JrW">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="40" text="Banana" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aG3-aF-JrW">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="130" id="iTY-hW-z8K"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -462,7 +462,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="GhE-4I-caE">
                                         <rect key="frame" x="0.0" y="217" width="330" height="40"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="40" text="Dairy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V77-xy-htC">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="40" text="Broccoli" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V77-xy-htC">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="130" id="TUt-PG-a5m"/>
@@ -484,7 +484,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="1He-uu-CTd">
                                         <rect key="frame" x="0.0" y="289" width="330" height="40"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="40" text="Meat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WmZ-iS-Pbm">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="40" text="Okra" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WmZ-iS-Pbm">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="130" id="8us-PY-z01"/>
@@ -506,7 +506,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="FDA-ny-Zmy">
                                         <rect key="frame" x="0.0" y="361" width="330" height="40"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="40" text="Produce" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYg-rB-gxH">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="40" text="Pumpkin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYg-rB-gxH">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="130" id="aqR-vJ-3aa"/>
