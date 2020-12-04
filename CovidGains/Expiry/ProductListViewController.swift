@@ -4,12 +4,13 @@
 //
 
 import UIKit
-
+import Firebase
 
 class ProductListViewController: UITableViewController {
         
     var products = [String]()
     var newProduct: String = ""
+    let db = Firestore.firestore()
     override func viewDidLoad() {
         super.viewDidLoad()
         products = []
@@ -58,11 +59,19 @@ class ProductListViewController: UITableViewController {
     }
 
     @IBAction func done(segue:UIStoryboardSegue) {
-         let productDetailVC = segue.source as! ProductDetailViewController
-         newProduct = productDetailVC.prodStr
+        let productDetailVC = segue.source as! ProductDetailViewController
+        newProduct = productDetailVC.prodStr
         
-         products.append(newProduct)
-         tableView.reloadData()
+        products.append(newProduct)
+        let user = Auth.auth().currentUser?.email
+        db.collection("Product Details").addDocument(data: ["User":user,"Product Name":newProduct]) { (	error) in
+            if let e = error {
+                print("there was an issue saving data to firestore, \(e)")
+            } else {
+                print("Successfully saved data")
+            }
+        }
+        tableView.reloadData()
         
     }
     
