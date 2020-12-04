@@ -21,6 +21,7 @@
 		D8CCC89A250ED1D10005C4B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8CCC898250ED1D10005C4B3 /* Main.storyboard */; };
 		D8CCC89C250ED1D30005C4B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8CCC89B250ED1D30005C4B3 /* Assets.xcassets */; };
 		D8DD73DE257553F30047EDDB /* noteSaving.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8DD73DC257553F30047EDDB /* noteSaving.xcdatamodeld */; };
+		FF5229362579CDF700021BB6 /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5229352579CDF700021BB6 /* BudgetViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		D8CCC89B250ED1D30005C4B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8CCC8A0250ED1D30005C4B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8DD73DD257553F30047EDDB /* noteSaving.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = noteSaving.xcdatamodel; sourceTree = "<group>"; };
+		FF5229352579CDF700021BB6 /* BudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		D8A30DB025776DBF0011EDB7 /* Budget */ = {
 			isa = PBXGroup;
 			children = (
+				FF5229352579CDF700021BB6 /* BudgetViewController.swift */,
 			);
 			path = Budget;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				D8CCC897250ED1D10005C4B3 /* ViewController.swift in Sources */,
 				D8CCC893250ED1D10005C4B3 /* AppDelegate.swift in Sources */,
 				D87BD88A2545F3520078692C /* RecipeViewController.swift in Sources */,
+				FF5229362579CDF700021BB6 /* BudgetViewController.swift in Sources */,
 				64391BFE2545E49A005C36CC /* ProductDetailViewController.swift in Sources */,
 				645A42122576BC8D003E3DFD /* ItemAttributeViewContoller.swift in Sources */,
 				64391BFC2545E492005C36CC /* ProductListViewController.swift in Sources */,
