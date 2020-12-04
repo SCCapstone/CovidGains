@@ -13,16 +13,40 @@ class ProductListViewController: UITableViewController {
     let db = Firestore.firestore()
     override func viewDidLoad() {
         super.viewDidLoad()
-        products = []
         
-        
+        loadProds()
+       
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    func loadProds() {
+        
+        
+        db.collection("Product Details").addSnapshotListener { (querySnapshot, error) in
+            self.products = []
+            if let e = error {
+                print("There was an issue retrieving data from Firestore. \(e)")
+            } else {
+                if let snapshotDocuments = querySnapshot?.documents {
+                    for doc in snapshotDocuments {
+                        let data = doc.data()
+                        if let user = data["User"] as? String, let ProdName = data["Product Name"] as? String {
+                            self.products.append(ProdName)
+                            
+                            DispatchQueue.main.async {
+                                 self.tableView.reloadData()
+                            }
+                           
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -64,7 +88,7 @@ class ProductListViewController: UITableViewController {
         
         products.append(newProduct)
         let user = Auth.auth().currentUser?.email
-        db.collection("Product Details").addDocument(data: ["User":user,"Product Name":newProduct]) { (	error) in
+        db.collection("Product Details").addDocument(data: ["User":user,"Product Name":newProduct, "Date":Date().timeIntervalSince1970]) { (	error) in
             if let e = error {
                 print("there was an issue saving data to firestore, \(e)")
             } else {
