@@ -57,6 +57,7 @@ class ProductListViewController: UITableViewController {
                     i += 1
                 }
                 */
+                /*
                 db.collection("Product Details").whereField("capital", isEqualTo: true)
                     .getDocuments() { (querySnapshot, err) in
                         if let err = err {
@@ -67,6 +68,7 @@ class ProductListViewController: UITableViewController {
                             }
                         }
                 }
+                */
             }
         }
     }
