@@ -3,7 +3,7 @@
 //  CovidGains
 //
 //  Created by TABASSUM, NISHAT on 12/4/20.
-//
+// 
 
 import UIKit
 
@@ -16,20 +16,28 @@ class BudgetViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var produceTextField: UITextField!
     @IBOutlet weak var priceLabel: UILabel!
     @IBAction func totalButton(_ sender: Any) {
-        
-        let firstValue = Double(beveragesTextField.text!)
-        let secondValue = Double(cannedTextField.text!)
-        let thirdValue = Double(dairyTextField.text!)
-        let fourthValue = Double(meatTextField.text!)
-        let fifthValue = Double(produceTextField.text!)
-        
-        if firstValue != nil && secondValue != nil && thirdValue != nil && fourthValue != nil && fifthValue != nil {
+        var firstValue = Double(beveragesTextField.text!)
+        var secondValue = Double(cannedTextField.text!)
+        var thirdValue = Double(dairyTextField.text!)
+        var fourthValue = Double(meatTextField.text!)
+        var fifthValue = Double(produceTextField.text!)
+        if (firstValue == nil) {
+            firstValue = 0.0
+        }
+        if (secondValue == nil) {
+            secondValue = 0.0
+        }
+        if (thirdValue == nil) {
+            thirdValue = 0.0
+        }
+        if (fourthValue == nil) {
+            fourthValue = 0.0
+        }
+        if (fifthValue == nil) {
+            fifthValue = 0.0
+        }
         let outputValue = Double(firstValue! + secondValue! + thirdValue! + fourthValue! + fifthValue!)
         priceLabel.text = " $ \(outputValue) "
-        } else {
-        priceLabel.text = "Enter no."
-        }
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
