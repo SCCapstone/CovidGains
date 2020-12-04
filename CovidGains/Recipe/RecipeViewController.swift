@@ -14,9 +14,9 @@ class RecipeViewController: UIViewController {
     
     var imageArr = ["Broccoli Pesto Pasta", "Mashed Potatoes", "Lemon Chicken", "Pasta with Chickpea Sauce", "Mac and Cheese", "Smoky Potatoes", "Greek Spaghetti", "Nutty Rice", "Meatball", "Alfraedo Chicken"]
     
-    var ingr = ["Ingr1", "Ingr2", "Ingr3", "Ingr4", "Ingr", "Ingr", "Ingr", "Ingr", "Ingr", "Ingr"]
+    var ingr = ["Pasta, \nBroccoli florets, \nBasil leaves, \nGarlic cloves, \nPine nuts, \nVirgin olive oil, \nSalt, \nParmigiano-reggiano", "potatoes, milk, butter, pepper", "chicken, garlic, lemon, salt, pepper, oregano", "onion, oil, carrot, parsley, basil, water", "macaroni cheese, cheddar cheese, milk, butter, flour, paprika", "potatoes, oil, pepper, salt", "tomatoes, olives, cheese, pepper, spaghetti, oil", "brown rice, nuts, butter, nutmeg, water", "beef, pork, cheese, onion, garlic, basil, parsley, oregano", "chicken, alfredo sauce, oil, heavy cream, nutmeg, butter, boneless chicken, fettuccine"]
     
-    var direct = ["Step1", "Step2", "Step3", "Step4", "Step", "Step", "Step", "Step", "Step", "Step"]
+    var direct = ["Step 1: Boil water in a large pot \nStep 2: Add broccoli with boil water ", "Step2", "Step3", "Step4", "Step", "Step", "Step", "Step", "Step", "Step"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
