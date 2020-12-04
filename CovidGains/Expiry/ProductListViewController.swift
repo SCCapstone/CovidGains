@@ -23,9 +23,10 @@ class ProductListViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     func loadProds() {
-        products = []
         
-        db.collection("Product Details").getDocuments { (querySnapshot, error) in
+        
+        db.collection("Product Details").addSnapshotListener { (querySnapshot, error) in
+            self.products = []
             if let e = error {
                 print("There was an issue retrieving data from Firestore. \(e)")
             } else {
