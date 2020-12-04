@@ -15,15 +15,21 @@ class ProductListViewController: UITableViewController {
     var ref: DocumentReference? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        for items in docIDs {
+            print("DOCID: ", items)
+        }
         loadProds()
-       
+    
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    
+    
+    
     func loadProds() {
         
         
@@ -41,10 +47,28 @@ class ProductListViewController: UITableViewController {
                             DispatchQueue.main.async {
                                  self.tableView.reloadData()
                             }
-                           
                         }
                     }
                 }
+                /*
+                var i = 0
+                for items in self.products {
+                    docIDs[i] = db.collection("Product Details").get
+                    i += 1
+                }
+                */
+                /*
+                db.collection("Product Details").whereField("capital", isEqualTo: true)
+                    .getDocuments() { (querySnapshot, err) in
+                        if let err = err {
+                            print("Error getting documents: \(err)")
+                        } else {
+                            for document in querySnapshot!.documents {
+                                docIDs[i] = "\(document.documentID) => \(document.data())"
+                            }
+                        }
+                }
+                */
             }
         }
     }
