@@ -12,7 +12,7 @@ class RecipeViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var imageArr = ["Broccoli Pesto Pasta", "Mashed Potatoes", "Lemon Chicken", "Pasta with Chickpea Sauce", "Mac and Cheese", "Smokey Potatoes", "Greek Spaghetti", "Nutty Rice", "Meatball", "Alfraedo Chicken"]
+    var imageArr = ["Broccoli Pesto Pasta", "Mashed Potatoes", "Lemon Chicken", "Pasta with Chickpea Sauce", "Mac and Cheese", "Smoky Potatoes", "Greek Spaghetti", "Nutty Rice", "Meatball", "Alfraedo Chicken"]
     
     var ingr = ["Ingredients: \nPasta, \nBroccoli florets, \nBasil leaves, \nGarlic cloves, \nPine nuts, \nVirgin olive oil, \nSalt, \nParmigiano-reggiano.", "Ingredients: \nBaking potatoes, \nMilk, \nButter, \nPepper, \nSalt.", "Ingredients: \nChicken breasts, \nFlour, \nGarlic, \nLemon, \nSalt, \nPepper, \nOregano, \nOlive oil, \nButter, \nChicken broth, \nParsley.", "Ingredients: \nOnion, \nOil, \nCarrot, \nParsley, \nBasil, \nWater.", "Ingredients: \nMacaroni cheese, \nCheddar cheese, \nMilk, \nButter, \nFlour, \nPaprika", "Ingredients: \nPotatoes, \nOil, \nPepper, \nSalt", "\nTomatoes, \nOlives, \nCheese, \nPepper, \nSpaghetti, \nOil", "Ingredients: \nBrown rice, \nNuts, \nButter, \nNutmeg, \nWater", "Ingredients: \nBeef, \nPork, \nCheese, \nOnion, \nGarlic, \nBasil, \nParsley, \nOregano, \nBread crumbs", "Ingredients: \nChicken, \nAlfredo sauce, \nOil, \nHeavy cream, \nNutmeg, \nButter, \nBoneless chicken, \nFettuccine"]
     
