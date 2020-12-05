@@ -605,7 +605,10 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwL-lE-YFf">
                                 <rect key="frame" x="100" y="733" width="214" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" red="0.97417217489999997" green="0.72560721640000003" blue="0.32930344340000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Calculate">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="calculateButton:" destination="kxM-iz-P6q" eventType="touchUpInside" id="HZr-Ar-4op"/>
                                 </connections>
