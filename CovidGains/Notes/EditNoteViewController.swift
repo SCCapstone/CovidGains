@@ -48,6 +48,7 @@ class EditNoteViewController: UIViewController, UITextViewDelegate {
             self.editeNoteDelegate?.updateNote(updatedTitle: self.getNotedTitle(), updateBody: self.bodyTextView.text)
         }
     }
+    
     /*
     // MARK: - Navigation
 

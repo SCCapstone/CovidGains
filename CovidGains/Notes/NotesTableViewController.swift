@@ -87,18 +87,13 @@ class NotesTableViewController: UITableViewController, EditNoteDelegate {
             
         }
     }
-    func delteNotes() {
-        //
-    }
     
     
     //Deleting the product by sliding left
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete{
-            self.notes.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
-        self.tableView.reloadData()
+        notes.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        saveNotes()
     }
     
     /*
@@ -136,6 +131,7 @@ class NotesTableViewController: UITableViewController, EditNoteDelegate {
     }
     */
     
+    
     @IBAction func logOut(_ sender: UIBarButtonItem) {
         
         //print("Logging out")
@@ -155,12 +151,4 @@ class NotesTableViewController: UITableViewController, EditNoteDelegate {
           print ("Error signing out: %@", signOutError)
         }
     }
-    
-    
-    
-    
-    
-
-
-
 }
