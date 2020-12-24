@@ -1,7 +1,5 @@
-//
 //  NotesTableViewController.swift
 //  CovidGains
-//
 //  Created by Maitri Patel on 12/2/20.
 //
 
