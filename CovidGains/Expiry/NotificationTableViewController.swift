@@ -10,18 +10,22 @@ import Firebase
 
 class NotificationTableViewController: UITableViewController {
     let db = Firestore.firestore()
+    var ref: DocumentReference? = nil
     
-    var productData = [MyReminder]() //stores product name, time added,
+    var productData = [MyReminder]() //stores all the reminders
+    
+    var products = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    
     @IBAction func didTapAdd(_ sender: UIBarButtonItem) {
+       
         guard let addVC = storyboard?.instantiateViewController(identifier: "add") as? AddViewController else{
             return
         }
+        
         addVC.title = "New Reminder"
         addVC.navigationItem.largeTitleDisplayMode = .never
         addVC.completion = { productName, productDetail, date in
@@ -48,6 +52,7 @@ class NotificationTableViewController: UITableViewController {
                     }
                 })
             }
+            
         }
         navigationController?.pushViewController(addVC, animated: true)
     }
@@ -59,8 +64,8 @@ class NotificationTableViewController: UITableViewController {
                 self.scheduleTest()
                 
             }
-            else if let error = error{
-                print("Error", error)
+            else if error != nil{
+                print("Error")
                 
             }
         })
@@ -69,15 +74,17 @@ class NotificationTableViewController: UITableViewController {
     func scheduleTest() {
         //request
         let content = UNMutableNotificationContent()
+        
         //content title, body and sound
         content.title = "Hello!"
         content.sound = .default
-        content.body = "Something Expires soon!"
+        content.body = "TEST Expires soon!"
+        
         //tigger with date
-        let targetDate = Date().addingTimeInterval(5)
+        let targetDate = Date().addingTimeInterval(10)
         let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: targetDate), repeats: false)
         
-        let request = UNNotificationRequest(identifier: "Some_long_id", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: "Some_id", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: {error in
             if error != nil{
                 print("Gone wrong...")
@@ -121,7 +128,7 @@ class NotificationTableViewController: UITableViewController {
         
         let date = productData[indexPath.row].date
         let formatter = DateFormatter()
-        formatter.dateFormat = "MMM dd, YYYY"
+        formatter.dateFormat = "MMM dd, YYYY 'at' hh:mm:ss a"
         //cell.detailTextLabel?.text = formatter.string(from: date)
         moreVC.dateAddedString = formatter.string(from: date) //second line
         
@@ -177,7 +184,7 @@ class NotificationTableViewController: UITableViewController {
 
 //hold our reminder objects
 struct MyReminder{
-    let productName: String
+    let productName: String //title
     let productDetail: String
     let date: Date
     let identifier: String
