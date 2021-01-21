@@ -1,4 +1,3 @@
-//
 //  ItemAttributeViewContoller.swift
 //  CovidGains
 //
