@@ -1,6 +1,9 @@
+//
 //  EditNoteViewController.swift
 //  CovidGains
+//
 //  Created by Maitri Patel on 11/19/20
+//
 
 import UIKit
 import Firebase
@@ -45,7 +48,6 @@ class EditNoteViewController: UIViewController, UITextViewDelegate {
             self.editeNoteDelegate?.updateNote(updatedTitle: self.getNotedTitle(), updateBody: self.bodyTextView.text)
         }
     }
-    
     /*
     // MARK: - Navigation
 

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "5D38D1DA-9554-42D0-9FB9-B544BF265BAF"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "916D871B-7ED2-4343-BD5D-AB3EC3B65446"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CovidGains/Recipe/RecipeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "RecipeViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "916D871B-7ED2-4343-BD5D-AB3EC3B65446 - 9b1e5b0a85d27b77"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CovidGains.RecipeViewController.imageArr.getter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "CovidGains"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nishat/Desktop/CovidGains/CovidGains/Recipe/RecipeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "122">
+               </Location>
+               <Location
+                  uuid = "916D871B-7ED2-4343-BD5D-AB3EC3B65446 - f7efe298e0ec0f63"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CovidGains.RecipeViewController.imageArr.setter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "CovidGains"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nishat/Desktop/CovidGains/CovidGains/Recipe/RecipeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "916D871B-7ED2-4343-BD5D-AB3EC3B65446 - 5303ad42623ce672"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CovidGains.RecipeViewController.imageArr.modify : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "CovidGains"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nishat/Desktop/CovidGains/CovidGains/Recipe/RecipeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "916D871B-7ED2-4343-BD5D-AB3EC3B65446 - 16b82f2d832b77b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CovidGains.RecipeViewController.imageArr.modify : Swift.Array&lt;Swift.String&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "CovidGains"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nishat/Desktop/CovidGains/CovidGains/Recipe/RecipeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "916D871B-7ED2-4343-BD5D-AB3EC3B65446 - bfdf738a2219379f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CovidGains.RecipeViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; CovidGains.RecipeViewController"
+                  moduleName = "CovidGains"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nishat/Desktop/CovidGains/CovidGains/Recipe/RecipeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "371">
+               </Location>
+               <Location
+                  uuid = "916D871B-7ED2-4343-BD5D-AB3EC3B65446 - 70cbabddfed2ee84"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CovidGains.RecipeViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;CovidGains.RecipeViewController&gt;"
+                  moduleName = "CovidGains"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nishat/Desktop/CovidGains/CovidGains/Recipe/RecipeViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "312">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

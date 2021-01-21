@@ -1,5 +1,7 @@
+//
 //  NotesTableViewController.swift
 //  CovidGains
+//
 //  Created by Maitri Patel on 12/2/20.
 //
 
@@ -85,13 +87,18 @@ class NotesTableViewController: UITableViewController, EditNoteDelegate {
             
         }
     }
+    func delteNotes() {
+        //
+    }
     
     
     //Deleting the product by sliding left
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        notes.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .fade)
-        saveNotes()
+        if editingStyle == .delete{
+            self.notes.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        self.tableView.reloadData()
     }
     
     /*
@@ -129,7 +136,6 @@ class NotesTableViewController: UITableViewController, EditNoteDelegate {
     }
     */
     
-    
     @IBAction func logOut(_ sender: UIBarButtonItem) {
         
         //print("Logging out")
@@ -149,4 +155,12 @@ class NotesTableViewController: UITableViewController, EditNoteDelegate {
           print ("Error signing out: %@", signOutError)
         }
     }
+    
+    
+    
+    
+    
+
+
+
 }
