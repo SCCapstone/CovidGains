@@ -3,4 +3,4 @@ _ignore
 .DS_Store
 CovidGains/.DS_Store
 design/.DS_Store
-CovidGains/CovidGains.xcodeproj/xcuserdata/
+CovidGains/CovidGains.xcodeproj/xcuserdata/*
