@@ -14,6 +14,7 @@ class ProductListViewController: UITableViewController {
     var justprod: String = ""
     let db = Firestore.firestore()
     var ref: DocumentReference? = nil
+    //let user: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         for items in docIDs {
@@ -114,7 +115,7 @@ class ProductListViewController: UITableViewController {
         justprod = productDetailVC.justProd
         products.append(newProduct)
         let user = Auth.auth().currentUser?.email
-        db.collection(user!).document(justprod).setData(["Date":Date().timeIntervalSince1970]) { (	error) in
+        db.collection("1@2.com").document(justprod).setData(["Date":Date().timeIntervalSince1970]) { (	error) in
             if let e = error {
                 print("there was an issue saving data to firestore, \(e)")
             } else {
