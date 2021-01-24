@@ -33,7 +33,6 @@ class ProductListViewController: UITableViewController {
     
     func loadProds() {
         
-        
         db.collection("Product Details").addSnapshotListener { (querySnapshot, error) in
             self.products = []
             if let e = error {
@@ -115,7 +114,7 @@ class ProductListViewController: UITableViewController {
         justprod = productDetailVC.justProd
         products.append(newProduct)
         let user = Auth.auth().currentUser?.email
-        db.collection("Products").document(justprod).setData(["User":user, "Date":Date().timeIntervalSince1970]) { (	error) in
+        db.collection(user!).document(justprod).setData(["Date":Date().timeIntervalSince1970]) { (	error) in
             if let e = error {
                 print("there was an issue saving data to firestore, \(e)")
             } else {
