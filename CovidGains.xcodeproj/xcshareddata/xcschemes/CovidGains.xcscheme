@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "647C8B5025B8FCCB0020BB47"
-               BuildableName = "CovidGainsTests.xctest"
-               BlueprintName = "CovidGainsTests"
+               BlueprintIdentifier = "4643CA5725B8FDFF00A29078"
+               BuildableName = "CovidGainsUITests.xctest"
+               BlueprintName = "CovidGainsUITests"
                ReferencedContainer = "container:CovidGains.xcodeproj">
             </BuildableReference>
          </TestableReference>
