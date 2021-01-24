@@ -33,7 +33,7 @@ class ProductListViewController: UITableViewController {
     
     func loadProds() {
         
-        db.collection("Product Details").addSnapshotListener { (querySnapshot, error) in
+        db.collection("Something").addSnapshotListener { (querySnapshot, error) in
             self.products = []
             if let e = error {
                 print("There was an issue retrieving data from Firestore. \(e)")
@@ -43,7 +43,7 @@ class ProductListViewController: UITableViewController {
                         let data = doc.data()
                         let docID = doc.documentID
                         self.products.append(docID)
-                            
+
                         DispatchQueue.main.async {
                                 self.tableView.reloadData()
                         }
