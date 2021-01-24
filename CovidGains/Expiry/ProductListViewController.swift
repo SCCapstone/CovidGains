@@ -33,7 +33,7 @@ class ProductListViewController: UITableViewController {
     
     func loadProds() {
         
-        db.collection("Something").addSnapshotListener { (querySnapshot, error) in
+        db.collection("1@2.com").addSnapshotListener { (querySnapshot, error) in
             self.products = []
             if let e = error {
                 print("There was an issue retrieving data from Firestore. \(e)")
