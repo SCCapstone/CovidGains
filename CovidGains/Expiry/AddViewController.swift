@@ -62,16 +62,16 @@ class AddViewController: UIViewController {
             
             completion?(titleText, bodyText, futureDate!)
             
-            let user =  Auth.auth().currentUser?.email
-            ref = db.collection("PD").addDocument(data: ["Name" : titleText, "Date" : Date().timeIntervalSince1970]){ (error) in
-                if let e = error{
-                    print(" ,\(e)")
-                }else{
-                    //let docid = (self.ref!.documentID)
-                    //self.docID
-                }
-                
-            }
+//            let user =  Auth.auth().currentUser?.email
+//            ref = db.collection("PD").addDocument(data: ["Name" : titleText, "Date" : Date().timeIntervalSince1970]){ (error) in
+//                if let e = error{
+//                    print(" ,\(e)")
+//                }else{
+//                    //let docid = (self.ref!.documentID)
+//                    //self.docID
+//                }
+//                
+//            }
 
             }
         
