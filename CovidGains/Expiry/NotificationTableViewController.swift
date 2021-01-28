@@ -13,13 +13,18 @@ class NotificationTableViewController: UITableViewController {
     var ref: DocumentReference? = nil
     
     var productData = [MyReminder]() //stores all the reminders
+    let user = Auth.auth().currentUser?.email
     
     var products = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //calls to load data from firebase
     }
-
+    
+    
+    
     @IBAction func didTapAdd(_ sender: UIBarButtonItem) {
        
         guard let addVC = storyboard?.instantiateViewController(identifier: "add") as? AddViewController else{
@@ -53,16 +58,31 @@ class NotificationTableViewController: UITableViewController {
                 })
             }
             
+            //stores the data to firebase
+             //loggined user
+            print("logged in user",self.user!)
             
-            let user = Auth.auth().currentUser?.email
-
-            self.db.collection("User").document(productName).setData(["Date":date,"Quantity":productDetail]) { (error) in
-                if let e = error {
-                    print("there was an issue saving data to firestore, \(e)")
-                } else {
-                    print("Successfully saved data")
+            //if not empty then save to firebase
+            if self.user != nil{
+                self.db.collection(self.user!).document(productName).setData(["Date":date,"Quantity":productDetail]) { (error) in
+                    if let e = error {
+                        print("there was an issue saving data to firestore, \(e)")
+                    } else {
+                        print("Successfully saved data")
+                    }
                 }
             }
+            else{
+                self.db.collection("User").document(productName).setData(["Date":date,"Quantity":productDetail]) { (error) in
+                    if let e = error {
+                        print("there was an issue saving data to firestore, \(e)")
+                    } else {
+                        print("Successfully saved data")
+                    }
+                }
+            }
+
+
             self.tableView.reloadData()
         
         }
@@ -71,40 +91,40 @@ class NotificationTableViewController: UITableViewController {
     }
     
     
-    @IBAction func didTapTest(_ sender: Any) {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: {success, error in
-            if success{
-                self.scheduleTest()
-                
-            }
-            else if error != nil{
-                print("Error")
-                
-            }
-        })
-    }
-    
-    func scheduleTest() {
-        //request
-        let content = UNMutableNotificationContent()
-        
-        //content title, body and sound
-        content.title = "Hello!"
-        content.sound = .default
-        content.body = "TEST Expires soon!"
-        
-        //tigger with date
-        let targetDate = Date().addingTimeInterval(10)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: targetDate), repeats: false)
-        
-        let request = UNNotificationRequest(identifier: "Some_id", content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: {error in
-            if error != nil{
-                print("Gone wrong...")
-            }
-        })
-        
-    }
+//    @IBAction func didTapTest(_ sender: Any) {
+//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: {success, error in
+//            if success{
+//                self.scheduleTest()
+//                
+//            }
+//            else if error != nil{
+//                print("Error")
+//                
+//            }
+//        })
+//    }
+//    
+//    func scheduleTest() {
+//        //request
+//        let content = UNMutableNotificationContent()
+//        
+//        //content title, body and sound
+//        content.title = "Hello!"
+//        content.sound = .default
+//        content.body = "TEST Expires soon!"
+//        
+//        //tigger with date
+//        let targetDate = Date().addingTimeInterval(10)
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: targetDate), repeats: false)
+//        
+//        let request = UNNotificationRequest(identifier: "Some_id", content: content, trigger: trigger)
+//        UNUserNotificationCenter.current().add(request, withCompletionHandler: {error in
+//            if error != nil{
+//                print("Gone wrong...")
+//            }
+//        })
+//        
+//    }
     
     
     // MARK: - Table view data source
