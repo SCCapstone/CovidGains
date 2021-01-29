@@ -17,10 +17,10 @@ class NotificationTableViewController: UITableViewController {
         super.viewDidLoad()
         
         //calls to load data from firebase
-        //loadData()
+        loadData()
     }
     
-    /*
+    
     func loadData(){
         self.db.collection(user!).getDocuments { (querySnapshot, error) in
             if let e = error{
@@ -52,7 +52,7 @@ class NotificationTableViewController: UITableViewController {
             }
         }
     }
-    */
+    
     
     
     @IBAction func didTapAdd(_ sender: UIBarButtonItem) {
