@@ -63,6 +63,6 @@ Explain how to run the automated tests.
 
 Praful Chunchu - prafulchunchu@gmail.com
 Maitri Patel - maitri.patel293@gmail.com
-Nishat Tabassum - 
+Nishat Tabassum - nishat@email.sc.edu
 Jeejun Kim - jeejun@email.sc.edu
 Robert Carey - rtcarey@email.sc.edu

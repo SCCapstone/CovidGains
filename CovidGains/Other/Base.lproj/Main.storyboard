@@ -253,11 +253,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Reminders" id="Xbn-Dl-WEH">
-                        <barButtonItem key="leftBarButtonItem" title="Test" id="FAL-UX-YjT">
-                            <connections>
-                                <action selector="didTapTest:" destination="rEV-C9-LQU" id="IwQ-KO-ikD"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="OJn-nW-QSf">
                             <connections>
                                 <action selector="didTapAdd:" destination="rEV-C9-LQU" id="jwr-ee-Y5d"/>
