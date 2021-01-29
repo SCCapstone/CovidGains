@@ -56,7 +56,7 @@ class NotificationTableViewController: UITableViewController {
             
             let user = Auth.auth().currentUser?.email
 
-            self.db.collection("User").document(productName).setData(["Date":date,"Quantity":productDetail]) { (error) in
+            self.db.collection(user!).document(productName).setData(["Date":date,"Quantity":productDetail]) { (error) in
                 if let e = error {
                     print("there was an issue saving data to firestore, \(e)")
                 } else {

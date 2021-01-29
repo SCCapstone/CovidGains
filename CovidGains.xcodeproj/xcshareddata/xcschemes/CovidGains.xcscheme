@@ -38,6 +38,26 @@
                ReferencedContainer = "container:CovidGains.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "64CDCDEC25C37D9A005E552B"
+               BuildableName = "Tests.xctest"
+               BlueprintName = "Tests"
+               ReferencedContainer = "container:CovidGains.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "64CDCDFA25C38E41005E552B"
+               BuildableName = "CovidGainsTests.xctest"
+               BlueprintName = "CovidGainsTests"
+               ReferencedContainer = "container:CovidGains.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
