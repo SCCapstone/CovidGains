@@ -98,6 +98,8 @@ class NotificationTableViewController: UITableViewController {
              //loggined user
             print("logged in user",self.user!)
             
+
+           
             //if not empty then save to firebase
             if self.user != nil{
                 self.db.collection(self.user!).document(productName).setData(["Date":date,"Quantity":productDetail]) { (error) in

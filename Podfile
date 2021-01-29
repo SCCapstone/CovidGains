@@ -9,4 +9,6 @@ target 'CovidGains' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
 
+target 'CovidGainsTests' do
+  inherit! :search_paths
 end
