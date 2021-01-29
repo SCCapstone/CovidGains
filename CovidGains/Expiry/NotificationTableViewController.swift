@@ -13,8 +13,6 @@ class NotificationTableViewController: UITableViewController {
     var productData = [MyReminder]() //stores all the reminders
     let user = Auth.auth().currentUser?.email
     
-    var products = [String]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,20 +31,17 @@ class NotificationTableViewController: UITableViewController {
                         let data = doc.data()
                         let docID = doc.documentID
                         
-                        let timeStamp = data["Date"]
-                        let converted = NSDate(timeIntervalSince1970: timeStamp as! Double/10000)
+                        //let timeStamp =
+                        let stamp = data["Date"] as? Timestamp
+                        let date = stamp?.dateValue()
                         
-                        let dateFormatter = DateFormatter()
-                        dateFormatter.timeZone = NSTimeZone.local
-                        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-                        let gotDate = dateFormatter.string(from: converted as Date)
                         //self.products.append(docID) //product names
                         
-                        print(gotDate) //date
+                        //print(gotDate) //date
                         //print(data["Quantity"]) //Quantity
                         
-                        //let new = MyReminder(productName: docID, productDetail: data["Quantity"] as! String, date: gotDate , identifier: "id_")
-                        //self.productData.append(new)
+                        let new = MyReminder(productName: docID, productDetail: data["Quantity"] as! String, date: date! , identifier: "id_\(docID)")
+                        self.productData.append(new)
                         
                         DispatchQueue.main.async {
                                 self.tableView.reloadData()
