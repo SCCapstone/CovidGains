@@ -21,6 +21,42 @@ class NotificationTableViewController: UITableViewController {
         super.viewDidLoad()
         
         //calls to load data from firebase
+        loadData()
+    }
+    
+    func loadData(){
+        self.db.collection(user!).getDocuments { (querySnapshot, error) in
+            if let e = error{
+                print("There is issue retrieving data.\(e)")
+            }else{
+                if let snapshotDocuments = querySnapshot?.documents {
+                    for doc in snapshotDocuments {
+                        let data = doc.data()
+                        let docID = doc.documentID
+                        
+                        let timeStamp = data["Date"]
+                        let converted = NSDate(timeIntervalSince1970: timeStamp as! Double/10000)
+                        
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.timeZone = NSTimeZone.local
+                        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+                        let gotDate = dateFormatter.string(from: converted as Date)
+                        //self.products.append(docID) //product names
+                        
+                        print(gotDate) //date
+                        //print(data["Quantity"]) //Quantity
+                        
+                        //let new = MyReminder(productName: docID, productDetail: data["Quantity"] as! String, date: gotDate , identifier: "id_")
+                        //self.productData.append(new)
+                        
+                        DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                        }
+                        
+                    }
+                }
+            }
+        }
     }
     
     
