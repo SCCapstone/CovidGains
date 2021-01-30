@@ -26,6 +26,33 @@ class CovidGainsUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    //Log in and test all functions within the app
+    func testLoginFull() throws {
+        
+        let app = XCUIApplication()
+        app.buttons["Login"].tap()
+        let testingUser = app.otherElements.textFields["Username"]
+        let testingPass = app.otherElements.secureTextFields["Password"]
+        testingUser.tap()
+        testingUser.typeText("UITest")
+        testingPass.tap()
+        testingPass.typeText("UITest")
+        app.buttons["Login"].tap()
+     
+        //Testing notes
+        app.buttons["Add"].tap()
+        app.typeText("Test Notes")
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        app.tables.element(boundBy: 0).cells.element(boundBy: 0).tap()
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        app.tables.element(boundBy: 0).cells.element(boundBy: 0).swipeLeft()
+        app.buttons["Delete"].tap()
+        
+        //Expiry test
+        app.tabBars["Expiry"].tap()
+        
+    }
+    
     func testRegister() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
