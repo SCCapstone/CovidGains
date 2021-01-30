@@ -11,10 +11,10 @@ class TestNotesTableViewController: XCTestCase {
     var notes = [[String:String]]()
    
     func testNotesAdded() throws {
-        let note = ["title": "", "body": ""]
+        let note = ["Title": "", "Body": ""]
         notes.insert(note, at: 0)
         print(notes[0])
-        XCTAssertEqual(notes[0], ["title": "", "body": ""])
+        XCTAssertEqual(notes[0], ["Title": "", "Body": ""])
     }
     
 
