@@ -14,7 +14,8 @@
 		3FC8C5CA257B125A0006A932 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8C5C9257B12590006A932 /* SecondViewController.swift */; };
 		4643CA5B25B8FDFF00A29078 /* CovidGainsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4643CA5A25B8FDFF00A29078 /* CovidGainsUITests.swift */; };
 		649C6B2D25780B3B00F9B7C1 /* DataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649C6B2C25780B3B00F9B7C1 /* DataCollectionViewCell.swift */; };
-		64CDCDFE25C38E41005E552B /* CovidGainsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CDCDFD25C38E41005E552B /* CovidGainsTests.swift */; };
+		64CE591825C5D43E00E3CEC9 /* CovidGainsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE591725C5D43E00E3CEC9 /* CovidGainsTests.swift */; };
+		64CE592425C5EF1000E3CEC9 /* TestNotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE592325C5EF1000E3CEC9 /* TestNotesTableViewController.swift */; };
 		D80CBB6325799EDE00841B25 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D80CBB6225799EDE00841B25 /* Podfile */; };
 		D8292891258A716400D75DBA /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8292890258A716400D75DBA /* NotificationTableViewController.swift */; };
 		D8292893258A743000D75DBA /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8292892258A743000D75DBA /* AddViewController.swift */; };
@@ -41,7 +42,7 @@
 			remoteGlobalIDString = D8CCC88E250ED1D10005C4B3;
 			remoteInfo = CovidGains;
 		};
-		64CDCE0025C38E41005E552B /* PBXContainerItemProxy */ = {
+		64CE591A25C5D43E00E3CEC9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D8CCC887250ED1D10005C4B3 /* Project object */;
 			proxyType = 1;
@@ -59,9 +60,11 @@
 		4643CA5A25B8FDFF00A29078 /* CovidGainsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidGainsUITests.swift; sourceTree = "<group>"; };
 		4643CA5C25B8FDFF00A29078 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		649C6B2C25780B3B00F9B7C1 /* DataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionViewCell.swift; sourceTree = "<group>"; };
-		64CDCDFB25C38E41005E552B /* CovidGainsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CovidGainsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		64CDCDFD25C38E41005E552B /* CovidGainsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidGainsTests.swift; sourceTree = "<group>"; };
-		64CDCDFF25C38E41005E552B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64CE591025C5D32200E3CEC9 /* CovidGains copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "CovidGains copy-Info.plist"; path = "/Users/rtcarey/Documents/CovidGains/CovidGains copy-Info.plist"; sourceTree = "<absolute>"; };
+		64CE591525C5D43E00E3CEC9 /* CovidGainsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CovidGainsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		64CE591725C5D43E00E3CEC9 /* CovidGainsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidGainsTests.swift; sourceTree = "<group>"; };
+		64CE591925C5D43E00E3CEC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64CE592325C5EF1000E3CEC9 /* TestNotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNotesTableViewController.swift; sourceTree = "<group>"; };
 		7EA0B37E93DC36D2EADDC86C /* Pods-CovidGains.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidGains.debug.xcconfig"; path = "Target Support Files/Pods-CovidGains/Pods-CovidGains.debug.xcconfig"; sourceTree = "<group>"; };
 		D29E1844A857054081D81DAE /* Pods-CovidGains.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidGains.release.xcconfig"; path = "Target Support Files/Pods-CovidGains/Pods-CovidGains.release.xcconfig"; sourceTree = "<group>"; };
 		D80CBB6225799EDE00841B25 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
@@ -93,7 +96,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		64CDCDF825C38E41005E552B /* Frameworks */ = {
+		64CE591225C5D43E00E3CEC9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -158,11 +161,12 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
-		64CDCDFC25C38E41005E552B /* CovidGainsTests */ = {
+		64CE591625C5D43E00E3CEC9 /* CovidGainsTests */ = {
 			isa = PBXGroup;
 			children = (
-				64CDCDFD25C38E41005E552B /* CovidGainsTests.swift */,
-				64CDCDFF25C38E41005E552B /* Info.plist */,
+				64CE591725C5D43E00E3CEC9 /* CovidGainsTests.swift */,
+				64CE592325C5EF1000E3CEC9 /* TestNotesTableViewController.swift */,
+				64CE591925C5D43E00E3CEC9 /* Info.plist */,
 			);
 			path = CovidGainsTests;
 			sourceTree = "<group>";
@@ -209,11 +213,12 @@
 			children = (
 				D8CCC891250ED1D10005C4B3 /* CovidGains */,
 				4643CA5925B8FDFF00A29078 /* CovidGainsUITests */,
-				64CDCDFC25C38E41005E552B /* CovidGainsTests */,
+				64CE591625C5D43E00E3CEC9 /* CovidGainsTests */,
 				3C8735CF74233EDC8E9B230D /* Frameworks */,
 				FF142B31233B71BEF1DC3474 /* Pods */,
 				D8CCC890250ED1D10005C4B3 /* Products */,
 				D80CBB6225799EDE00841B25 /* Podfile */,
+				64CE591025C5D32200E3CEC9 /* CovidGains copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -222,7 +227,7 @@
 			children = (
 				D8CCC88F250ED1D10005C4B3 /* CovidGains.app */,
 				4643CA5825B8FDFF00A29078 /* CovidGainsUITests.xctest */,
-				64CDCDFB25C38E41005E552B /* CovidGainsTests.xctest */,
+				64CE591525C5D43E00E3CEC9 /* CovidGainsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -282,22 +287,22 @@
 			productReference = 4643CA5825B8FDFF00A29078 /* CovidGainsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		64CDCDFA25C38E41005E552B /* CovidGainsTests */ = {
+		64CE591425C5D43E00E3CEC9 /* CovidGainsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 64CDCE0225C38E41005E552B /* Build configuration list for PBXNativeTarget "CovidGainsTests" */;
+			buildConfigurationList = 64CE591C25C5D43E00E3CEC9 /* Build configuration list for PBXNativeTarget "CovidGainsTests" */;
 			buildPhases = (
-				64CDCDF725C38E41005E552B /* Sources */,
-				64CDCDF825C38E41005E552B /* Frameworks */,
-				64CDCDF925C38E41005E552B /* Resources */,
+				64CE591125C5D43E00E3CEC9 /* Sources */,
+				64CE591225C5D43E00E3CEC9 /* Frameworks */,
+				64CE591325C5D43E00E3CEC9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				64CDCE0125C38E41005E552B /* PBXTargetDependency */,
+				64CE591B25C5D43E00E3CEC9 /* PBXTargetDependency */,
 			);
 			name = CovidGainsTests;
 			productName = CovidGainsTests;
-			productReference = 64CDCDFB25C38E41005E552B /* CovidGainsTests.xctest */;
+			productReference = 64CE591525C5D43E00E3CEC9 /* CovidGainsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		D8CCC88E250ED1D10005C4B3 /* CovidGains */ = {
@@ -332,7 +337,7 @@
 						CreatedOnToolsVersion = 11.7;
 						TestTargetID = D8CCC88E250ED1D10005C4B3;
 					};
-					64CDCDFA25C38E41005E552B = {
+					64CE591425C5D43E00E3CEC9 = {
 						CreatedOnToolsVersion = 11.7;
 						TestTargetID = D8CCC88E250ED1D10005C4B3;
 					};
@@ -356,7 +361,7 @@
 			targets = (
 				D8CCC88E250ED1D10005C4B3 /* CovidGains */,
 				4643CA5725B8FDFF00A29078 /* CovidGainsUITests */,
-				64CDCDFA25C38E41005E552B /* CovidGainsTests */,
+				64CE591425C5D43E00E3CEC9 /* CovidGainsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -369,7 +374,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		64CDCDF925C38E41005E552B /* Resources */ = {
+		64CE591325C5D43E00E3CEC9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -440,11 +445,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		64CDCDF725C38E41005E552B /* Sources */ = {
+		64CE591125C5D43E00E3CEC9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64CDCDFE25C38E41005E552B /* CovidGainsTests.swift in Sources */,
+				64CE591825C5D43E00E3CEC9 /* CovidGainsTests.swift in Sources */,
+				64CE592425C5EF1000E3CEC9 /* TestNotesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,10 +486,10 @@
 			target = D8CCC88E250ED1D10005C4B3 /* CovidGains */;
 			targetProxy = 4643CA5D25B8FDFF00A29078 /* PBXContainerItemProxy */;
 		};
-		64CDCE0125C38E41005E552B /* PBXTargetDependency */ = {
+		64CE591B25C5D43E00E3CEC9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D8CCC88E250ED1D10005C4B3 /* CovidGains */;
-			targetProxy = 64CDCE0025C38E41005E552B /* PBXContainerItemProxy */;
+			targetProxy = 64CE591A25C5D43E00E3CEC9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -535,7 +541,7 @@
 			};
 			name = Release;
 		};
-		64CDCE0325C38E41005E552B /* Debug */ = {
+		64CE591D25C5D43E00E3CEC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -559,7 +565,7 @@
 			};
 			name = Debug;
 		};
-		64CDCE0425C38E41005E552B /* Release */ = {
+		64CE591E25C5D43E00E3CEC9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -747,11 +753,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		64CDCE0225C38E41005E552B /* Build configuration list for PBXNativeTarget "CovidGainsTests" */ = {
+		64CE591C25C5D43E00E3CEC9 /* Build configuration list for PBXNativeTarget "CovidGainsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				64CDCE0325C38E41005E552B /* Debug */,
-				64CDCE0425C38E41005E552B /* Release */,
+				64CE591D25C5D43E00E3CEC9 /* Debug */,
+				64CE591E25C5D43E00E3CEC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -2,27 +2,31 @@
 //  CovidGainsTests.swift
 //  CovidGainsTests
 //
-//  Created by CAREY, ROBERT T on 1/28/21.
+//  Created by CAREY, ROBERT T on 1/30/21.
 //
 
 import XCTest
-@testable import CovidGains
-import Firebase
+
 class CovidGainsTests: XCTestCase {
-    let db = Firestore.firestore()
-    var notificationTable: NotificationTableViewController!
-    
-    override func setUp() {
-        super.setUp()
-        notificationTable = NotificationTableViewController()
+
+    override func setUpWithError() throws {
+        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-    override func tearDown() {
-        notificationTable = nil
-        super.tearDown()
+
+    override func tearDownWithError() throws {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-    func test_add_to_database() {
-        self.db.collection("User").document("apple").setData(["Quantity":"2"])
-            
+
+    func testExample() throws {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+
+    func testPerformanceExample() throws {
+        // This is an example of a performance test case.
+        measure {
+            // Put the code you want to measure the time of here.
+        }
     }
 
 }

@@ -122,41 +122,7 @@ class NotificationTableViewController: UITableViewController {
 
     }
     
-    
-//    @IBAction func didTapTest(_ sender: Any) {
-//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: {success, error in
-//            if success{
-//                self.scheduleTest()
-//                
-//            }
-//            else if error != nil{
-//                print("Error")
-//                
-//            }
-//        })
-//    }
-//    
-//    func scheduleTest() {
-//        //request
-//        let content = UNMutableNotificationContent()
-//        
-//        //content title, body and sound
-//        content.title = "Hello!"
-//        content.sound = .default
-//        content.body = "TEST Expires soon!"
-//        
-//        //tigger with date
-//        let targetDate = Date().addingTimeInterval(10)
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: targetDate), repeats: false)
-//        
-//        let request = UNNotificationRequest(identifier: "Some_id", content: content, trigger: trigger)
-//        UNUserNotificationCenter.current().add(request, withCompletionHandler: {error in
-//            if error != nil{
-//                print("Gone wrong...")
-//            }
-//        })
-//        
-//    }
+ 
     
     
     // MARK: - Table view data source
