@@ -841,17 +841,20 @@
                                     <constraint firstAttribute="width" constant="350" id="IWU-lE-uGc"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sa-7c-WtV">
-                                <rect key="frame" x="32" y="117" width="71" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title=" Back">
-                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="F9q-Jo-qbi" kind="presentation" modalPresentationStyle="fullScreen" id="Ily-om-KAh"/>
-                                </connections>
-                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8xv-ag-Jby">
+                                <rect key="frame" x="0.0" y="32" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <items>
+                                    <navigationItem title="Register" id="hbQ-EM-p2J">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Rm6-Qd-ZDZ">
+                                            <connections>
+                                                <action selector="tappedCancel:" destination="EMK-uo-3Uq" id="EjR-15-1rH"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -868,7 +871,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UPq-y4-z7O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2991.304347826087" y="241.74107142857142"/>
+            <point key="canvasLocation" x="-3029" y="242"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="QBW-dj-3gd">
@@ -938,7 +941,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="IqG-Ax-qSq">
-                                <rect key="frame" x="32" y="340.5" width="350" height="215"/>
+                                <rect key="frame" x="32" y="300.5" width="350" height="295"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UbG-JK-u6w">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="40"/>
@@ -968,25 +971,36 @@
                                         <connections>
                                             <action selector="loginPressed:" destination="Gze-K2-tYb" eventType="touchUpInside" id="hnQ-oG-LlG"/>
                                             <action selector="registerPressed:" destination="EMK-uo-3Uq" eventType="touchUpInside" id="ztJ-Qr-ymF"/>
-                                            <segue destination="QS3-fT-gKR" kind="presentation" identifier="LoginToGrosh" modalPresentationStyle="fullScreen" id="RQM-ZD-xP9"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kc-9r-DQm">
+                                        <rect key="frame" x="0.0" y="255" width="350" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="cLw-yT-lUR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="P5q-ls-hcQ"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hD-5y-obV">
-                                <rect key="frame" x="32" y="117" width="71" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title=" Back">
-                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="F9q-Jo-qbi" kind="presentation" modalPresentationStyle="fullScreen" id="pKU-yb-QNc"/>
-                                </connections>
-                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sE2-hd-mVH">
+                                <rect key="frame" x="0.0" y="34" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <items>
+                                    <navigationItem title="Login" id="G7s-Ju-lXV">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="apD-va-hLO">
+                                            <connections>
+                                                <action selector="tappedCancel:" destination="Gze-K2-tYb" id="mEz-af-l2L"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -995,13 +1009,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dkl-14-k0N"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="t8W-IP-DJ4"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="Rto-nN-dc3"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="emailTextfield" destination="UbG-JK-u6w" id="0E1-TU-A3S"/>
+                        <outlet property="errorLabel" destination="5kc-9r-DQm" id="1qy-84-pHT"/>
                         <outlet property="passwordTextfield" destination="1yB-Pg-mQD" id="Luh-ae-WcZ"/>
                     </connections>
                 </viewController>
@@ -1067,10 +1080,6 @@
             <point key="canvasLocation" x="-404" y="242"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Ily-om-KAh"/>
-        <segue reference="RMf-nj-Mlz"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="clock" catalog="system" width="128" height="121"/>
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
