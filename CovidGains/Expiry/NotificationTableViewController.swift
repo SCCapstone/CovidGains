@@ -22,7 +22,7 @@ class NotificationTableViewController: UITableViewController {
     
     
     func loadData(){
-        self.db.collection(user!).getDocuments { (querySnapshot, error) in
+        self.db.collection((user)!).getDocuments { (querySnapshot, error) in
             if let e = error{
                 print("There is issue retrieving data.\(e)")
             }else{
@@ -34,11 +34,6 @@ class NotificationTableViewController: UITableViewController {
                         //let timeStamp =
                         let stamp = data["Date"] as? Timestamp
                         let date = stamp?.dateValue()
-                        
-                        //self.products.append(docID) //product names
-                        
-                        //print(gotDate) //date
-                        //print(data["Quantity"]) //Quantity
                         
                         let new = MyReminder(productName: docID, productDetail: data["Quantity"] as! String, date: date! , identifier: "id_\(docID)")
                         self.productData.append(new)
@@ -89,10 +84,6 @@ class NotificationTableViewController: UITableViewController {
             }
             
             //stores the data to firebase
-             //loggined user
-            print("logged in user",self.user!)
-            
-
            
             //if not empty then save to firebase
             if self.user != nil{
