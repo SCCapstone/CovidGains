@@ -44,8 +44,6 @@ select the generation of ios phone to run it.
 
 # Testing
 
-In 492 you will write automated tests. When you do you will need to add a 
-section that explains how to run them.
 
 
 
