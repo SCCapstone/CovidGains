@@ -50,6 +50,7 @@ section that explains how to run them.
 
 
 The unit tests are in `/CovidGains/CovidGainsTests`.
+
 In order to run unit tests click the diamond next to the test you would like to run.
 
 The behavioral tests are in `/CovidGains/CovidGainsUITests`.
