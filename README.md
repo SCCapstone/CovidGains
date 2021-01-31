@@ -44,12 +44,15 @@ select the generation of ios phone to run it.
 
 # Testing
 
-In 492 you will write automated tests. When you do you will need to add a 
-section that explains how to run them.
 
-The unit tests are in `/test/unit`.
 
-The behavioral tests are in `/test/casper/`.
+
+The unit tests are in `/CovidGains/CovidGainsTests`.
+
+In order to run unit tests click the diamond next to the test you would like to run.
+
+The behavioral tests are in `/CovidGains/CovidGainsUITests`.
+To run the behavioral tests, go to the testing tab in XCode and press the play button next to the file name.
 
 ## Testing Technology
 
