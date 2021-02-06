@@ -40,25 +40,14 @@ class LoginViewController: UIViewController{
                 if error != nil{
                     print(error?.localizedDescription)
                     self.errorLabel.text = error?.localizedDescription
-                    //self.errorLabel.alpha = 1
+                    self.errorLabel.alpha = 1
                     
                 }else{
-                    print("Still going to go !!")
-                    //self.performSegue(withIdentifier: "LoginToGrosh", sender: self)
+                    //print("Still going to go !!")
+                    let homeVC = self.storyboard?.instantiateViewController(identifier: "myTabBar")
+                    self.view.window?.rootViewController = homeVC
+                    self.view.window?.makeKeyAndVisible()
                 }
-                
-                
-                
-                
-//                if let e = error
-//                {
-//                    print(e)
-//                }
-//                else
-//                {
-//                    self.performSegue(withIdentifier: "LoginToGrosh", sender: self)
-//
-//                }
         
             }
           
