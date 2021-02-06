@@ -11,7 +11,7 @@
         <!--Budget-->
         <scene sceneID="AvB-mP-Phu">
             <objects>
-                <tabBarController storyboardIdentifier="myTabBar" title="Budget" id="QS3-fT-gKR" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="myTabBar" title="Budget" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QS3-fT-gKR" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="fH0-sF-x2G"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7ef-GE-Xfx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -804,7 +804,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="hWr-T7-8OU">
-                                <rect key="frame" x="32" y="340.5" width="350" height="215"/>
+                                <rect key="frame" x="32" y="295.5" width="350" height="305"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qrM-aV-o3I">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="40"/>
@@ -833,9 +833,17 @@
                                         <state key="normal" title="Register"/>
                                         <connections>
                                             <action selector="registerPressed:" destination="EMK-uo-3Uq" eventType="touchUpInside" id="WZR-4k-mtR"/>
-                                            <segue destination="QS3-fT-gKR" kind="presentation" identifier="RegisterToGrosh" modalPresentationStyle="fullScreen" id="RMf-nj-Mlz"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mt0-km-Dcq">
+                                        <rect key="frame" x="0.0" y="255" width="350" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="jVr-62-Zwl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="IWU-lE-uGc"/>
@@ -866,6 +874,7 @@
                     <navigationItem key="navigationItem" id="Juo-n5-LFa"/>
                     <connections>
                         <outlet property="emailTextfield" destination="qrM-aV-o3I" id="OaG-kL-bML"/>
+                        <outlet property="errorL" destination="mt0-km-Dcq" id="bqL-ch-hqQ"/>
                         <outlet property="passwordTextfield" destination="eEZ-lD-mxY" id="pw5-Gl-yFG"/>
                     </connections>
                 </viewController>
@@ -941,7 +950,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="IqG-Ax-qSq">
-                                <rect key="frame" x="32" y="300.5" width="350" height="295"/>
+                                <rect key="frame" x="32" y="295.5" width="350" height="305"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UbG-JK-u6w">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="40"/>
@@ -973,10 +982,10 @@
                                             <action selector="registerPressed:" destination="EMK-uo-3Uq" eventType="touchUpInside" id="ztJ-Qr-ymF"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kc-9r-DQm">
-                                        <rect key="frame" x="0.0" y="255" width="350" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kc-9r-DQm">
+                                        <rect key="frame" x="0.0" y="255" width="350" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="cLw-yT-lUR"/>
+                                            <constraint firstAttribute="height" constant="50" id="cLw-yT-lUR"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
