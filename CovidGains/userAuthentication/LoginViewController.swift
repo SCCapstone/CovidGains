@@ -38,7 +38,7 @@ class LoginViewController: UIViewController{
                // print("Login user", email)
                 
                 if error != nil{
-                    print(error?.localizedDescription)
+                    //print(error?.localizedDescription)
                     self.errorLabel.text = error?.localizedDescription
                     self.errorLabel.alpha = 1
                     

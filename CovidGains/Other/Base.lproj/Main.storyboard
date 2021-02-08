@@ -835,7 +835,7 @@
                                             <action selector="registerPressed:" destination="EMK-uo-3Uq" eventType="touchUpInside" id="WZR-4k-mtR"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mt0-km-Dcq">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mt0-km-Dcq">
                                         <rect key="frame" x="0.0" y="255" width="350" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="jVr-62-Zwl"/>
@@ -982,7 +982,7 @@
                                             <action selector="registerPressed:" destination="EMK-uo-3Uq" eventType="touchUpInside" id="ztJ-Qr-ymF"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kc-9r-DQm">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kc-9r-DQm">
                                         <rect key="frame" x="0.0" y="255" width="350" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="cLw-yT-lUR"/>

@@ -41,9 +41,9 @@ class RegisterViewController: UIViewController{
                 
                 if error != nil{
                     //print(e.localizedDescription)
-                    print(error?.localizedDescription)
+                    //print(error?.localizedDescription)
                     self.errorL.text = error?.localizedDescription
-                    //self.errorLabel.alpha = 1
+                    self.errorL.alpha = 1
                     
                 }else{
                     
