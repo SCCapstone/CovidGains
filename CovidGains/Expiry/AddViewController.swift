@@ -34,15 +34,17 @@ class AddViewController: UIViewController {
     
     @IBAction func tappedSave(_ sender: Any) {
         if let titleText = titleField.text, !titleText.isEmpty, let bodyText = bodyField.text, !bodyText.isEmpty{
+            
             let targetDate = datePicker.date
             var dateComponent = DateComponents()
-            dateComponent.day = 0 //to test
+            //dateComponent.day = 0 //to test
             
             var i = 0
             
             for item in products {
                 if item == titleField.text! {
                     dateComponent.day = expirTime[i]
+                    print("dateComp",dateComponent)
                     //prodStr += " (" + String(expirTime[i]) + " days)"
                 }
                 i += 1
@@ -51,27 +53,16 @@ class AddViewController: UIViewController {
             //to add days to the current date
             let futureDate = Calendar.current.date(byAdding: dateComponent, to: targetDate)
  
-//            let date = targetDate
-//            let formatter = DateFormatter()
-//            formatter.dateFormat = "MM - dd - YYYY"
-//            print("Todays date",formatter.string(from: date))
-//
-//            let newDate = futureDate!
-//            print("Upcoming date", formatter.string(from: newDate))
+            //let date = targetDate
+            //let formatter = DateFormatter()
+           // formatter.dateFormat = "MM - dd - YYYY"
+            //print("Todays date",formatter.string(from: date))
+
+            //let newDate = futureDate!
+            //print("Upcoming date", formatter.string(from: newDate))
             
             
             completion?(titleText, bodyText, futureDate!)
-            
-//            let user =  Auth.auth().currentUser?.email
-//            ref = db.collection("PD").addDocument(data: ["Name" : titleText, "Date" : Date().timeIntervalSince1970]){ (error) in
-//                if let e = error{
-//                    print(" ,\(e)")
-//                }else{
-//                    //let docid = (self.ref!.documentID)
-//                    //self.docID
-//                }
-//                
-//            }
 
             }
         
