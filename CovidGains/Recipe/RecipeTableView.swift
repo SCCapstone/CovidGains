@@ -42,7 +42,6 @@ class RecipeTableView: UITableViewController {
                         let docID = doc.documentID
                         
                         let recipe = myRecipe(recipeName: docID, directions: data["directions"] as! String, ingredients: data["ingredients"] as! String, identifier: "id_\(docID)")
-                        
                         self.recipeData.append(recipe)
                         
                         DispatchQueue.main.async{
@@ -55,31 +54,29 @@ class RecipeTableView: UITableViewController {
     }
     
     
-    
-    @IBOutlet var showRecipeDetail: UITableViewCell!
-    
+        
     
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return recipeData.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "rCell", for: indexPath)
+        
+        cell.textLabel?.text = recipeData[indexPath.row].recipeName
         // Configure the cell...
-
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
