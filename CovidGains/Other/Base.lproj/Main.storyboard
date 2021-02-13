@@ -697,10 +697,10 @@
             </objects>
             <point key="canvasLocation" x="-252" y="1582"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Recipe Table View-->
         <scene sceneID="waH-X8-VmU">
             <objects>
-                <tableViewController id="Mhg-E5-BbL" sceneMemberID="viewController">
+                <tableViewController id="Mhg-E5-BbL" customClass="RecipeTableView" customModule="CovidGains" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wFw-yl-u8S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -720,6 +720,9 @@
                             <outlet property="delegate" destination="Mhg-E5-BbL" id="zps-rp-JXc"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="didTapCell" destination="lAf-ms-sfC" id="qf6-Fx-LZ2"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMG-gi-71C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
