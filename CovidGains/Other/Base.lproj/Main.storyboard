@@ -217,22 +217,21 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="3S7-ND-OLr">
-                                <rect key="frame" x="10" y="232" width="414" height="571"/>
+                                <rect key="frame" x="47" y="93" width="320" height="710"/>
                             </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uYz-9B-bUI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="uYz-9B-bUI" firstAttribute="trailing" secondItem="kmT-xG-DtJ" secondAttribute="trailing" constant="10" id="MZw-xw-AjL"/>
+                            <constraint firstItem="3S7-ND-OLr" firstAttribute="centerX" secondItem="50P-oQ-q1w" secondAttribute="centerX" id="NrL-bH-bvp"/>
                             <constraint firstItem="kmT-xG-DtJ" firstAttribute="top" secondItem="x26-gg-Vtc" secondAttribute="bottom" constant="20" id="PG5-7b-wjc"/>
-                            <constraint firstItem="3S7-ND-OLr" firstAttribute="leading" secondItem="uYz-9B-bUI" secondAttribute="leading" constant="10" id="Ttk-S8-d8L"/>
+                            <constraint firstItem="3S7-ND-OLr" firstAttribute="centerY" secondItem="50P-oQ-q1w" secondAttribute="centerY" id="Qn1-3i-dnN"/>
                             <constraint firstItem="x26-gg-Vtc" firstAttribute="leading" secondItem="uYz-9B-bUI" secondAttribute="leading" constant="10" id="UY8-8i-efb"/>
                             <constraint firstItem="uYz-9B-bUI" firstAttribute="bottom" secondItem="3S7-ND-OLr" secondAttribute="bottom" constant="10" id="Vft-Dx-7cy"/>
                             <constraint firstItem="kmT-xG-DtJ" firstAttribute="leading" secondItem="uYz-9B-bUI" secondAttribute="leading" constant="10" id="bQ0-8E-4af"/>
                             <constraint firstItem="x26-gg-Vtc" firstAttribute="top" secondItem="uYz-9B-bUI" secondAttribute="top" constant="10" id="goy-Bd-KWL"/>
                             <constraint firstItem="uYz-9B-bUI" firstAttribute="trailing" secondItem="x26-gg-Vtc" secondAttribute="trailing" constant="10" id="tRx-Sl-FEO"/>
-                            <constraint firstItem="3S7-ND-OLr" firstAttribute="trailing" secondItem="uYz-9B-bUI" secondAttribute="trailing" constant="10" id="xby-Rw-cl3"/>
-                            <constraint firstItem="3S7-ND-OLr" firstAttribute="top" secondItem="kmT-xG-DtJ" secondAttribute="bottom" constant="10" id="z5I-dF-aAn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ef9-ep-dXa">
