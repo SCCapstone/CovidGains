@@ -30,10 +30,10 @@
             </objects>
             <point key="canvasLocation" x="-1690" y="243"/>
         </scene>
-        <!--Detailed View Controller-->
+        <!--Recipe Detail View Controller-->
         <scene sceneID="KPb-UJ-evV">
             <objects>
-                <viewController storyboardIdentifier="DetailedViewController" id="ZyZ-jT-KA6" customClass="DetailedViewController" customModule="CovidGains" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailedViewController" id="ZyZ-jT-KA6" customClass="RecipeDetailViewController" customModule="CovidGains" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y3C-qJ-iP1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

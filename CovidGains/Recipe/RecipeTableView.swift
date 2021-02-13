@@ -77,6 +77,22 @@ class RecipeTableView: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let recp = storyboard?.instantiateViewController(identifier: "DetailedViewController") as? RecipeDetailViewController else{
+             return
+         }
+        recp.recipeName = recipeData[indexPath.row].recipeName // first line = apples
+        
+        recp.recipeIngredients = recipeData[indexPath.row].ingredients
+        recp.recipeDetails = recipeData[indexPath.row].directions
+        
+        //cell.detailTextLabel?.text = formatter.string(from: date)
+        
+        //third line = 5
+        navigationController?.pushViewController(rec, animated: true)
+    }
+    
+    
 
     /*
     // Override to support conditional editing of the table view.
