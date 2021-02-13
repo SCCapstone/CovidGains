@@ -84,8 +84,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="gqn-Zb-7Sz"/>
                     <connections>
+                        <outlet property="Directions" destination="8Yk-vM-Phk" id="VaW-ce-Yxg"/>
+                        <outlet property="Ingredients" destination="xBh-5H-LDi" id="Cfy-Ku-VG0"/>
                         <outlet property="ingredients" destination="xBh-5H-LDi" id="BIN-E5-3JU"/>
                         <outlet property="lbl" destination="ZRI-5e-3qr" id="bcD-G1-NeU"/>
+                        <outlet property="recipeTitle" destination="ZRI-5e-3qr" id="ccp-na-aam"/>
                         <outlet property="steps" destination="8Yk-vM-Phk" id="0ZQ-AQ-RX2"/>
                     </connections>
                 </viewController>
@@ -249,7 +252,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k4u-ag-BxP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1612" y="242"/>
+            <point key="canvasLocation" x="2309" y="242"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="WTw-k6-lhj">
