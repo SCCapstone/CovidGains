@@ -33,7 +33,7 @@ class RecipeTableView: UITableViewController {
     {
         self.db.collection("Recipes").getDocuments { (querySnapshot, error) in
             if let e = error{
-                print("Im transpohboic. \(e)")
+                print("The error is : \(e)")
                 
             }else{
                 if let snapshotDocuments = querySnapshot?.documents {
@@ -51,10 +51,14 @@ class RecipeTableView: UITableViewController {
                     }
                 }
             }
+        }
     }
-}
     
-
+    
+    
+    @IBOutlet var showRecipeDetail: UITableViewCell!
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
