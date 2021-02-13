@@ -722,6 +722,7 @@
                     </tableView>
                     <connections>
                         <outlet property="didTapCell" destination="lAf-ms-sfC" id="qf6-Fx-LZ2"/>
+                        <outlet property="showRecipeDetail" destination="lAf-ms-sfC" id="nDT-8g-us4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMG-gi-71C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

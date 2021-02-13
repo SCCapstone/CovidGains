@@ -56,6 +56,7 @@ class RecipeTableView: UITableViewController {
     
     
     
+    @IBOutlet var showRecipeDetail: UITableViewCell!
     
     
     // MARK: - Table view data source
