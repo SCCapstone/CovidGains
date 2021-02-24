@@ -89,7 +89,7 @@ class RecipeTableView: UITableViewController {
         //cell.detailTextLabel?.text = formatter.string(from: date)
         
         //third line = 5
-        navigationController?.pushViewController(rec, animated: true)
+        navigationController?.pushViewController(recp, animated: true)
     }
     
     
