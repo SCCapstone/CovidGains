@@ -92,6 +92,7 @@ class RecipeTableView: UITableViewController {
         navigationController?.pushViewController(recp, animated: true)
     }
     
+    //Recipe view button function
     /*
     @IBAction func didTapView(_ sender: UIButton) {
         guard let viewVC = storyboard?.instantiateViewController(identifier: "DetailedViewController") as? AddViewController else{
@@ -147,6 +148,7 @@ class RecipeTableView: UITableViewController {
     }
     
  */
+    
     
     
     
