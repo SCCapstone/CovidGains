@@ -44,7 +44,7 @@ class AddViewController: UIViewController {
             for item in products {
                 if item == titleField.text! {
                     dateComponent.day = expirTime[i]
-                    print("dateComp",dateComponent)
+                    //print("dateComp",dateComponent)
                     //prodStr += " (" + String(expirTime[i]) + " days)"
                 }
                 i += 1

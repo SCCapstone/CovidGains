@@ -169,7 +169,10 @@ class NotificationTableViewController: UITableViewController {
 
     // slide to delete
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
         if editingStyle == .delete {
+            self.db.collection(self.user!).document(productData[indexPath.row].productName).delete()
+            //print("From delte",productData[indexPath.row].productName)
             self.productData.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
