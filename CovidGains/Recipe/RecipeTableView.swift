@@ -92,7 +92,7 @@ class RecipeTableView: UITableViewController {
         navigationController?.pushViewController(recp, animated: true)
     }
     
-    //Recipe view button function
+    //Recipe view button function, and will be done
     /*
     @IBAction func didTapView(_ sender: UIButton) {
         guard let viewVC = storyboard?.instantiateViewController(identifier: "DetailedViewController") as? AddViewController else{
