@@ -22,13 +22,15 @@ class RecipeDetailViewController: UIViewController {
     
     @IBOutlet weak var Directions: UITextView!
     
+    public var finisher: ((String, String, String)-> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         recipeTitle.text = recipeName
         Ingredients.text = recipeIngredients
         Directions.text = recipeDetails
-        
+        print(recipeName)
         
         
 

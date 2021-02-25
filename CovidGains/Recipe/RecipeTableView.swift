@@ -14,9 +14,6 @@ class RecipeTableView: UITableViewController {
     let db = Firestore.firestore()
     var recipeData = [myRecipe]()
     
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         loadRecipeData()
@@ -52,9 +49,6 @@ class RecipeTableView: UITableViewController {
             }
         }
     }
-    
-    
-        
     
     // MARK: - Table view data source
 
@@ -93,61 +87,50 @@ class RecipeTableView: UITableViewController {
     }
     
     //Recipe view button function, and will be done
-    /*
-    @IBAction func didTapView(_ sender: UIButton) {
-        guard let viewVC = storyboard?.instantiateViewController(identifier: "DetailedViewController") as? AddViewController else{
-            return
-        }
-        
-        viewVC.title = "View Recipe"
-        viewVC.navigationItem.largeTitleDisplayMode = .never
-        viewVC.completion = { recipeName, directions, ingredients in
-            DispatchQueue.main.async {
-                self.navigationController?.popViewController(animated: true)
-                let straight = myRecipe(recipeName: recipeName, directions: directions, ingredients:ingredients, identifier: "id_\(recipeName )")
-                self.recipeData.append(straight)
-                self.tableView.reloadData()
-                
-                //request
-                let content = UNMutableNotificationContent()
-                //content title, body and sound
-                content.title = recipeName
-                content.sound = .default
-                content.body = directions
-                //content.body = ingredients
-                //tigger with date
-                let targetDir = ingredients
-                
-  
-  
-            }
-            
-            //stores the data to firebase
-           
-            //if not empty then save to firebase
-            
-            
-            
-            
-                self.db.collection("Recipes").document(recipeName).setData(["directions":directions,"ingredients":ingredients]) { (error) in
-                    if let e = error {
-                        print("there was an issue saving data to firestore, \(e)")
-                    } else {
-                        print("Successfully saved data")
-                    }
-                }
-            
-
-
-            self.tableView.reloadData()
-        
-        }
-        navigationController?.pushViewController(viewVC, animated: true)
-
-        
-    }
     
- */
+//    @IBAction func didTapView(_ sender: UIButton) {
+//        guard let viewVC = storyboard?.instantiateViewController(identifier: "DetailedViewController") as? RecipeDetailViewController else{
+//            return
+//        }
+//        
+//        viewVC.title = "View Recipe"
+//        viewVC.navigationItem.largeTitleDisplayMode = .never
+//        
+//        
+//        viewVC.finisher = { recipeName, directions, ingredients in DispatchQueue.main.async {
+//                self.navigationController?.popViewController(animated: true)
+//                let straight = myRecipe(recipeName: recipeName, directions: directions ,ingredients: ingredients, identifier: "id_\(recipeName )")
+//                self.recipeData.append(straight)
+//                self.tableView.reloadData()
+//                
+//            }
+//            
+//            //stores the data to firebase
+//           
+//            //if not empty then save to firebase
+//            
+//            
+//            
+//            
+//                self.db.collection("Recipes").document(recipeName).setData(["directions":directions,"ingredients":ingredients]) { (error) in
+//                    if let e = error {
+//                        print("there was an issue saving data to firestore, \(e)")
+//                    } else {
+//                        print("Successfully saved data")
+//                    }
+//                }
+//            
+//
+//
+//            self.tableView.reloadData()
+//        
+//        }
+//        navigationController?.pushViewController(viewVC, animated: true)
+//
+//        
+//    }
+    
+ 
     
     
     
