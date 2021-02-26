@@ -27,8 +27,8 @@ class RecipeDetailViewController: UIViewController {
         super.viewDidLoad()
         
         recipeTitle.text = recipName
-        Ingredients.text = recipeIngredients
-        Directions.text = recipeDetails
+        Ingredients.text = recipeIngredients.replacingOccurrences(of: "\\n", with: "\n")
+        Directions.text = recipeDetails.replacingOccurrences(of: "\\n", with: "\n")
         
         let storage = Storage.storage()
         let storageRef = storage.reference()

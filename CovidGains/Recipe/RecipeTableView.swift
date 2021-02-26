@@ -19,8 +19,7 @@ class RecipeTableView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadRecipeData()
-        
-
+        self.db.collection("Recipes").document("Pizza").delete()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
