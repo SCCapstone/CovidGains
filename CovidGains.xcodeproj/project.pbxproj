@@ -67,7 +67,7 @@
 		64CE592325C5EF1000E3CEC9 /* TestNotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNotesTableViewController.swift; sourceTree = "<group>"; };
 		7EA0B37E93DC36D2EADDC86C /* Pods-CovidGains.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidGains.debug.xcconfig"; path = "Target Support Files/Pods-CovidGains/Pods-CovidGains.debug.xcconfig"; sourceTree = "<group>"; };
 		D29E1844A857054081D81DAE /* Pods-CovidGains.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidGains.release.xcconfig"; path = "Target Support Files/Pods-CovidGains/Pods-CovidGains.release.xcconfig"; sourceTree = "<group>"; };
-		D80CBB6225799EDE00841B25 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		D80CBB6225799EDE00841B25 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D8292890258A716400D75DBA /* NotificationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
 		D8292892258A743000D75DBA /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		D8292894258AD43500D75DBA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };

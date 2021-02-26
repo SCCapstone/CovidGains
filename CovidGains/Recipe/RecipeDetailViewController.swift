@@ -7,6 +7,8 @@
 
 import UIKit
 import Firebase
+import Photos
+import FirebaseStorage
 class RecipeDetailViewController: UIViewController {
     
     var recipName = ""
@@ -18,6 +20,7 @@ class RecipeDetailViewController: UIViewController {
     @IBOutlet weak var Ingredients: UITextView!
     @IBOutlet weak var Directions: UITextView!
     
+    @IBOutlet var imageDownloaded: UIImageView!
     
     
     override func viewDidLoad() {
@@ -27,11 +30,16 @@ class RecipeDetailViewController: UIViewController {
         Ingredients.text = recipeIngredients
         Directions.text = recipeDetails
         
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
         
+        let ref = storageRef.child(recipName + ".jpg")
+        imageDownloaded.sd_setImage(with: ref)
 
         // Do any additional setup after loading the view.
     }
     
+ 
 
     /*
     // MARK: - Navigation

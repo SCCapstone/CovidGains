@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FirebaseStorage
 import Photos
+import FirebaseUI
 
 class RecipeTableView: UITableViewController {
     
@@ -76,6 +77,14 @@ class RecipeTableView: UITableViewController {
         guard let recp = storyboard?.instantiateViewController(identifier: "Detail") as? RecipeDetailViewController else{
              return
          }
+        
+
+        
+        
+        
+        
+        
+        
         recp.recipName = recipeData[indexPath.row].recipeName // first line = apples
         recp.recipeIngredients = recipeData[indexPath.row].ingredients
         recp.recipeDetails = recipeData[indexPath.row].directions
