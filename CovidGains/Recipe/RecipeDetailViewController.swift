@@ -10,7 +10,7 @@ import Firebase
 import Photos
 import FirebaseStorage
 class RecipeDetailViewController: UIViewController {
-    
+    // testing
     var recipName = ""
     var recipeIngredients = ""
     var recipeDetails = ""
