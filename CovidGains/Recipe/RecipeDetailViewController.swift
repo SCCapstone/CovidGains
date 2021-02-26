@@ -6,31 +6,26 @@
 //
 
 import UIKit
-
+import Firebase
 class RecipeDetailViewController: UIViewController {
     
-    var recipeName = ""
+    var recipName = ""
     var recipeIngredients = ""
     var recipeDetails = ""
     
     
     @IBOutlet weak var recipeTitle: UILabel!
-    
-    
     @IBOutlet weak var Ingredients: UITextView!
-    
-    
     @IBOutlet weak var Directions: UITextView!
     
-    public var finisher: ((String, String, String)-> Void)?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        recipeTitle.text = recipeName
+        recipeTitle.text = recipName
         Ingredients.text = recipeIngredients
         Directions.text = recipeDetails
-        print(recipeName)
         
         
 

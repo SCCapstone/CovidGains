@@ -23,7 +23,7 @@ class DetailViewController: UIViewController {
         titelLabel.text = productTitle
         dateAddedLabel.text = dateAddedString
         detailLabel.text = productDetail
-        
+    
     }
 
 }

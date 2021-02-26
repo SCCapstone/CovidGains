@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseStorage
+import Photos
 
 class RecipeTableView: UITableViewController {
     
@@ -72,14 +73,12 @@ class RecipeTableView: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let recp = storyboard?.instantiateViewController(identifier: "DetailedViewController") as? RecipeDetailViewController else{
+        guard let recp = storyboard?.instantiateViewController(identifier: "Detail") as? RecipeDetailViewController else{
              return
          }
-        recp.recipeName = recipeData[indexPath.row].recipeName // first line = apples
-        
+        recp.recipName = recipeData[indexPath.row].recipeName // first line = apples
         recp.recipeIngredients = recipeData[indexPath.row].ingredients
         recp.recipeDetails = recipeData[indexPath.row].directions
-        
         //cell.detailTextLabel?.text = formatter.string(from: date)
         
         //third line = 5
@@ -88,52 +87,9 @@ class RecipeTableView: UITableViewController {
     
     //Recipe view button function, and will be done
     
-//    @IBAction func didTapView(_ sender: UIButton) {
-//        guard let viewVC = storyboard?.instantiateViewController(identifier: "DetailedViewController") as? RecipeDetailViewController else{
-//            return
-//        }
-//        
-//        viewVC.title = "View Recipe"
-//        viewVC.navigationItem.largeTitleDisplayMode = .never
-//        
-//        
-//        viewVC.finisher = { recipeName, directions, ingredients in DispatchQueue.main.async {
-//                self.navigationController?.popViewController(animated: true)
-//                let straight = myRecipe(recipeName: recipeName, directions: directions ,ingredients: ingredients, identifier: "id_\(recipeName )")
-//                self.recipeData.append(straight)
-//                self.tableView.reloadData()
-//                
-//            }
-//            
-//            //stores the data to firebase
-//           
-//            //if not empty then save to firebase
-//            
-//            
-//            
-//            
-//                self.db.collection("Recipes").document(recipeName).setData(["directions":directions,"ingredients":ingredients]) { (error) in
-//                    if let e = error {
-//                        print("there was an issue saving data to firestore, \(e)")
-//                    } else {
-//                        print("Successfully saved data")
-//                    }
-//                }
-//            
-//
-//
-//            self.tableView.reloadData()
-//        
-//        }
-//        navigationController?.pushViewController(viewVC, animated: true)
-//
-//        
-//    }
-    
- 
     
     
-    
+    t
     
     
 
