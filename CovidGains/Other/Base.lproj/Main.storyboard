@@ -431,6 +431,7 @@
                                 <state key="normal" title="+"/>
                                 <connections>
                                     <action selector="addList:" destination="I1e-h5-QmM" eventType="touchUpInside" id="VGA-OZ-x0h"/>
+                                    <segue destination="8Y2-of-1kI" kind="show" id="jyW-ce-Thh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -448,6 +449,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H7Q-sc-eJv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="644.92753623188412" y="2279.4642857142858"/>
+        </scene>
+        <!--New Item View Controller-->
+        <scene sceneID="Po9-nk-W6u">
+            <objects>
+                <viewController id="8Y2-of-1kI" customClass="NewItemViewController" customModule="CovidGains" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tKg-4D-SaT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Product Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nmR-Bd-bsc">
+                                <rect key="frame" x="10" y="100" width="394" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="xGQ-GJ-HNr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W3d-iI-Pkk">
+                                <rect key="frame" x="10" y="172" width="394" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="Gd2-cw-uoN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tyt-OI-NMJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="W3d-iI-Pkk" firstAttribute="leading" secondItem="tyt-OI-NMJ" secondAttribute="leading" constant="10" id="3n5-SV-sI1"/>
+                            <constraint firstItem="W3d-iI-Pkk" firstAttribute="top" secondItem="nmR-Bd-bsc" secondAttribute="bottom" constant="20" id="JPl-OT-EPm"/>
+                            <constraint firstItem="nmR-Bd-bsc" firstAttribute="leading" secondItem="tyt-OI-NMJ" secondAttribute="leading" constant="10" id="Kqy-QY-r1j"/>
+                            <constraint firstItem="nmR-Bd-bsc" firstAttribute="top" secondItem="tKg-4D-SaT" secondAttribute="top" constant="100" id="kK2-Rd-tac"/>
+                            <constraint firstItem="tyt-OI-NMJ" firstAttribute="trailing" secondItem="W3d-iI-Pkk" secondAttribute="trailing" constant="10" id="rn5-np-RNf"/>
+                            <constraint firstItem="tyt-OI-NMJ" firstAttribute="trailing" secondItem="nmR-Bd-bsc" secondAttribute="trailing" constant="10" id="tVV-gx-86U"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="os1-lP-tmn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="x6b-yR-a4C">
+                            <connections>
+                                <action selector="pressedSave:" destination="8Y2-of-1kI" id="kU2-m5-6tE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="productCost" destination="W3d-iI-Pkk" id="oZH-N0-YfL"/>
+                        <outlet property="productName" destination="nmR-Bd-bsc" id="roT-Hi-3zU"/>
+                        <outlet property="productPrice" destination="W3d-iI-Pkk" id="2aL-9b-73N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NX3-a7-oy9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1682.608695652174" y="2279.4642857142858"/>
         </scene>
         <!--BMI-->
         <scene sceneID="HkB-f8-epW">
