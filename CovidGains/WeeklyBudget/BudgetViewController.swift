@@ -3,72 +3,74 @@
 //  CovidGains
 //
 //  Created by TABASSUM, NISHAT on 12/4/20.
-// 
+//
 
 import UIKit
 
-class BudgetViewController: UIViewController, UITextFieldDelegate{
-
-    @IBOutlet weak var beveragesTextField: UITextField!
-    @IBOutlet weak var cannedTextField: UITextField!
-    @IBOutlet weak var dairyTextField: UITextField!
-    @IBOutlet weak var meatTextField: UITextField!
-    @IBOutlet weak var produceTextField: UITextField!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBAction func totalButton(_ sender: Any) {
-        var firstValue = Double(beveragesTextField.text!)
-        var secondValue = Double(cannedTextField.text!)
-        var thirdValue = Double(dairyTextField.text!)
-        var fourthValue = Double(meatTextField.text!)
-        var fifthValue = Double(produceTextField.text!)
-        if (firstValue == nil) {
-            firstValue = 0.0
-        }
-        if (secondValue == nil) {
-            secondValue = 0.0
-        }
-        if (thirdValue == nil) {
-            thirdValue = 0.0
-        }
-        if (fourthValue == nil) {
-            fourthValue = 0.0
-        }
-        if (fifthValue == nil) {
-            fifthValue = 0.0
-        }
-        let outputValue = Double(firstValue! + secondValue! + thirdValue! + fourthValue! + fifthValue!)
-        priceLabel.text = " $ \(outputValue) "
-    }
-    @IBAction func resetbutton(_ sender: UIButton) {
-        beveragesTextField.text = ""
-        cannedTextField.text = ""
-        dairyTextField.text = ""
-        meatTextField.text = ""
-        produceTextField.text = ""
-        priceLabel.text = ""
-    }
+class BudgetViewController: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet var tableView: UITableView!
+    
+    
+    
+    @IBOutlet weak var allowanceField: UITextField!
+    @IBOutlet weak var safeSpentLabel: UILabel!
+    @IBOutlet weak var spentLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.beveragesTextField.delegate = self
-        self.cannedTextField.delegate = self
-        self.dairyTextField.delegate = self
-        self.meatTextField.delegate = self
-        self.produceTextField.delegate = self
-        beveragesTextField.clearButtonMode = .always
-        cannedTextField.clearButtonMode = .always
-        dairyTextField.clearButtonMode = .always
-        meatTextField.clearButtonMode = .always
-        produceTextField.clearButtonMode = .always
-        beveragesTextField.clearButtonMode = .whileEditing
-        cannedTextField.clearButtonMode = .whileEditing
-        dairyTextField.clearButtonMode = .whileEditing
-        meatTextField.clearButtonMode = .whileEditing
-        produceTextField.clearButtonMode = .whileEditing
+        
+        self.allowanceField.delegate = self
+        allowanceField.clearButtonMode = .always
+        allowanceField.clearButtonMode = .whileEditing
     }
+    
+    //allowance - spent = safe to spend
+    //transactions = + = adds to the list of items
+    //user input
+    @IBAction func allowancePressed(_ sender: Any) {
+        
+        // ?? = nil = 0 so default = 0
+        let allowance = Double (self.allowanceField.text ?? "") ?? 0
+        let tipPercent = 0.20
+        
+        let tipAmount = (allowance * tipPercent)
+        self.safeSpentLabel.text = "$\(tipAmount)"
+        
+        let total = allowance + tipAmount
+        self.spentLabel.text = "$\(total)"
+    }
+    
+    @IBAction func addList(_ sender: Any) {
+        
+        
+        
+        
+        // from tab view controller
+        //get the list of items of product abd prices and add them abd sent it to label for spent
+    }
+    
+    //Hide keyboard when user touches outside keyboard
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    //return funciton in keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+extension ViewController: UITableViewDelegate{
+    
+}
+extension ViewController: UITextFieldDelegate{
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return true
+}
 }
 
