@@ -32,14 +32,15 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     @IBAction func allowancePressed(_ sender: Any) {
         
         // ?? = nil = 0 so default = 0
-        let allowance = Double (self.allowanceField.text ?? "") ?? 0
-        let tipPercent = 0.20
+        let allowance = Int (self.allowanceField.text ?? "") ?? 0
+        let spent = 90
         
-        let tipAmount = (allowance * tipPercent)
-        self.safeSpentLabel.text = "$\(tipAmount)"
+        let safeAmount = (allowance - spent)
+        self.safeSpentLabel.text = "$\(safeAmount)"
         
-        let total = allowance + tipAmount
-        self.spentLabel.text = "$\(total)"
+        //let total = allowance + tipAmount
+        //store values of all added to the llist
+        //self.spentLabel.text = "$\(total)"
     }
     
     @IBAction func addList(_ sender: Any) {
