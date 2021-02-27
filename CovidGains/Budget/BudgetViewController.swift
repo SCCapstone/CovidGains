@@ -45,9 +45,6 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func addList(_ sender: Any) {
         
-        
-        
-        
         // from tab view controller
         //get the list of items of product abd prices and add them abd sent it to label for spent
     }
@@ -75,3 +72,9 @@ extension ViewController: UITextFieldDelegate{
 }
 }
 
+struct myBudget {
+    let productName = ""
+    let productCost = 0
+    let moneyLeftNum = 0
+    let spentNum = 0
+}

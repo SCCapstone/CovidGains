@@ -17,6 +17,7 @@
 		4643CA5B25B8FDFF00A29078 /* CovidGainsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4643CA5A25B8FDFF00A29078 /* CovidGainsUITests.swift */; };
 		64CE591825C5D43E00E3CEC9 /* CovidGainsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE591725C5D43E00E3CEC9 /* CovidGainsTests.swift */; };
 		64CE592425C5EF1000E3CEC9 /* TestNotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE592325C5EF1000E3CEC9 /* TestNotesTableViewController.swift */; };
+		64E39BB125EACFCF00132850 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E39BB025EACFCF00132850 /* NewItemViewController.swift */; };
 		D80CBB6325799EDE00841B25 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D80CBB6225799EDE00841B25 /* Podfile */; };
 		D8292891258A716400D75DBA /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8292890258A716400D75DBA /* NotificationTableViewController.swift */; };
 		D8292893258A743000D75DBA /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8292892258A743000D75DBA /* AddViewController.swift */; };
@@ -65,6 +66,7 @@
 		64CE591725C5D43E00E3CEC9 /* CovidGainsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidGainsTests.swift; sourceTree = "<group>"; };
 		64CE591925C5D43E00E3CEC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64CE592325C5EF1000E3CEC9 /* TestNotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNotesTableViewController.swift; sourceTree = "<group>"; };
+		64E39BB025EACFCF00132850 /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewItemViewController.swift; path = CovidGains/Budget/NewItemViewController.swift; sourceTree = SOURCE_ROOT; };
 		7EA0B37E93DC36D2EADDC86C /* Pods-CovidGains.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidGains.debug.xcconfig"; path = "Target Support Files/Pods-CovidGains/Pods-CovidGains.debug.xcconfig"; sourceTree = "<group>"; };
 		D29E1844A857054081D81DAE /* Pods-CovidGains.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidGains.release.xcconfig"; path = "Target Support Files/Pods-CovidGains/Pods-CovidGains.release.xcconfig"; sourceTree = "<group>"; };
 		D80CBB6225799EDE00841B25 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -237,7 +239,7 @@
 				D8A30DB325776DE50011EDB7 /* Notes */,
 				3FC8C5B9257AE0F70006A932 /* BMI */,
 				3F0173642579E7CE006CC316 /* userAuthentication */,
-				E1C8D7C8257AA27600F6833C /* WeeklyBudget */,
+				E1C8D7C8257AA27600F6833C /* Budget */,
 				64CDCDE825C37D48005E552B /* Other */,
 				D8A30D79257722260011EDB7 /* coreData */,
 				D8CCC89B250ED1D30005C4B3 /* Assets.xcassets */,
@@ -246,12 +248,13 @@
 			path = CovidGains;
 			sourceTree = "<group>";
 		};
-		E1C8D7C8257AA27600F6833C /* WeeklyBudget */ = {
+		E1C8D7C8257AA27600F6833C /* Budget */ = {
 			isa = PBXGroup;
 			children = (
+				64E39BB025EACFCF00132850 /* NewItemViewController.swift */,
 				E1C8D7C9257AA28800F6833C /* BudgetViewController.swift */,
 			);
-			path = WeeklyBudget;
+			path = Budget;
 			sourceTree = "<group>";
 		};
 		FF142B31233B71BEF1DC3474 /* Pods */ = {
@@ -468,6 +471,7 @@
 				3FAAB7FC25D851970050193F /* RecipeDetailViewController.swift in Sources */,
 				3FC8C5C5257AEA740006A932 /* BMIViewController.swift in Sources */,
 				D8CCC895250ED1D10005C4B3 /* SceneDelegate.swift in Sources */,
+				64E39BB125EACFCF00132850 /* NewItemViewController.swift in Sources */,
 				3F0173662579E808006CC316 /* RegisterViewController.swift in Sources */,
 				D893521D2579688B005F2F4C /* EditNoteViewController.swift in Sources */,
 				D8DD73DE257553F30047EDDB /* noteSaving.xcdatamodeld in Sources */,
