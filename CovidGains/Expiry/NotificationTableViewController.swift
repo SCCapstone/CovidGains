@@ -60,6 +60,7 @@ class NotificationTableViewController: UITableViewController {
         addVC.navigationItem.largeTitleDisplayMode = .never
         addVC.completion = { productName, productDetail, date in
             DispatchQueue.main.async {
+                
                 self.navigationController?.popViewController(animated: true)
                 let new = MyReminder(productName: productName, productDetail: productDetail, date: date, identifier: "id_\(productName )")
                 self.productData.append(new)

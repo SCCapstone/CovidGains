@@ -19,6 +19,14 @@ class LoginViewController: UIViewController{
     
     @IBOutlet weak var errorLabel: UILabel!
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //calls to load data from firebase
+        isLoggedIn()
+    }
+    
     @IBAction func tappedCancel(_ sender: UIBarButtonItem) {
         let outC = storyboard?.instantiateViewController(identifier: "MainScreen") as? ViewController
         
@@ -28,6 +36,10 @@ class LoginViewController: UIViewController{
         
         sceneDelegate.window?.rootViewController = outC
         
+    }
+    
+    fileprivate func isLoggedIn() -> Bool{
+        return UserDefaults.standard.bool(forKey: "isLoggedIn")
     }
     
     @IBAction func loginPressed(_ sender: UIButton) {
@@ -41,14 +53,17 @@ class LoginViewController: UIViewController{
                     //print(error?.localizedDescription)
                     self.errorLabel.text = error?.localizedDescription
                     self.errorLabel.alpha = 1
+
                     
                 }else{
                     //print("Still going to go !!")
+                    UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                    UserDefaults.standard.synchronize()
                     let homeVC = self.storyboard?.instantiateViewController(identifier: "myTabBar")
                     self.view.window?.rootViewController = homeVC
                     self.view.window?.makeKeyAndVisible()
                 }
-        
+
             }
           
         }
