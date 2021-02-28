@@ -6,28 +6,56 @@
 //
 
 import UIKit
-
+import Firebase
 class BudgetViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var tableView: UITableView!
-    
     @IBOutlet weak var allowanceField: UITextField!
     @IBOutlet weak var safeSpentLabel: UILabel!
     @IBOutlet weak var spentLabel: UILabel!
     var allowance = 0
     var spent = 0
     var budgetData = [MyBudget]()
+    let db = Firestore.firestore()
+    let user = Auth.auth().currentUser?.email
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
         allowanceField.delegate = self
         allowanceField.clearButtonMode = .always
         allowanceField.clearButtonMode = .whileEditing
-        
+        loadB()
     }
+    
+    func loadB(){
+        let budgUser = (user)! + " Budget"
+        print(budgUser)
+        self.db.collection(budgUser).getDocuments { (querySnapshot, error) in
+            if let e = error{
+                print("There is issue retrieving data.\(e)")
+            }else{
+                if let snapshotDocuments = querySnapshot?.documents {
+                    for doc in snapshotDocuments {
+                        let data = doc.data()
+                        let docID = doc.documentID
+                        
+                        //let timeStamp =
+                        
+                        let new = MyBudget(bProductName: docID, bProductCost: data["Price"] as! String)
+                        self.budgetData.append(new)
+                        
+                        DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+    
     
     //allowance - spent = safe to spend
     //transactions = + = adds to the list of items
@@ -42,10 +70,9 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         guard let addNewBudgetVC = storyboard?.instantiateViewController(identifier: "addNewBudget") as? AddNewBudgetViewController else{
             return
         }
-        addNewBudgetVC.title = "New Budget"
-        addNewBudgetVC.navigationItem.largeTitleDisplayMode = .never
-        addNewBudgetVC.comp = {bProductName, bProductCost in
-            DispatchQueue.main.async{
+            addNewBudgetVC.title = "New Budget"
+            addNewBudgetVC.navigationItem.largeTitleDisplayMode = .never
+            addNewBudgetVC.comp = {bProductName, bProductCost in DispatchQueue.main.async{
                 self.navigationController?.popToRootViewController(animated: true)
                 let newBudget = MyBudget(bProductName: bProductName, bProductCost: bProductCost)
                     //print(newBudget)
@@ -61,9 +88,19 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
                     self.safeSpentLabel.text = "$\(safeAmount)"
                 
                 self.spentLabel.text = "$\(self.spent)"
-                
-                 
             }
+            
+            if self.user != nil {
+                self.db.collection(self.user! + " Budget").document(bProductName).setData(["Price": bProductCost]) { (error) in
+                    if let e = error {
+                        print("there was an issue saving data to firestore, \(e)")
+                    } else {
+                        print("Successfully saved data")
+                    }
+                }
+            }
+            self.tableView.reloadData()
+                
         }
         navigationController?.pushViewController(addNewBudgetVC, animated: true)
         
