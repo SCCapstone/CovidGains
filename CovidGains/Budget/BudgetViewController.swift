@@ -65,6 +65,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
                         let data1 = doc.data()
                         if data1["num"] != nil {
                             self.allowance = data1["num"] as! Int
+                            self.safeAmount = self.allowance
                             if data1["spent"] != nil {
                                 self.spent = data1["spent"] as! Int
                             }
@@ -89,7 +90,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     //user input
     @IBAction func allowancePressed(_ sender: Any) {
         allowance = Int (self.allowanceField.text ?? "") ?? 0
-        self.safeSpentLabel.text = "$\(self.safeAmount)"
+        self.safeSpentLabel.text = "$\(self.allowance)"
         self.spentLabel.text = "$\(self.spent)"
         print("\(allowance)")
         if self.user != nil {
