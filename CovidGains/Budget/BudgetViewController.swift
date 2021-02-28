@@ -11,12 +11,11 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var tableView: UITableView!
     
-    var budgetData = [myBudget]()
-    
     @IBOutlet weak var allowanceField: UITextField!
     @IBOutlet weak var safeSpentLabel: UILabel!
     @IBOutlet weak var spentLabel: UILabel!
     
+    var budgetData = [MyBudget]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,24 +42,24 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         //self.spentLabel.text = "$\(total)"
     }
     
-    @IBAction func pressedNew(_ sender: Any) {
-        guard let budgetVC = storyboard?.instantiateViewController(identifier: "addNewBudget") as? NewItemViewController else{
-                    return
-                }
-        budgetVC.title = "New Budget"
-        budgetVC.navigationItem.largeTitleDisplayMode = .never
-        budgetVC.comp = { productName, productCost in
-                    DispatchQueue.main.async {
+    @IBAction func pressedAdd(){
+        guard let addNewBudget = storyboard?.instantiateViewController(identifier: "addNewBudget") as? AddNewBudgetViewController else{
+            return
+        }
+        addNewBudget.title = "New Budget"
+        addNewBudget.navigationItem.largeTitleDisplayMode = .never
+        addNewBudget.comp = {bProductName, bProductCost in
+            DispatchQueue.main.async{
+                self.navigationController?.popToRootViewController(animated: true)
+                let newBudget = MyBudget(bProductName: bProductName, bProductCost: bProductCost)
+                self.budgetData.append(newBudget)
+                //self.table.reloadData()
+            }
+        }
+        navigationController?.pushViewController(addNewBudget, animated: true)
 
-                        self.navigationController?.popViewController(animated: true)
-                        let newBudget = myBudget(productName: productName, productCost: productCost)
-                       self.budgetData.append(newBudget)
-                    self.tableView.reloadData()
     }
-    }
-    }
-    
-    
+
     //Hide keyboard when user touches outside keyboard
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -81,12 +80,10 @@ extension ViewController: UITextFieldDelegate{
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
     textField.resignFirstResponder()
     return true
-}
+    }
 }
 
-struct myBudget {
-    let productName: String
-    let productCost: String
-//    let moneyLeftNum = 0
-//    let spentNum = 0
+struct MyBudget {
+    let bProductName: String
+    let bProductCost: String
 }
