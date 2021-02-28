@@ -15,10 +15,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var spentLabel: UILabel!
     var allowance = 0
     var spent = 0
-<<<<<<< HEAD
-=======
     var safeAmount = 0
->>>>>>> f85e9e0f9991e993b874ac9623edeca72ee8b98e
     var budgetData = [MyBudget]()
     let db = Firestore.firestore()
     let user = Auth.auth().currentUser?.email
@@ -92,15 +89,12 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     //user input
     @IBAction func allowancePressed(_ sender: Any) {
         allowance = Int (self.allowanceField.text ?? "") ?? 0
-<<<<<<< HEAD
-=======
         self.safeSpentLabel.text = "$\(self.safeAmount)"
         self.spentLabel.text = "$\(self.spent)"
         print("\(allowance)")
         if self.user != nil {
             self.db.collection(self.user! + " BudgetAllow").document("Allowance").setData(["num":allowance])
         }
->>>>>>> f85e9e0f9991e993b874ac9623edeca72ee8b98e
         // ?? = nil = 0 so default = 0
 
     }
@@ -109,40 +103,19 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         guard let addNewBudgetVC = storyboard?.instantiateViewController(identifier: "addNewBudget") as? AddNewBudgetViewController else{
             return
         }
-<<<<<<< HEAD
-        addNewBudgetVC.title = "New Budget"
-        addNewBudgetVC.navigationItem.largeTitleDisplayMode = .never
-        addNewBudgetVC.comp = {bProductName, bProductCost in
-            DispatchQueue.main.async{
-=======
             addNewBudgetVC.title = "New Budget"
             addNewBudgetVC.navigationItem.largeTitleDisplayMode = .never
             addNewBudgetVC.comp = {bProductName, bProductCost in DispatchQueue.main.async{
->>>>>>> f85e9e0f9991e993b874ac9623edeca72ee8b98e
                 self.navigationController?.popToRootViewController(animated: true)
                 let newBudget = MyBudget(bProductName: bProductName, bProductCost: bProductCost)
                 self.budgetData.append(newBudget)
                 self.tableView.reloadData()
-<<<<<<< HEAD
-                self.spent += (newBudget.bProductCost as NSString).integerValue
-                //print(self.spent)
-                    
-                    // add all the things bProductCost
-                    
-                let safeAmount = (self.allowance - self.spent)
-                    self.safeSpentLabel.text = "$\(safeAmount)"
-                
-                self.spentLabel.text = "$\(self.spent)"
-                
-                 
-=======
                 
                 self.spent += (newBudget.bProductCost as NSString).integerValue
                 self.safeAmount = (self.allowance - self.spent)
                 self.safeSpentLabel.text = "$\(self.safeAmount)"
                 self.db.collection(self.user! + " BudgetAllow").document("Allowance").setData(["num":self.allowance,"spent":self.spent,"safetospend":self.safeAmount])
                 self.spentLabel.text = "$\(self.spent)"
->>>>>>> f85e9e0f9991e993b874ac9623edeca72ee8b98e
             }
             
             if self.user != nil {
