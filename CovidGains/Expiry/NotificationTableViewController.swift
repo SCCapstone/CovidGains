@@ -15,11 +15,10 @@ class NotificationTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         //calls to load data from firebase
         loadData()
     }
-
     
     func loadData(){
         self.db.collection((user)!).getDocuments { (querySnapshot, error) in
