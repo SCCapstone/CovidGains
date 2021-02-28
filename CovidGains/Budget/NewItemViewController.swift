@@ -13,24 +13,24 @@ class NewItemViewController: UIViewController {
     let db = Firestore.firestore()
     var ref: DocumentReference? = nil
     
-    @IBOutlet weak var productName: UITextField!
-    @IBOutlet weak var productCost: UITextField!
+    @IBOutlet weak var prodName: UITextField!
+    @IBOutlet weak var prodCost: UITextField!
     
-    public var comp1: ((String, Int)->Void)?
+    public var comp: ((String, String)->Void)?
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(pressedDone))
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func pressedSave(_ sender: Any) {
-        if let titleText = productName.text, !titleText.isEmpty, let bodyText = productCost.text, !bodyText.isEmpty{
-            //comp1?(productName, productCost)
-
-            }
+    @objc func pressedDone(){
+        if let tText = prodName.text, !tText.isEmpty, let bText = prodCost.text, !bText.isEmpty{
+            comp?(tText, bText)
+        }
+        
     }
     
     /*

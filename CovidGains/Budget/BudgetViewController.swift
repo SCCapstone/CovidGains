@@ -11,7 +11,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var tableView: UITableView!
     
-    
+    var budgetData = [myBudget]()
     
     @IBOutlet weak var allowanceField: UITextField!
     @IBOutlet weak var safeSpentLabel: UILabel!
@@ -43,11 +43,23 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         //self.spentLabel.text = "$\(total)"
     }
     
-    @IBAction func addList(_ sender: Any) {
-        
-        // from tab view controller
-        //get the list of items of product abd prices and add them abd sent it to label for spent
+    @IBAction func pressedNew(_ sender: Any) {
+        guard let budgetVC = storyboard?.instantiateViewController(identifier: "addNewBudget") as? NewItemViewController else{
+                    return
+                }
+        budgetVC.title = "New Budget"
+        budgetVC.navigationItem.largeTitleDisplayMode = .never
+        budgetVC.comp = { productName, productCost in
+                    DispatchQueue.main.async {
+
+                        self.navigationController?.popViewController(animated: true)
+                        let newBudget = myBudget(productName: productName, productCost: productCost)
+                       self.budgetData.append(newBudget)
+                    self.tableView.reloadData()
     }
+    }
+    }
+    
     
     //Hide keyboard when user touches outside keyboard
     
@@ -73,8 +85,8 @@ extension ViewController: UITextFieldDelegate{
 }
 
 struct myBudget {
-    let productName = ""
-    let productCost = 0
-    let moneyLeftNum = 0
-    let spentNum = 0
+    let productName: String
+    let productCost: String
+//    let moneyLeftNum = 0
+//    let spentNum = 0
 }

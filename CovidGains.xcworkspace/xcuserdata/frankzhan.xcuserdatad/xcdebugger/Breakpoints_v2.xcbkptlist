@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "BEC6CA3A-0E32-4432-838A-C399680020EC"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BC160841-73D7-4A3C-B1FE-9E3AC7D1A0D2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CovidGains/Budget/NewItemViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "NewItemViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "BC160841-73D7-4A3C-B1FE-9E3AC7D1A0D2 - bb7daf5cb40606a2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CovidGains.NewItemViewController.comp1.getter : Swift.Optional&lt;(Swift.String, Swift.Int) -&gt; ()&gt;"
+                  moduleName = "CovidGains"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/frankzhan/Downloads/CovidGains/CovidGains/Budget/NewItemViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "131">
+               </Location>
+               <Location
+                  uuid = "BC160841-73D7-4A3C-B1FE-9E3AC7D1A0D2 - 27744808bee7ba9e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CovidGains.NewItemViewController.comp1.setter : Swift.Optional&lt;(Swift.String, Swift.Int) -&gt; ()&gt;"
+                  moduleName = "CovidGains"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/frankzhan/Downloads/CovidGains/CovidGains/Budget/NewItemViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "166">
+               </Location>
+               <Location
+                  uuid = "BC160841-73D7-4A3C-B1FE-9E3AC7D1A0D2 - c259545c7d7a8d30"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CovidGains.NewItemViewController.comp1.modify : Swift.Optional&lt;(Swift.String, Swift.Int) -&gt; ()&gt;"
+                  moduleName = "CovidGains"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/frankzhan/Downloads/CovidGains/CovidGains/Budget/NewItemViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "BC160841-73D7-4A3C-B1FE-9E3AC7D1A0D2 - 646d1730bf673048"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CovidGains.NewItemViewController.comp1.modify : Swift.Optional&lt;(Swift.String, Swift.Int) -&gt; ()&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "CovidGains"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/frankzhan/Downloads/CovidGains/CovidGains/Budget/NewItemViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "BC160841-73D7-4A3C-B1FE-9E3AC7D1A0D2 - 8dfe805365dd227f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CovidGains.NewItemViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; CovidGains.NewItemViewController"
+                  moduleName = "CovidGains"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/frankzhan/Downloads/CovidGains/CovidGains/Budget/NewItemViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "675">
+               </Location>
+               <Location
+                  uuid = "BC160841-73D7-4A3C-B1FE-9E3AC7D1A0D2 - 506f844c8ffc2593"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CovidGains.NewItemViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;CovidGains.NewItemViewController&gt;"
+                  moduleName = "CovidGains"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/frankzhan/Downloads/CovidGains/CovidGains/Budget/NewItemViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "616">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
