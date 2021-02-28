@@ -52,8 +52,9 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
             DispatchQueue.main.async{
                 self.navigationController?.popToRootViewController(animated: true)
                 let newBudget = MyBudget(bProductName: bProductName, bProductCost: bProductCost)
+                    //print(newBudget)
                 self.budgetData.append(newBudget)
-                //self.table.reloadData()
+                self.tableView.reloadData()
             }
         }
         navigationController?.pushViewController(addNewBudget, animated: true)
@@ -71,11 +72,37 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+
 }
 
-extension ViewController: UITableViewDelegate{
-    
+extension BudgetViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
 }
+
+extension BudgetViewController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return budgetData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellBudget", for: indexPath)
+        cell.textLabel?.text = budgetData[indexPath.row].bProductName
+        return cell
+    }
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+}
+
+
+
 extension ViewController: UITextFieldDelegate{
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
     textField.resignFirstResponder()
