@@ -15,10 +15,12 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var spentLabel: UILabel!
     var allowance = 0
     var spent = 0
+    var safeAmount = 0
     var budgetData = [MyBudget]()
     let db = Firestore.firestore()
     let user = Auth.auth().currentUser?.email
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -35,7 +37,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         self.db.collection(budgUser).getDocuments { (querySnapshot, error) in
             if let e = error{
                 print("There is issue retrieving data.\(e)")
-            }else{
+            } else {
                 if let snapshotDocuments = querySnapshot?.documents {
                     for doc in snapshotDocuments {
                         let data = doc.data()
@@ -49,10 +51,29 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
                         DispatchQueue.main.async {
                                 self.tableView.reloadData()
                         }
-                        
+                    }
+                    
+                }
+            }
+        }
+        self.db.collection((user)! + " BudgetAllow").getDocuments { (querySnapshot, error) in
+            if let e = error {
+                print("There is issue retrieving data. \(e)")
+            } else {
+                if let snapshotDocuments = querySnapshot?.documents {
+                    for doc in snapshotDocuments {
+                        let data1 = doc.data()
+                        if data1["num"] != nil {
+                            self.allowance = data1["num"] as! Int
+                            self.spent = data1["spent"] as! Int
+                            self.safeAmount = data1["safetospend"] as! Int
+                        }
+                        print(self.allowance); print(self.spent); print(self.safeAmount)
+                        //allowance = (data as NSString).integerValue
                     }
                 }
             }
+            
         }
     }
     
@@ -62,6 +83,12 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     //user input
     @IBAction func allowancePressed(_ sender: Any) {
         allowance = Int (self.allowanceField.text ?? "") ?? 0
+        self.safeAmount = allowance
+        self.safeSpentLabel.text = "$\(self.safeAmount)"
+        print("\(allowance)")
+        if self.user != nil {
+            self.db.collection(self.user! + " BudgetAllow").document("Allowance").setData(["num":allowance])
+        }
         // ?? = nil = 0 so default = 0
 
     }
@@ -75,18 +102,14 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
             addNewBudgetVC.comp = {bProductName, bProductCost in DispatchQueue.main.async{
                 self.navigationController?.popToRootViewController(animated: true)
                 let newBudget = MyBudget(bProductName: bProductName, bProductCost: bProductCost)
-                    //print(newBudget)
                 self.budgetData.append(newBudget)
-                //print(self.budgetData)
                 self.tableView.reloadData()
                 self.spent += (newBudget.bProductCost as NSString).integerValue
-                //print(self.spent)
                     
-                    // add all the things bProductCost
                     
-                let safeAmount = (self.allowance - self.spent)
-                    self.safeSpentLabel.text = "$\(safeAmount)"
-                
+                self.safeAmount = (self.allowance - self.spent)
+                self.safeSpentLabel.text = "$\(self.safeAmount)"
+                self.db.collection(self.user! + " BudgetAllow").document("Allowance").setData(["num":self.allowance,"spent":self.spent,"safetospend":self.safeAmount])
                 self.spentLabel.text = "$\(self.spent)"
             }
             
