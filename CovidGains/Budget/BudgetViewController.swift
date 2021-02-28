@@ -54,6 +54,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
                 let newBudget = MyBudget(bProductName: bProductName, bProductCost: bProductCost)
                     //print(newBudget)
                 self.budgetData.append(newBudget)
+                //print(self.budgetData)
                 self.tableView.reloadData()
             }
         }
@@ -84,6 +85,10 @@ extension BudgetViewController: UITableViewDelegate{
 }
 
 extension BudgetViewController: UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return budgetData.count
     }
@@ -91,12 +96,8 @@ extension BudgetViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellBudget", for: indexPath)
         cell.textLabel?.text = budgetData[indexPath.row].bProductName
+        //cell.detailTextLabel
         return cell
-    }
-    
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
     }
 
 }
