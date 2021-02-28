@@ -65,10 +65,16 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
                         let data1 = doc.data()
                         if data1["num"] != nil {
                             self.allowance = data1["num"] as! Int
-                            self.spent = data1["spent"] as! Int
-                            self.safeAmount = data1["safetospend"] as! Int
+                            if data1["spent"] != nil {
+                                self.spent = data1["spent"] as! Int
+                            }
+                            if data1["safetospend"] != nil {
+                                self.safeAmount = data1["safetospend"] as! Int
+                            }
                         }
                         print(self.allowance); print(self.spent); print(self.safeAmount)
+                        self.safeSpentLabel.text = "$\(self.safeAmount)"
+                        self.spentLabel.text = "$\(self.spent)"
                         //allowance = (data as NSString).integerValue
                     }
                 }
@@ -83,8 +89,8 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     //user input
     @IBAction func allowancePressed(_ sender: Any) {
         allowance = Int (self.allowanceField.text ?? "") ?? 0
-        self.safeAmount = allowance
         self.safeSpentLabel.text = "$\(self.safeAmount)"
+        self.spentLabel.text = "$\(self.spent)"
         print("\(allowance)")
         if self.user != nil {
             self.db.collection(self.user! + " BudgetAllow").document("Allowance").setData(["num":allowance])
@@ -104,9 +110,8 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
                 let newBudget = MyBudget(bProductName: bProductName, bProductCost: bProductCost)
                 self.budgetData.append(newBudget)
                 self.tableView.reloadData()
+                
                 self.spent += (newBudget.bProductCost as NSString).integerValue
-                    
-                    
                 self.safeAmount = (self.allowance - self.spent)
                 self.safeSpentLabel.text = "$\(self.safeAmount)"
                 self.db.collection(self.user! + " BudgetAllow").document("Allowance").setData(["num":self.allowance,"spent":self.spent,"safetospend":self.safeAmount])
