@@ -14,7 +14,8 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var allowanceField: UITextField!
     @IBOutlet weak var safeSpentLabel: UILabel!
     @IBOutlet weak var spentLabel: UILabel!
-    
+    var allowance = 0
+    var spent = 0
     var budgetData = [MyBudget]()
     
     override func viewDidLoad() {
@@ -25,32 +26,25 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         allowanceField.delegate = self
         allowanceField.clearButtonMode = .always
         allowanceField.clearButtonMode = .whileEditing
+        
     }
     
     //allowance - spent = safe to spend
     //transactions = + = adds to the list of items
     //user input
     @IBAction func allowancePressed(_ sender: Any) {
-        
+        allowance = Int (self.allowanceField.text ?? "") ?? 0
         // ?? = nil = 0 so default = 0
-        let allowance = Int (self.allowanceField.text ?? "") ?? 0
-        let spent = 90 // add all the things bProductCost
-        
-        let safeAmount = (allowance - spent)
-        self.safeSpentLabel.text = "$\(safeAmount)"
-        
-        //let total = allowance + tipAmount
-        //store values of all added to the llist
-        //self.spentLabel.text = "$\(total)"
+
     }
     
     @IBAction func pressedAdd(){
-        guard let addNewBudget = storyboard?.instantiateViewController(identifier: "addNewBudget") as? AddNewBudgetViewController else{
+        guard let addNewBudgetVC = storyboard?.instantiateViewController(identifier: "addNewBudget") as? AddNewBudgetViewController else{
             return
         }
-        addNewBudget.title = "New Budget"
-        addNewBudget.navigationItem.largeTitleDisplayMode = .never
-        addNewBudget.comp = {bProductName, bProductCost in
+        addNewBudgetVC.title = "New Budget"
+        addNewBudgetVC.navigationItem.largeTitleDisplayMode = .never
+        addNewBudgetVC.comp = {bProductName, bProductCost in
             DispatchQueue.main.async{
                 self.navigationController?.popToRootViewController(animated: true)
                 let newBudget = MyBudget(bProductName: bProductName, bProductCost: bProductCost)
@@ -58,9 +52,21 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
                 self.budgetData.append(newBudget)
                 //print(self.budgetData)
                 self.tableView.reloadData()
+                self.spent += (newBudget.bProductCost as NSString).integerValue
+                //print(self.spent)
+                    
+                    // add all the things bProductCost
+                    
+                let safeAmount = (self.allowance - self.spent)
+                    self.safeSpentLabel.text = "$\(safeAmount)"
+                
+                self.spentLabel.text = "$\(self.spent)"
+                
+                 
             }
         }
-        navigationController?.pushViewController(addNewBudget, animated: true)
+        navigationController?.pushViewController(addNewBudgetVC, animated: true)
+        
 
     }
 
