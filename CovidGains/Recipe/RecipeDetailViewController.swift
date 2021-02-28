@@ -15,17 +15,16 @@ class RecipeDetailViewController: UIViewController {
     var recipeIngredients = ""
     var recipeDetails = ""
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    //@IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var recipeTitle: UILabel!
-    
-//    @IBOutlet var Ingredients: UIScrollView!
-//
-//    @IBOutlet var Directions: UIScrollView!
+
+    @IBOutlet weak var Ingredients: UILabel!
+    @IBOutlet weak var Directions: UILabel!
     
     //@IBOutlet weak var Ingredients: UITextView!
    // @IBOutlet weak var Directions: UITextView!
     
-    @IBOutlet var Ingredients: UILabel!
-    @IBOutlet var Directions: UILabel!
     
     @IBOutlet var imageDownloaded: UIImageView!
     
@@ -42,6 +41,8 @@ class RecipeDetailViewController: UIViewController {
         
         let ref = storageRef.child(recipName + ".jpg")
         imageDownloaded.sd_setImage(with: ref)
+        
+        scrollView.contentLayoutGuide.bottomAnchor.constraint(equalTo: Directions.bottomAnchor).isActive = true
 
         // Do any additional setup after loading the view.
     }
