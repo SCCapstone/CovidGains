@@ -15,10 +15,17 @@ class RecipeDetailViewController: UIViewController {
     var recipeIngredients = ""
     var recipeDetails = ""
     
-    
     @IBOutlet weak var recipeTitle: UILabel!
-    @IBOutlet weak var Ingredients: UITextView!
-    @IBOutlet weak var Directions: UITextView!
+    
+//    @IBOutlet var Ingredients: UIScrollView!
+//
+//    @IBOutlet var Directions: UIScrollView!
+    
+    //@IBOutlet weak var Ingredients: UITextView!
+   // @IBOutlet weak var Directions: UITextView!
+    
+    @IBOutlet var Ingredients: UILabel!
+    @IBOutlet var Directions: UILabel!
     
     @IBOutlet var imageDownloaded: UIImageView!
     

@@ -23,6 +23,7 @@ class AddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         
         products = ["apple", "apricots", "avocado", "banana", "blackberries", "blackcurrant", "blueberries", "breadfruit", "cantaloupe", "carambola", "cherimoya", "cherries", "clementine", "coconut", "cranberries", "custard-apple", "date fruit", "durian", "elderberries", "figs", "gooseberries", "grapefruit", "grapes", "guava", "honeydew melon", "jackfruit", "java-plum", "jujube fruit", "kiwifruit", "kumquat", "lemon", "longan", "loquat", "lychee", "mandarin", "mango", "mangosteen", "mulberries", "nectarine", "olives", "orange", "papaya", "passion fruit", "peaches", "pear", "persimmon", "pitaya", "dragonfruit", "pineapple", "plantain", "plums", "pomegranate", "prickly pear", "prunes", "pummelo", "quince", "raspberies", "rhubarb", "rose-apple", "sapodilla", "tamarind", "watermelon", "amaranth leaves", "artichoke", "arugula", "asparagus", "bamboo shoots", "green beans", "beets", "belgian endive", "bitter melon", "bok choy", "broadbeans", "broccoli", "broccoli rabe", "russel sprouts", "green cabbage", "red cabbage", "carrot", "cassava", "cauliflower", "celeriac", "celery root", "celery", "chayote", "chicory", "collards", "corn", "crookneck", "cucumber", "daikon", "dandelion greens", "edamame", "eggplant", "fennel", "fiddleheads", "ginger root", "horseradish", "jicama", "kale", "kohlrabi", "leeks", "iceberg lettuce", "lettuce", "romaine lettuce", "mushrooms", "mustard greens", "okra", "red onion", "onions", "parsnip", "green peas", "green pepper", "red pepper", "red potato", "white potato", "yellow potato", "pumpkin", "radicchio", "radishes", "rutabaga", "oysterplant", "shallots", "snow peas", "sorrel", "spaghetti squash", "spinach", "butternut squash", "sugar snap peas", "sweet potato", "swiss chard", "tomatillo", "tomato", "turnip", "watercress", "yam root", "zucchini"]
         
@@ -66,6 +67,10 @@ class AddViewController: UIViewController {
 
             }
         
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
 }

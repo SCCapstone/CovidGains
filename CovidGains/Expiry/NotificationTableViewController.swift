@@ -19,7 +19,7 @@ class NotificationTableViewController: UITableViewController {
         //calls to load data from firebase
         loadData()
     }
-    
+
     
     func loadData(){
         self.db.collection((user)!).getDocuments { (querySnapshot, error) in
