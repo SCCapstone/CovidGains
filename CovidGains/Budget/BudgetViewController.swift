@@ -19,8 +19,10 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         
-        self.allowanceField.delegate = self
+        allowanceField.delegate = self
         allowanceField.clearButtonMode = .always
         allowanceField.clearButtonMode = .whileEditing
     }
@@ -32,7 +34,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         
         // ?? = nil = 0 so default = 0
         let allowance = Int (self.allowanceField.text ?? "") ?? 0
-        let spent = 90
+        let spent = 90 // add all the things bProductCost
         
         let safeAmount = (allowance - spent)
         self.safeSpentLabel.text = "$\(safeAmount)"
@@ -68,7 +70,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
-    //return funciton in keyboard
+    //return function in keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -96,7 +98,7 @@ extension BudgetViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellBudget", for: indexPath)
         cell.textLabel?.text = budgetData[indexPath.row].bProductName
-        //cell.detailTextLabel
+        cell.detailTextLabel?.text = budgetData[indexPath.row].bProductCost
         return cell
     }
 
