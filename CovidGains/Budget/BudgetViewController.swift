@@ -32,21 +32,21 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     }
     
     func loadB(){
-        let budgUser = (user)! + " Budget"
-        print(budgUser)
-        self.db.collection(budgUser).getDocuments { (querySnapshot, error) in
+        self.db.collection(user!).getDocuments { (querySnapshot, error) in
             if let e = error{
                 print("There is issue retrieving data.\(e)")
             } else {
                 if let snapshotDocuments = querySnapshot?.documents {
                     for doc in snapshotDocuments {
+                        
                         let data = doc.data()
-                        let docID = doc.documentID
                         
-                        //let timeStamp =
-                        
-                        let new = MyBudget(bProductName: docID, bProductCost: data["Price"] as! String)
-                        self.budgetData.append(new)
+                        if ((data["product"] != nil) && data["price"] != nil) {
+                         
+                            let new = MyBudget(bProductName: data["product"] as! String, bProductCost: data["price"] as! String)
+                            self.budgetData.append(new)
+                            
+                        }
                         
                         DispatchQueue.main.async {
                                 self.tableView.reloadData()
@@ -56,15 +56,15 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         }
-        self.db.collection((user)! + " BudgetAllow").getDocuments { (querySnapshot, error) in
+        self.db.collection(user!).getDocuments { (querySnapshot, error) in
             if let e = error {
                 print("There is issue retrieving data. \(e)")
             } else {
                 if let snapshotDocuments = querySnapshot?.documents {
                     for doc in snapshotDocuments {
                         let data1 = doc.data()
-                        if data1["num"] != nil {
-                            self.allowance = data1["num"] as! Int
+                        if data1["allowance"] != nil {
+                            self.allowance = data1["allowance"] as! Int
                             self.safeAmount = self.allowance
                             if data1["spent"] != nil {
                                 self.spent = data1["spent"] as! Int
@@ -84,6 +84,16 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // slide to delete
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            self.db.collection(self.user!).document(budgetData[indexPath.row].bProductName).delete()
+            self.budgetData.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+
+    }
     
     //allowance - spent = safe to spend
     //transactions = + = adds to the list of items
@@ -94,7 +104,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         self.spentLabel.text = "$\(self.spent)"
         print("\(allowance)")
         if self.user != nil {
-            self.db.collection(self.user! + " BudgetAllow").document("Allowance").setData(["num":allowance])
+            self.db.collection(self.user!).document("BudgetAllow").setData(["allowance":allowance])
         }
         // ?? = nil = 0 so default = 0
 
@@ -115,12 +125,12 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
                 self.spent += (newBudget.bProductCost as NSString).integerValue
                 self.safeAmount = (self.allowance - self.spent)
                 self.safeSpentLabel.text = "$\(self.safeAmount)"
-                self.db.collection(self.user! + " BudgetAllow").document("Allowance").setData(["num":self.allowance,"spent":self.spent,"safetospend":self.safeAmount])
+                self.db.collection(self.user!).document("BudgetAllow").setData(["allowance":self.allowance,"spent":self.spent,"safetospend":self.safeAmount])
                 self.spentLabel.text = "$\(self.spent)"
             }
             
             if self.user != nil {
-                self.db.collection(self.user! + " Budget").document(bProductName).setData(["Price": bProductCost]) { (error) in
+                self.db.collection(self.user!).document("Budget").collection(bProductName).document("data").setData(["product": bProductName, "price": bProductCost]) { (error) in
                     if let e = error {
                         print("there was an issue saving data to firestore, \(e)")
                     } else {
