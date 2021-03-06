@@ -130,12 +130,12 @@ class NotificationTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = productData[indexPath.row].productName
         
-//        let date = productData[indexPath.row].date
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "MM, dd, YYYY at hh:mm a"
-//        cell.detailTextLabel?.text = formatter.string(from: date)
+        let date = productData[indexPath.row].date
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM, dd, YYYY at hh:mm a"
+        cell.detailTextLabel?.text = formatter.string(from: date)
         
-        cell.detailTextLabel?.text = productData[indexPath.row].productDetail
+        //cell.detailTextLabel?.text = formatter.string(from: date)
 
         return cell
     }

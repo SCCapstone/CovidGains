@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Firebase
 
 var app: XCUIApplication!
 
