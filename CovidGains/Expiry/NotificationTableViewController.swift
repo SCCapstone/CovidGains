@@ -1,7 +1,7 @@
-//
 //  NotificationTableViewController.swift
 //  Created by CAREY, ROBERT T on 10/9/20.
 //  Copyright © 2020 CAREY, ROBERT T. All rights reserved.
+
 import UIKit
 import UserNotifications
 import Firebase
