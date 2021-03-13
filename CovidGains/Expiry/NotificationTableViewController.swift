@@ -15,11 +15,11 @@ class NotificationTableViewController: UITableViewController {
         super.viewDidLoad()
 
         //calls to load data from firebase
-        loadData()
+//        loadData()
     }
     
     func loadData(){
-        self.db.collection((user)!).getDocuments { (querySnapshot, error) in
+        self.db.collection((user)!).document("Expiry").collection("expiryList").getDocuments { (querySnapshot, error) in
             if let e = error{
                 print("There is issue retrieving data.\(e)")
             }else{
@@ -27,18 +27,18 @@ class NotificationTableViewController: UITableViewController {
                     for doc in snapshotDocuments {
                         let data = doc.data()
                         let docID = doc.documentID
-                        
+
                         //let timeStamp =
                         let stamp = data["Date"] as? Timestamp
                         let date = stamp?.dateValue()
-                        
+
                         let new = MyReminder(productName: docID, productDetail: data["Quantity"] as! String, date: date! , identifier: "id_\(docID)")
                         self.productData.append(new)
-                        
+
                         DispatchQueue.main.async {
                                 self.tableView.reloadData()
                         }
-                        
+
                     }
                 }
             }
@@ -85,7 +85,7 @@ class NotificationTableViewController: UITableViewController {
            
             //if not empty then save to firebase
             if self.user != nil{
-                self.db.collection(self.user!).document(productName).setData(["Date":date,"Quantity":productDetail]) { (error) in
+                self.db.collection(self.user!).document("Expiry").collection(productName).document("data").setData(["Date":date,"Quantity":productDetail]) { (error) in
                     if let e = error {
                         print("there was an issue saving data to firestore, \(e)")
                     } else {

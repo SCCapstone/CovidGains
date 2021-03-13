@@ -32,7 +32,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     }
     
     func loadB(){
-        self.db.collection(user!).getDocuments { (querySnapshot, error) in
+        self.db.collection(user!).document("Budget").collection("budgetItems").getDocuments { (querySnapshot, error) in
             if let e = error{
                 print("There is issue retrieving data.\(e)")
             } else {
@@ -56,31 +56,28 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         }
-        self.db.collection(user!).getDocuments { (querySnapshot, error) in
-            if let e = error {
-                print("There is issue retrieving data. \(e)")
-            } else {
-                if let snapshotDocuments = querySnapshot?.documents {
-                    for doc in snapshotDocuments {
-                        let data1 = doc.data()
-                        if data1["allowance"] != nil {
-                            self.allowance = data1["allowance"] as! Int
-                            self.safeAmount = self.allowance
-                            if data1["spent"] != nil {
-                                self.spent = data1["spent"] as! Int
-                            }
-                            if data1["safetospend"] != nil {
-                                self.safeAmount = data1["safetospend"] as! Int
-                            }
-                        }
-                        print(self.allowance); print(self.spent); print(self.safeAmount)
-                        self.safeSpentLabel.text = "$\(self.safeAmount)"
-                        self.spentLabel.text = "$\(self.spent)"
-                        //allowance = (data as NSString).integerValue
+        
+        let docRef = db.collection(user!).document("BudgetAllow")
+
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let data = document.data()
+                if data?["allowance"] != nil {
+                    self.allowance = data?["allowance"] as! Int
+                    self.safeAmount = self.allowance
+                    if data?["spent"] != nil {
+                        self.spent = data?["spent"] as! Int
+                    }
+                    if data?["safetospend"] != nil {
+                        self.safeAmount = data?["safetospend"] as! Int
                     }
                 }
+                print(self.allowance); print(self.spent); print(self.safeAmount)
+                self.safeSpentLabel.text = "$\(self.safeAmount)"
+                self.spentLabel.text = "$\(self.spent)"
+            } else {
+                print("Document does not exist")
             }
-            
         }
     }
     
@@ -130,7 +127,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
             }
             
             if self.user != nil {
-                self.db.collection(self.user!).document("Budget").collection(bProductName).document("data").setData(["product": bProductName, "price": bProductCost]) { (error) in
+                self.db.collection(self.user!).document("Budget").collection("budgetList").document(bProductName).setData(["name": bProductName, "price": bProductCost]) { (error) in
                     if let e = error {
                         print("there was an issue saving data to firestore, \(e)")
                     } else {
