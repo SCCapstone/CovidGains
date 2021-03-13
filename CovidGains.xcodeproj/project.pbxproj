@@ -10,20 +10,21 @@
 		370AADEDEBF4B3FE2F7DA27A /* Pods_CovidGains.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBB4CF8CE13FA0D31D30D5E6 /* Pods_CovidGains.framework */; };
 		3F0173662579E808006CC316 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0173652579E808006CC316 /* RegisterViewController.swift */; };
 		3F0173692579FD07006CC316 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0173682579FD07006CC316 /* LoginViewController.swift */; };
+		3FAAB7E325D74FAA0050193F /* RecipeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAAB7E225D74FAA0050193F /* RecipeTableView.swift */; };
+		3FAAB7FC25D851970050193F /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAAB7FB25D851970050193F /* RecipeDetailViewController.swift */; };
 		3FC8C5C5257AEA740006A932 /* BMIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8C5C4257AEA740006A932 /* BMIViewController.swift */; };
 		3FC8C5CA257B125A0006A932 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8C5C9257B12590006A932 /* SecondViewController.swift */; };
 		4643CA5B25B8FDFF00A29078 /* CovidGainsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4643CA5A25B8FDFF00A29078 /* CovidGainsUITests.swift */; };
-		649C6B2D25780B3B00F9B7C1 /* DataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649C6B2C25780B3B00F9B7C1 /* DataCollectionViewCell.swift */; };
-		64CDCDFE25C38E41005E552B /* CovidGainsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CDCDFD25C38E41005E552B /* CovidGainsTests.swift */; };
+		64CE591825C5D43E00E3CEC9 /* CovidGainsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE591725C5D43E00E3CEC9 /* CovidGainsTests.swift */; };
+		64CE592425C5EF1000E3CEC9 /* TestNotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE592325C5EF1000E3CEC9 /* TestNotesTableViewController.swift */; };
 		D80CBB6325799EDE00841B25 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D80CBB6225799EDE00841B25 /* Podfile */; };
 		D8292891258A716400D75DBA /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8292890258A716400D75DBA /* NotificationTableViewController.swift */; };
 		D8292893258A743000D75DBA /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8292892258A743000D75DBA /* AddViewController.swift */; };
 		D8292895258AD43500D75DBA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8292894258AD43500D75DBA /* DetailViewController.swift */; };
-		D87BD88A2545F3520078692C /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87BD8892545F3520078692C /* RecipeViewController.swift */; };
+		D88D259325EB424E0020A30A /* AddNewBudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D259225EB424E0020A30A /* AddNewBudgetViewController.swift */; };
 		D89062102579ADC40062A2DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D890620F2579ADC40062A2DC /* GoogleService-Info.plist */; };
 		D893521B2579620E005F2F4C /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D893521A2579620E005F2F4C /* NotesTableViewController.swift */; };
 		D893521D2579688B005F2F4C /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D893521C2579688B005F2F4C /* EditNoteViewController.swift */; };
-		D8A30DBC25785C830011EDB7 /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A30DBB25785C830011EDB7 /* DetailedViewController.swift */; };
 		D8CCC893250ED1D10005C4B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CCC892250ED1D10005C4B3 /* AppDelegate.swift */; };
 		D8CCC895250ED1D10005C4B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CCC894250ED1D10005C4B3 /* SceneDelegate.swift */; };
 		D8CCC897250ED1D10005C4B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CCC896250ED1D10005C4B3 /* ViewController.swift */; };
@@ -41,7 +42,7 @@
 			remoteGlobalIDString = D8CCC88E250ED1D10005C4B3;
 			remoteInfo = CovidGains;
 		};
-		64CDCE0025C38E41005E552B /* PBXContainerItemProxy */ = {
+		64CE591A25C5D43E00E3CEC9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D8CCC887250ED1D10005C4B3 /* Project object */;
 			proxyType = 1;
@@ -53,26 +54,28 @@
 /* Begin PBXFileReference section */
 		3F0173652579E808006CC316 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3F0173682579FD07006CC316 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3FAAB7E225D74FAA0050193F /* RecipeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableView.swift; sourceTree = "<group>"; };
+		3FAAB7FB25D851970050193F /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		3FC8C5C4257AEA740006A932 /* BMIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIViewController.swift; sourceTree = "<group>"; };
 		3FC8C5C9257B12590006A932 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		4643CA5825B8FDFF00A29078 /* CovidGainsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CovidGainsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4643CA5A25B8FDFF00A29078 /* CovidGainsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidGainsUITests.swift; sourceTree = "<group>"; };
 		4643CA5C25B8FDFF00A29078 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		649C6B2C25780B3B00F9B7C1 /* DataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionViewCell.swift; sourceTree = "<group>"; };
-		64CDCDFB25C38E41005E552B /* CovidGainsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CovidGainsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		64CDCDFD25C38E41005E552B /* CovidGainsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidGainsTests.swift; sourceTree = "<group>"; };
-		64CDCDFF25C38E41005E552B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64CE591025C5D32200E3CEC9 /* CovidGains copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "CovidGains copy-Info.plist"; path = "/Users/rtcarey/Documents/CovidGains/CovidGains copy-Info.plist"; sourceTree = "<absolute>"; };
+		64CE591525C5D43E00E3CEC9 /* CovidGainsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CovidGainsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		64CE591725C5D43E00E3CEC9 /* CovidGainsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidGainsTests.swift; sourceTree = "<group>"; };
+		64CE591925C5D43E00E3CEC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64CE592325C5EF1000E3CEC9 /* TestNotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNotesTableViewController.swift; sourceTree = "<group>"; };
 		7EA0B37E93DC36D2EADDC86C /* Pods-CovidGains.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidGains.debug.xcconfig"; path = "Target Support Files/Pods-CovidGains/Pods-CovidGains.debug.xcconfig"; sourceTree = "<group>"; };
 		D29E1844A857054081D81DAE /* Pods-CovidGains.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CovidGains.release.xcconfig"; path = "Target Support Files/Pods-CovidGains/Pods-CovidGains.release.xcconfig"; sourceTree = "<group>"; };
-		D80CBB6225799EDE00841B25 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		D80CBB6225799EDE00841B25 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D8292890258A716400D75DBA /* NotificationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
 		D8292892258A743000D75DBA /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		D8292894258AD43500D75DBA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		D87BD8892545F3520078692C /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		D88D259225EB424E0020A30A /* AddNewBudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewBudgetViewController.swift; sourceTree = "<group>"; };
 		D890620F2579ADC40062A2DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D893521A2579620E005F2F4C /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
 		D893521C2579688B005F2F4C /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
-		D8A30DBB25785C830011EDB7 /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 		D8CCC88F250ED1D10005C4B3 /* CovidGains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidGains.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CCC892250ED1D10005C4B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8CCC894250ED1D10005C4B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,7 +96,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		64CDCDF825C38E41005E552B /* Frameworks */ = {
+		64CE591225C5D43E00E3CEC9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -158,11 +161,12 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
-		64CDCDFC25C38E41005E552B /* CovidGainsTests */ = {
+		64CE591625C5D43E00E3CEC9 /* CovidGainsTests */ = {
 			isa = PBXGroup;
 			children = (
-				64CDCDFD25C38E41005E552B /* CovidGainsTests.swift */,
-				64CDCDFF25C38E41005E552B /* Info.plist */,
+				64CE591725C5D43E00E3CEC9 /* CovidGainsTests.swift */,
+				64CE592325C5EF1000E3CEC9 /* TestNotesTableViewController.swift */,
+				64CE591925C5D43E00E3CEC9 /* Info.plist */,
 			);
 			path = CovidGainsTests;
 			sourceTree = "<group>";
@@ -178,9 +182,8 @@
 		D8A30DB125776DCA0011EDB7 /* Recipe */ = {
 			isa = PBXGroup;
 			children = (
-				649C6B2C25780B3B00F9B7C1 /* DataCollectionViewCell.swift */,
-				D8A30DBB25785C830011EDB7 /* DetailedViewController.swift */,
-				D87BD8892545F3520078692C /* RecipeViewController.swift */,
+				3FAAB7E225D74FAA0050193F /* RecipeTableView.swift */,
+				3FAAB7FB25D851970050193F /* RecipeDetailViewController.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -209,11 +212,12 @@
 			children = (
 				D8CCC891250ED1D10005C4B3 /* CovidGains */,
 				4643CA5925B8FDFF00A29078 /* CovidGainsUITests */,
-				64CDCDFC25C38E41005E552B /* CovidGainsTests */,
+				64CE591625C5D43E00E3CEC9 /* CovidGainsTests */,
 				3C8735CF74233EDC8E9B230D /* Frameworks */,
 				FF142B31233B71BEF1DC3474 /* Pods */,
 				D8CCC890250ED1D10005C4B3 /* Products */,
 				D80CBB6225799EDE00841B25 /* Podfile */,
+				64CE591025C5D32200E3CEC9 /* CovidGains copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -222,7 +226,7 @@
 			children = (
 				D8CCC88F250ED1D10005C4B3 /* CovidGains.app */,
 				4643CA5825B8FDFF00A29078 /* CovidGainsUITests.xctest */,
-				64CDCDFB25C38E41005E552B /* CovidGainsTests.xctest */,
+				64CE591525C5D43E00E3CEC9 /* CovidGainsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -235,7 +239,7 @@
 				D8A30DB325776DE50011EDB7 /* Notes */,
 				3FC8C5B9257AE0F70006A932 /* BMI */,
 				3F0173642579E7CE006CC316 /* userAuthentication */,
-				E1C8D7C8257AA27600F6833C /* WeeklyBudget */,
+				E1C8D7C8257AA27600F6833C /* Budget */,
 				64CDCDE825C37D48005E552B /* Other */,
 				D8A30D79257722260011EDB7 /* coreData */,
 				D8CCC89B250ED1D30005C4B3 /* Assets.xcassets */,
@@ -244,12 +248,13 @@
 			path = CovidGains;
 			sourceTree = "<group>";
 		};
-		E1C8D7C8257AA27600F6833C /* WeeklyBudget */ = {
+		E1C8D7C8257AA27600F6833C /* Budget */ = {
 			isa = PBXGroup;
 			children = (
 				E1C8D7C9257AA28800F6833C /* BudgetViewController.swift */,
+				D88D259225EB424E0020A30A /* AddNewBudgetViewController.swift */,
 			);
-			path = WeeklyBudget;
+			path = Budget;
 			sourceTree = "<group>";
 		};
 		FF142B31233B71BEF1DC3474 /* Pods */ = {
@@ -282,22 +287,22 @@
 			productReference = 4643CA5825B8FDFF00A29078 /* CovidGainsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		64CDCDFA25C38E41005E552B /* CovidGainsTests */ = {
+		64CE591425C5D43E00E3CEC9 /* CovidGainsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 64CDCE0225C38E41005E552B /* Build configuration list for PBXNativeTarget "CovidGainsTests" */;
+			buildConfigurationList = 64CE591C25C5D43E00E3CEC9 /* Build configuration list for PBXNativeTarget "CovidGainsTests" */;
 			buildPhases = (
-				64CDCDF725C38E41005E552B /* Sources */,
-				64CDCDF825C38E41005E552B /* Frameworks */,
-				64CDCDF925C38E41005E552B /* Resources */,
+				64CE591125C5D43E00E3CEC9 /* Sources */,
+				64CE591225C5D43E00E3CEC9 /* Frameworks */,
+				64CE591325C5D43E00E3CEC9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				64CDCE0125C38E41005E552B /* PBXTargetDependency */,
+				64CE591B25C5D43E00E3CEC9 /* PBXTargetDependency */,
 			);
 			name = CovidGainsTests;
 			productName = CovidGainsTests;
-			productReference = 64CDCDFB25C38E41005E552B /* CovidGainsTests.xctest */;
+			productReference = 64CE591525C5D43E00E3CEC9 /* CovidGainsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		D8CCC88E250ED1D10005C4B3 /* CovidGains */ = {
@@ -332,7 +337,7 @@
 						CreatedOnToolsVersion = 11.7;
 						TestTargetID = D8CCC88E250ED1D10005C4B3;
 					};
-					64CDCDFA25C38E41005E552B = {
+					64CE591425C5D43E00E3CEC9 = {
 						CreatedOnToolsVersion = 11.7;
 						TestTargetID = D8CCC88E250ED1D10005C4B3;
 					};
@@ -356,7 +361,7 @@
 			targets = (
 				D8CCC88E250ED1D10005C4B3 /* CovidGains */,
 				4643CA5725B8FDFF00A29078 /* CovidGainsUITests */,
-				64CDCDFA25C38E41005E552B /* CovidGainsTests */,
+				64CE591425C5D43E00E3CEC9 /* CovidGainsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -369,7 +374,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		64CDCDF925C38E41005E552B /* Resources */ = {
+		64CE591325C5D43E00E3CEC9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -440,11 +445,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		64CDCDF725C38E41005E552B /* Sources */ = {
+		64CE591125C5D43E00E3CEC9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64CDCDFE25C38E41005E552B /* CovidGainsTests.swift in Sources */,
+				64CE591825C5D43E00E3CEC9 /* CovidGainsTests.swift in Sources */,
+				64CE592425C5EF1000E3CEC9 /* TestNotesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,17 +460,17 @@
 			files = (
 				D8292891258A716400D75DBA /* NotificationTableViewController.swift in Sources */,
 				3F0173692579FD07006CC316 /* LoginViewController.swift in Sources */,
+				3FAAB7E325D74FAA0050193F /* RecipeTableView.swift in Sources */,
 				3FC8C5CA257B125A0006A932 /* SecondViewController.swift in Sources */,
-				D8A30DBC25785C830011EDB7 /* DetailedViewController.swift in Sources */,
 				D893521B2579620E005F2F4C /* NotesTableViewController.swift in Sources */,
 				D8CCC897250ED1D10005C4B3 /* ViewController.swift in Sources */,
 				D8CCC893250ED1D10005C4B3 /* AppDelegate.swift in Sources */,
 				D8292895258AD43500D75DBA /* DetailViewController.swift in Sources */,
-				D87BD88A2545F3520078692C /* RecipeViewController.swift in Sources */,
+				D88D259325EB424E0020A30A /* AddNewBudgetViewController.swift in Sources */,
 				D8292893258A743000D75DBA /* AddViewController.swift in Sources */,
 				E1C8D7CA257AA28800F6833C /* BudgetViewController.swift in Sources */,
+				3FAAB7FC25D851970050193F /* RecipeDetailViewController.swift in Sources */,
 				3FC8C5C5257AEA740006A932 /* BMIViewController.swift in Sources */,
-				649C6B2D25780B3B00F9B7C1 /* DataCollectionViewCell.swift in Sources */,
 				D8CCC895250ED1D10005C4B3 /* SceneDelegate.swift in Sources */,
 				3F0173662579E808006CC316 /* RegisterViewController.swift in Sources */,
 				D893521D2579688B005F2F4C /* EditNoteViewController.swift in Sources */,
@@ -480,10 +486,10 @@
 			target = D8CCC88E250ED1D10005C4B3 /* CovidGains */;
 			targetProxy = 4643CA5D25B8FDFF00A29078 /* PBXContainerItemProxy */;
 		};
-		64CDCE0125C38E41005E552B /* PBXTargetDependency */ = {
+		64CE591B25C5D43E00E3CEC9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D8CCC88E250ED1D10005C4B3 /* CovidGains */;
-			targetProxy = 64CDCE0025C38E41005E552B /* PBXContainerItemProxy */;
+			targetProxy = 64CE591A25C5D43E00E3CEC9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -535,7 +541,7 @@
 			};
 			name = Release;
 		};
-		64CDCE0325C38E41005E552B /* Debug */ = {
+		64CE591D25C5D43E00E3CEC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -559,7 +565,7 @@
 			};
 			name = Debug;
 		};
-		64CDCE0425C38E41005E552B /* Release */ = {
+		64CE591E25C5D43E00E3CEC9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -709,6 +715,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.covidgains.CovidGains;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -728,6 +735,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.covidgains.CovidGains;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -747,11 +755,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		64CDCE0225C38E41005E552B /* Build configuration list for PBXNativeTarget "CovidGainsTests" */ = {
+		64CE591C25C5D43E00E3CEC9 /* Build configuration list for PBXNativeTarget "CovidGainsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				64CDCE0325C38E41005E552B /* Debug */,
-				64CDCE0425C38E41005E552B /* Release */,
+				64CE591D25C5D43E00E3CEC9 /* Debug */,
+				64CE591E25C5D43E00E3CEC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

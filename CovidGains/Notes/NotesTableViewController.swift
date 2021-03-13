@@ -144,6 +144,8 @@ class NotesTableViewController: UITableViewController, EditNoteDelegate {
             try Auth.auth().signOut()
             //navigationController?.popToRootViewController(animated: true)
                     sceneDelegate.window?.rootViewController = LogOut
+                    UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+                    UserDefaults.standard.synchronize()
 
         } catch let signOutError as NSError {
           print ("Error signing out: %@", signOutError)

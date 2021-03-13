@@ -1,8 +1,6 @@
-//
 //  NotificationTableViewController.swift
 //  Created by CAREY, ROBERT T on 10/9/20.
 //  Copyright © 2020 CAREY, ROBERT T. All rights reserved.
-//
 
 import UIKit
 import UserNotifications
@@ -15,14 +13,13 @@ class NotificationTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         //calls to load data from firebase
         loadData()
     }
     
-    
     func loadData(){
-        self.db.collection(user!).getDocuments { (querySnapshot, error) in
+        self.db.collection((user)!).getDocuments { (querySnapshot, error) in
             if let e = error{
                 print("There is issue retrieving data.\(e)")
             }else{
@@ -34,11 +31,6 @@ class NotificationTableViewController: UITableViewController {
                         //let timeStamp =
                         let stamp = data["Date"] as? Timestamp
                         let date = stamp?.dateValue()
-                        
-                        //self.products.append(docID) //product names
-                        
-                        //print(gotDate) //date
-                        //print(data["Quantity"]) //Quantity
                         
                         let new = MyReminder(productName: docID, productDetail: data["Quantity"] as! String, date: date! , identifier: "id_\(docID)")
                         self.productData.append(new)
@@ -65,6 +57,7 @@ class NotificationTableViewController: UITableViewController {
         addVC.navigationItem.largeTitleDisplayMode = .never
         addVC.completion = { productName, productDetail, date in
             DispatchQueue.main.async {
+                
                 self.navigationController?.popViewController(animated: true)
                 let new = MyReminder(productName: productName, productDetail: productDetail, date: date, identifier: "id_\(productName )")
                 self.productData.append(new)
@@ -89,10 +82,6 @@ class NotificationTableViewController: UITableViewController {
             }
             
             //stores the data to firebase
-             //loggined user
-            print("logged in user",self.user!)
-            
-
            
             //if not empty then save to firebase
             if self.user != nil{
@@ -122,41 +111,7 @@ class NotificationTableViewController: UITableViewController {
 
     }
     
-    
-//    @IBAction func didTapTest(_ sender: Any) {
-//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: {success, error in
-//            if success{
-//                self.scheduleTest()
-//                
-//            }
-//            else if error != nil{
-//                print("Error")
-//                
-//            }
-//        })
-//    }
-//    
-//    func scheduleTest() {
-//        //request
-//        let content = UNMutableNotificationContent()
-//        
-//        //content title, body and sound
-//        content.title = "Hello!"
-//        content.sound = .default
-//        content.body = "TEST Expires soon!"
-//        
-//        //tigger with date
-//        let targetDate = Date().addingTimeInterval(10)
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: targetDate), repeats: false)
-//        
-//        let request = UNNotificationRequest(identifier: "Some_id", content: content, trigger: trigger)
-//        UNUserNotificationCenter.current().add(request, withCompletionHandler: {error in
-//            if error != nil{
-//                print("Gone wrong...")
-//            }
-//        })
-//        
-//    }
+ 
     
     
     // MARK: - Table view data source
@@ -175,12 +130,12 @@ class NotificationTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = productData[indexPath.row].productName
         
-//        let date = productData[indexPath.row].date
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "MM, dd, YYYY at hh:mm a"
-//        cell.detailTextLabel?.text = formatter.string(from: date)
+        let date = productData[indexPath.row].date
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM, dd, YYYY at hh:mm a"
+        cell.detailTextLabel?.text = formatter.string(from: date)
         
-        cell.detailTextLabel?.text = productData[indexPath.row].productDetail
+        //cell.detailTextLabel?.text = formatter.string(from: date)
 
         return cell
     }
@@ -212,7 +167,10 @@ class NotificationTableViewController: UITableViewController {
 
     // slide to delete
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
         if editingStyle == .delete {
+            self.db.collection(self.user!).document(productData[indexPath.row].productName).delete()
+            //print("From delte",productData[indexPath.row].productName)
             self.productData.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }

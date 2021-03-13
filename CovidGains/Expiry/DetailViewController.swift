@@ -6,7 +6,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITextFieldDelegate {
     var productTitle = ""
     var productDetail = ""
     var dateAddedString = ""
@@ -23,7 +23,5 @@ class DetailViewController: UIViewController {
         titelLabel.text = productTitle
         dateAddedLabel.text = dateAddedString
         detailLabel.text = productDetail
-        
     }
-
 }
