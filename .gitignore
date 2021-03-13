@@ -4,3 +4,4 @@ _ignore
 CovidGains/.DS_Store
 design/.DS_Store
 CovidGains/CovidGains.xcodeproj/xcuserdata/*
+Pods/Pods.xcodeproj/xcuserdata/*
