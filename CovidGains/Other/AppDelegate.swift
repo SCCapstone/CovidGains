@@ -27,6 +27,22 @@ import Firebase
         // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
+    
+    private func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+
+        let isUserLoggedIn:Bool = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
+        if(isUserLoggedIn) {
+            //let homeVC = UIStoryboard(name: "myTabBar" , bundle: nil)
+            //window?.rootViewController = homeVC
+            //window?.makeKeyAndVisible()
+            
+            
+//            let protectedPage = mainStoryboard.instantiateViewControllerWithIdentifier("profail") as! ProfailViewController
+//            window!.rootViewController = protectedPage
+//            window!.makeKeyAndVisible()
+        }
+        return true
+    }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         // Called when the user discards a scene session.
