@@ -15,7 +15,7 @@ class NotificationTableViewController: UITableViewController {
         super.viewDidLoad()
 
         //calls to load data from firebase
-//        loadData()
+        loadData()
     }
     
     func loadData(){
@@ -27,7 +27,7 @@ class NotificationTableViewController: UITableViewController {
                     for doc in snapshotDocuments {
                         let data = doc.data()
                         let docID = doc.documentID
-
+                        
                         //let timeStamp =
                         let stamp = data["Date"] as? Timestamp
                         let date = stamp?.dateValue()
@@ -85,7 +85,7 @@ class NotificationTableViewController: UITableViewController {
            
             //if not empty then save to firebase
             if self.user != nil{
-                self.db.collection(self.user!).document("Expiry").collection(productName).document("data").setData(["Date":date,"Quantity":productDetail]) { (error) in
+                self.db.collection(self.user!).document("Expiry").collection("expiryList").document(productName).setData(["Date":date,"Quantity":productDetail]) { (error) in
                     if let e = error {
                         print("there was an issue saving data to firestore, \(e)")
                     } else {
@@ -94,7 +94,7 @@ class NotificationTableViewController: UITableViewController {
                 }
             }
             else{
-                self.db.collection("User").document(productName).setData(["Date":date,"Quantity":productDetail]) { (error) in
+                self.db.collection(self.user!).document("Expiry").collection("expiryList").document(productName).setData(["Date":date,"Quantity":productDetail]) { (error) in
                     if let e = error {
                         print("there was an issue saving data to firestore, \(e)")
                     } else {

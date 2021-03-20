@@ -32,7 +32,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     }
     
     func loadB(){
-        self.db.collection(user!).document("Budget").collection("budgetItems").getDocuments { (querySnapshot, error) in
+        self.db.collection(user!).document("Budget").collection("budgetList").getDocuments { (querySnapshot, error) in
             if let e = error{
                 print("There is issue retrieving data.\(e)")
             } else {
@@ -41,9 +41,9 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
                         
                         let data = doc.data()
                         
-                        if ((data["product"] != nil) && data["price"] != nil) {
+                        if ((data["name"] != nil) && data["price"] != nil) {
                          
-                            let new = MyBudget(bProductName: data["product"] as! String, bProductCost: data["price"] as! String)
+                            let new = MyBudget(bProductName: data["name"] as! String, bProductCost: data["price"] as! String)
                             self.budgetData.append(new)
                             
                         }
@@ -85,7 +85,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            self.db.collection(self.user!).document(budgetData[indexPath.row].bProductName).delete()
+            self.db.collection(self.user!).document("Budget").collection("budgetList").document(budgetData[indexPath.row].bProductName).delete()
             self.budgetData.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
