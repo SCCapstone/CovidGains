@@ -86,6 +86,11 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         
         if editingStyle == .delete {
             self.db.collection(self.user!).document("Budget").collection("budgetList").document(budgetData[indexPath.row].bProductName).delete()
+            self.spent -= (self.budgetData[indexPath.row].bProductCost as NSString).integerValue
+            self.safeAmount = (self.allowance - self.spent)
+            self.safeSpentLabel.text = "$\(self.safeAmount)"
+            self.db.collection(self.user!).document("BudgetAllow").setData(["allowance":self.allowance,"spent":self.spent,"safetospend":self.safeAmount])
+            self.spentLabel.text = "$\(self.spent)"
             self.budgetData.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
