@@ -10,6 +10,7 @@ import Firebase
 import FirebaseStorage
 import Photos
 import FirebaseUI
+import Foundation
 
 class RecipeTableView: UITableViewController {
     
