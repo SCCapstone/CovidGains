@@ -18,7 +18,10 @@ class RecipeTableView: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadRecipeAPI()
+        
         loadRecipeData()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -47,6 +50,102 @@ class RecipeTableView: UITableViewController {
                 }
             }
         }
+    }
+    
+    func loadRecipeAPI(){
+
+        let headers = [
+            "x-rapidapi-key": "3989959899mshfeb4d8905d820ccp1dc37bjsn1049a6d50381",
+            "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
+        ]
+
+        let request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/479101/information")! as URL,
+                                                cachePolicy: .useProtocolCachePolicy,
+                                            timeoutInterval: 10.0)
+        //let jsonData = !
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+         
+       // request.httpBody = try! JSONSerialization.data(withJSONObject: [], options: .prettyPrinted)
+
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            if (error != nil) {
+                print("error " , error)
+            } else {
+                let httpResponse = response as? HTTPURLResponse
+                
+                
+                if let data = data, let dataString = String(data: data, encoding: .utf8){
+                    print("Response data string:\n \(dataString)")
+                }
+            }
+        })
+
+        dataTask.resume()
+        
+
+        
+        
+        
+         /*//URL
+        let url = URL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/479101/information")
+        
+        guard url != nil else {
+            print("Error creating URL object")
+            return
+        }
+        
+        //URL Request
+        var request = URLRequest(url: url!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+        
+        //Specify the header
+        let headers = [
+            "x-rapidapi-key": "3989959899mshfeb4d8905d820ccp1dc37bjsn1049a6d50381",
+            "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
+        ]
+        request.allHTTPHeaderFields = headers
+        
+        
+        //Specify the body
+        let jsonObject = ["id":479101] as [String: Any]
+        do{
+            let requestBody = try JSONSerialization.data(withJSONObject: jsonObject, options: .fragmentsAllowed)
+            request.httpBody = requestBody
+        }
+        catch{
+            print("Error creating the data object from json")
+        }
+        
+        //Set the request type
+        request.httpMethod = "GET"
+        
+        //Get the URLSession
+        let session = URLSession.shared
+        
+        //Create the data task
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+
+                   if (error == nil && data != nil) {
+
+                       do{
+                           let dictionary = try  JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
+                           print("dictionary ", dictionary)
+                       }
+                       catch{
+                           print("Error parsing response data")
+                       }
+
+                    print("Error", error as Any)
+                   } else {
+                       let httpResponse = response as? HTTPURLResponse
+                    print("HttpsResponse ", httpResponse as Any)
+                   }
+               })
+        
+        //Fire off the data task
+        dataTask.resume()*/
+        
     }
     
     // MARK: - Table view data source
