@@ -22,12 +22,13 @@ class RecipeTableView: UITableViewController {
         loadRecipeAPI()
         
         loadRecipeData()
-        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    
     
     func loadRecipeData()
     {
@@ -61,24 +62,48 @@ class RecipeTableView: UITableViewController {
         ]
 
         let request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/479101/information")! as URL,
-                                                cachePolicy: .useProtocolCachePolicy,
-                                            timeoutInterval: 10.0)
+                                                cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+        
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
+        
+        
         
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             if (error != nil) {
                 print("error " , error)
             } else {
-                let httpResponse = response as? HTTPURLResponse
+            
                 
+                let json = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments)//whole RAW JSON object
+                
+
+//                if let analyzedInstrJSON = json["analyzedInstructions"] as? Any{
+//                    print(analyzedInstrJSON)
                 
                 do {
-                          if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
-                               
-                               let  instructions = convertedJsonIntoDict["instructions"]
-                               print(instructions ?? "instructions could not be read")
+                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary { //converted JSON objec to dictonary
+
+                        if let analyzedInstrJSON = convertedJsonIntoDict["analyzedInstructions"] as? NSArray{
+                            if let analyzedStepsJSON = analyzedInstrJSON[0] as? NSDictionary{
+                                if let stepsSteps = analyzedStepsJSON["steps"] as? NSDictionary{
+                                    //if let 
+                                //print(analyzedSteps["steps"])
+                            }
+
+                        }
+                        
+//                            if (key as! String == "analyzedInstructions"){
+//                                print("Key" , key)
+//                                print ("Value", value)
+//                            }
+
+
+//                            let  instructions = convertedJsonIntoDict["analyzedInstructions"]
+//                            print(instructions ?? "instructions could not be read")
+                            
+                            
                                
                            }
                 } catch let error as NSError {
@@ -118,12 +143,6 @@ class RecipeTableView: UITableViewController {
          }
         
 
-        
-        
-        
-        
-        
-        
         recp.recipName = recipeData[indexPath.row].recipeName // first line = apples
         recp.recipeIngredients = recipeData[indexPath.row].ingredients
         recp.recipeDetails = recipeData[indexPath.row].directions
@@ -132,59 +151,6 @@ class RecipeTableView: UITableViewController {
         //third line = 5
         navigationController?.pushViewController(recp, animated: true)
     }
-    
-    //Recipe view button function, and will be done
-    
-    
-    
-    
-    
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -195,5 +161,3 @@ struct myRecipe{
     let identifier: String
     
 }
-
- 
