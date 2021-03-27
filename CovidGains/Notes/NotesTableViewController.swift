@@ -10,15 +10,40 @@ class NotesTableViewController: UITableViewController, EditNoteDelegate {
     
     var notes = [[String:String]]()
     var selectedIndex = -1
-
+    var noteData = [MyNote]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.readNotes()
     }
 
-    
-    
+    func loadNotes(){
+        self.db.collection(user!).document("Notes").collection("noteList").getDocuments { (querySnapshot, error) in
+            if let e = error{
+                print("There is issue retrieving data.\(e)")
+            } else {
+                if let snapshotDocuments = querySnapshot?.documents {
+                    for doc in snapshotDocuments {
+                        
+                        let data = doc.data()
+                        
+                        if ((data["title"] != nil) && data["body"] != nil) {
+                         
+                            let new = MyNote(title: data["title"] as! String, body: data["body"] as! String)
+                            self.noteData.append(new)
+                            
+                        }
+                        
+                        DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                        }
+                    }
+                    
+                }
+            }
+        }
+        
+    }
     
     @IBAction func addNotesButtonTapped(_ sender: UIBarButtonItem) {
         let note = ["title": "", "body": ""]
@@ -151,4 +176,9 @@ class NotesTableViewController: UITableViewController, EditNoteDelegate {
           print ("Error signing out: %@", signOutError)
         }
     }
+}
+
+struct MyNote {
+    let title: String
+    let body: String
 }
