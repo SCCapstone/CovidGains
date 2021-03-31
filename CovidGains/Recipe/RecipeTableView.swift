@@ -103,15 +103,17 @@ class RecipeTableView: UITableViewController {
 
                         if let extendedIngredJSON = convertedJsonIntoDict["extendedIngredients"] as? NSArray{
                             var j = 0
+                            var ingreds = ""
                             for index in extendedIngredJSON
                             {
                                 if let embeddedIngredJSON = extendedIngredJSON[j] as? NSDictionary{
                                     if let ingred = embeddedIngredJSON["original"] {
-                                            print(ingred)
+                                            ingreds += (ingred as! String) + "\n"
                                     }
                                 }
                                 j += 1
                             }
+                            print(ingreds)
 
                         
                         }
