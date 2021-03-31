@@ -19,7 +19,7 @@ class RecipeTableView: UITableViewController {
     var recpID = "479101"
     override func viewDidLoad() {
         super.viewDidLoad()
-        //loadRecipeAPI(recpID: recpID)
+        loadRecipeAPI(recpID: recpID)
         
         loadRecipeData()
         // Uncomment the following line to preserve selection between presentations
@@ -83,7 +83,7 @@ class RecipeTableView: UITableViewController {
                         if let analyzedInstrJSON = convertedJsonIntoDict["analyzedInstructions"] as? NSArray{
                             if let analyzedStepsJSON = analyzedInstrJSON[0] as? NSDictionary{
                                 if let stepsSteps = analyzedStepsJSON["steps"] as? NSArray{
-                                    
+
                                     var i = 0
                                     var steps = ""
                                     for index in stepsSteps{
@@ -97,6 +97,25 @@ class RecipeTableView: UITableViewController {
                                 }
                             }
                         }
+                    }
+                    
+                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary { //converted JSON objec to dictonary
+
+                        if let extendedIngredJSON = convertedJsonIntoDict["extendedIngredients"] as? NSArray{
+                            var j = 0
+                            for index in extendedIngredJSON
+                            {
+                                if let embeddedIngredJSON = extendedIngredJSON[j] as? NSDictionary{
+                                    if let ingred = embeddedIngredJSON["original"] {
+                                            print(ingred)
+                                    }
+                                }
+                                j += 1
+                            }
+
+                        
+                        }
+                        
                     }
                 } catch let error as NSError {
                            print(error.localizedDescription)
