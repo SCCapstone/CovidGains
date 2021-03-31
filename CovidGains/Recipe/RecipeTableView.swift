@@ -17,10 +17,13 @@ class RecipeTableView: UITableViewController {
     let db = Firestore.firestore()
     var recipeData = [myRecipe]()
     var recpID = "479101"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadRecipeAPI(recpID: recpID)
-        
+        let strArr: [String] = loadRecipeAPI(recpID: recpID)
+        for items in strArr {
+            print(items)
+        }
         loadRecipeData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -54,7 +57,10 @@ class RecipeTableView: UITableViewController {
         }
     }
     
-    func loadRecipeAPI(recpID: String){
+    func loadRecipeAPI(recpID: String) -> Array<String> {
+        var arrStr: [String] = ["lol"]
+        var ingreds = ""
+        var steps = ""
         let headers = [
             "x-rapidapi-key": "3989959899mshfeb4d8905d820ccp1dc37bjsn1049a6d50381",
             "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
@@ -79,13 +85,13 @@ class RecipeTableView: UITableViewController {
                 
                 do {
                     if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary { //converted JSON objec to dictonary
-
+                        
                         if let analyzedInstrJSON = convertedJsonIntoDict["analyzedInstructions"] as? NSArray{
                             if let analyzedStepsJSON = analyzedInstrJSON[0] as? NSDictionary{
                                 if let stepsSteps = analyzedStepsJSON["steps"] as? NSArray{
 
                                     var i = 0
-                                    var steps = ""
+                                    
                                     for index in stepsSteps{
                                         if let dictStep = stepsSteps[i] as? NSDictionary{
                                             let step = dictStep["step"] as! String
@@ -93,7 +99,7 @@ class RecipeTableView: UITableViewController {
                                             i += 1
                                         }
                                     }
-                                    print(steps)
+                                    arrStr.append(steps)
                                 }
                             }
                         }
@@ -103,7 +109,7 @@ class RecipeTableView: UITableViewController {
 
                         if let extendedIngredJSON = convertedJsonIntoDict["extendedIngredients"] as? NSArray{
                             var j = 0
-                            var ingreds = ""
+                            
                             for index in extendedIngredJSON
                             {
                                 if let embeddedIngredJSON = extendedIngredJSON[j] as? NSDictionary{
@@ -113,8 +119,7 @@ class RecipeTableView: UITableViewController {
                                 }
                                 j += 1
                             }
-                            print(ingreds)
-
+                            arrStr.append(ingreds)
                         
                         }
                         
@@ -124,8 +129,11 @@ class RecipeTableView: UITableViewController {
                  }
             }
         })
-
+        
         dataTask.resume()
+        
+        return arrStr
+        
         
     }
     
