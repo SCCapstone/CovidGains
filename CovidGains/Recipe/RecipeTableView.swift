@@ -19,7 +19,7 @@ class RecipeTableView: UITableViewController {
     var recpID = "479101"
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadRecipeAPI(recpID: recpID)
+        //loadRecipeAPI(recpID: recpID)
         
         loadRecipeData()
         // Uncomment the following line to preserve selection between presentations
