@@ -72,40 +72,31 @@ class RecipeTableView: UITableViewController {
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             if (error != nil) {
-                print("error " , error)
+                print("error" , error)
             } else {
             
                 
                 let json = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments)//whole RAW JSON object
-                
-
-//                if let analyzedInstrJSON = json["analyzedInstructions"] as? Any{
-//                    print(analyzedInstrJSON)
                 
                 do {
                     if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary { //converted JSON objec to dictonary
 
                         if let analyzedInstrJSON = convertedJsonIntoDict["analyzedInstructions"] as? NSArray{
                             if let analyzedStepsJSON = analyzedInstrJSON[0] as? NSDictionary{
-                                if let stepsSteps = analyzedStepsJSON["steps"] as? NSDictionary{
-                                    //if let 
-                                //print(analyzedSteps["steps"])
+                                if let stepsSteps = analyzedStepsJSON["steps"] as? NSArray{
+                                    
+                                    var i = 0
+                                    for index in stepsSteps{
+                                        if let dictStep = stepsSteps[i] as? NSDictionary{
+                                            print("Step", i+1, ":", dictStep["step"] as! String)
+                                            i += 1
+                                        }
+                                    }
+                                    
+                                }
                             }
-
                         }
-                        
-//                            if (key as! String == "analyzedInstructions"){
-//                                print("Key" , key)
-//                                print ("Value", value)
-//                            }
-
-
-//                            let  instructions = convertedJsonIntoDict["analyzedInstructions"]
-//                            print(instructions ?? "instructions could not be read")
-                            
-                            
-                               
-                           }
+                    }
                 } catch let error as NSError {
                            print(error.localizedDescription)
                  }
