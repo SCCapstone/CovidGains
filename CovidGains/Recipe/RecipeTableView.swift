@@ -16,10 +16,10 @@ class RecipeTableView: UITableViewController {
     
     let db = Firestore.firestore()
     var recipeData = [myRecipe]()
-    
+    var recpID = "479101"
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadRecipeAPI()
+        loadRecipeAPI(recpID: recpID)
         
         loadRecipeData()
         // Uncomment the following line to preserve selection between presentations
@@ -54,14 +54,13 @@ class RecipeTableView: UITableViewController {
         }
     }
     
-    func loadRecipeAPI(){
-
+    func loadRecipeAPI(recpID: String){
         let headers = [
             "x-rapidapi-key": "3989959899mshfeb4d8905d820ccp1dc37bjsn1049a6d50381",
             "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
         ]
 
-        let request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/479101/information")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/" + recpID + "/information")! as URL,
                                                 cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
         
         request.httpMethod = "GET"
@@ -86,13 +85,15 @@ class RecipeTableView: UITableViewController {
                                 if let stepsSteps = analyzedStepsJSON["steps"] as? NSArray{
                                     
                                     var i = 0
+                                    var steps = ""
                                     for index in stepsSteps{
                                         if let dictStep = stepsSteps[i] as? NSDictionary{
-                                            print("Step", i+1, ":", dictStep["step"] as! String)
+                                            let step = dictStep["step"] as! String
+                                            steps += ("Step " + String(i+1) + ": " + step + "\n")
                                             i += 1
                                         }
                                     }
-                                    
+                                    print(steps)
                                 }
                             }
                         }
