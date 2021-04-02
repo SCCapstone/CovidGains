@@ -18,8 +18,13 @@ class RecipeTableView: UITableViewController {
     var recipeData = [myRecipe]()
     var recpID = "479101"
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchBar.delegate = self
+        
         let strArr: [String] = loadRecipeAPI(recpID: recpID)
         for items in strArr {
             print(items)
@@ -181,4 +186,9 @@ struct myRecipe{
     let ingredients: String
     let identifier: String
     
+}
+
+extension RecipeTableView : UISearchBarDelegate {
+    func searchBarSearchButtonClicked( searchBar: UISearchBar){
+}
 }

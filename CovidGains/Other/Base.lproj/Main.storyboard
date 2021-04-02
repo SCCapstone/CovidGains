@@ -742,9 +742,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="KGX-7D-YW7">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="rCell" id="lAf-ms-sfC">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lAf-ms-sfC" id="0L4-Ev-h4T">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -758,10 +763,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Recipes" id="oIu-RF-ErC"/>
+                    <connections>
+                        <outlet property="searchBar" destination="KGX-7D-YW7" id="ajt-qU-TTx"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMG-gi-71C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857" y="1582"/>
+            <point key="canvasLocation" x="684" y="1582"/>
         </scene>
         <!--Notes-->
         <scene sceneID="sGD-ed-oAJ">
