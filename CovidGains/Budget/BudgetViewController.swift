@@ -188,8 +188,6 @@ extension BudgetViewController: UITableViewDataSource{
 
 }
 
-
-
 extension ViewController: UITextFieldDelegate{
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
     textField.resignFirstResponder()

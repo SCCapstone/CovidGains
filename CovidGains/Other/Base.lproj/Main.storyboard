@@ -480,6 +480,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zaW-E4-Act">
+                                <rect key="frame" x="10" y="255" width="394" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k6F-O0-9Em">
+                                <rect key="frame" x="10" y="309" width="394" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tyt-OI-NMJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -496,8 +508,10 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="x6b-yR-a4C"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="location" destination="k6F-O0-9Em" id="nLo-3g-sds"/>
                         <outlet property="prodCost" destination="W3d-iI-Pkk" id="0TR-lh-BKR"/>
                         <outlet property="prodName" destination="nmR-Bd-bsc" id="pgz-bY-7wL"/>
+                        <outlet property="time" destination="zaW-E4-Act" id="UyT-nv-zuT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NX3-a7-oy9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
