@@ -41,10 +41,23 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qig-Pf-7ng">
                                 <rect key="frame" x="0.0" y="44" width="414" height="826"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UVk-xn-cLR">
-                                        <rect key="frame" x="0.0" y="-109" width="414" height="831"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UVk-xn-cLR">
+                                        <rect key="frame" x="0.0" y="-101" width="414" height="831"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VV2-UW-x8W">
+                                                <rect key="frame" x="0.0" y="199" width="414" height="128"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="UBI-II-i73"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="VV2-UW-x8W" firstAttribute="top" secondItem="UVk-xn-cLR" secondAttribute="top" constant="199" id="PSD-7q-gjZ"/>
+                                            <constraint firstItem="VV2-UW-x8W" firstAttribute="centerX" secondItem="UVk-xn-cLR" secondAttribute="centerX" id="SQO-Q2-lc7"/>
+                                            <constraint firstItem="VV2-UW-x8W" firstAttribute="leading" secondItem="UVk-xn-cLR" secondAttribute="leading" id="eJ4-IV-zuG"/>
+                                            <constraint firstAttribute="height" constant="831" id="pUj-68-d6i"/>
+                                        </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkK-l8-NZe">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="34.5"/>
@@ -53,7 +66,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJL-qf-eJU">
-                                        <rect key="frame" x="0.0" y="54.5" width="414" height="23.5"/>
+                                        <rect key="frame" x="0.0" y="334.5" width="414" height="23.5"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -63,12 +76,15 @@
                                     <constraint firstAttribute="bottom" secondItem="rJL-qf-eJU" secondAttribute="bottom" constant="766" id="25R-Ie-5F7"/>
                                     <constraint firstAttribute="trailing" secondItem="DkK-l8-NZe" secondAttribute="trailing" id="2xC-1S-KZh"/>
                                     <constraint firstItem="HaU-ba-4uL" firstAttribute="trailing" secondItem="rJL-qf-eJU" secondAttribute="trailing" id="32C-ps-3HG"/>
+                                    <constraint firstItem="HaU-ba-4uL" firstAttribute="bottom" secondItem="UVk-xn-cLR" secondAttribute="bottom" constant="104" id="8NH-wZ-dlE"/>
                                     <constraint firstItem="DkK-l8-NZe" firstAttribute="top" secondItem="qig-Pf-7ng" secondAttribute="top" id="H5e-yG-i6h"/>
                                     <constraint firstAttribute="trailing" secondItem="rJL-qf-eJU" secondAttribute="trailing" id="aIF-sA-Ijv"/>
                                     <constraint firstItem="rJL-qf-eJU" firstAttribute="leading" secondItem="qig-Pf-7ng" secondAttribute="leading" id="aMK-iO-adv"/>
                                     <constraint firstItem="DkK-l8-NZe" firstAttribute="leading" secondItem="qig-Pf-7ng" secondAttribute="leading" id="cQw-Xa-oxs"/>
                                     <constraint firstItem="rJL-qf-eJU" firstAttribute="leading" secondItem="HaU-ba-4uL" secondAttribute="leading" id="ciK-0w-vYr"/>
-                                    <constraint firstItem="rJL-qf-eJU" firstAttribute="top" secondItem="DkK-l8-NZe" secondAttribute="bottom" constant="20" id="rXb-Lc-HO9"/>
+                                    <constraint firstItem="UVk-xn-cLR" firstAttribute="trailing" secondItem="DkK-l8-NZe" secondAttribute="trailing" id="duN-BH-hrH"/>
+                                    <constraint firstItem="UVk-xn-cLR" firstAttribute="leading" secondItem="DkK-l8-NZe" secondAttribute="leading" id="nwY-Ad-B2g"/>
+                                    <constraint firstItem="rJL-qf-eJU" firstAttribute="top" secondItem="DkK-l8-NZe" secondAttribute="bottom" constant="300" id="rXb-Lc-HO9"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="nuI-BP-6JH"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="HaU-ba-4uL"/>
@@ -86,6 +102,7 @@
                     <navigationItem key="navigationItem" id="gqn-Zb-7Sz"/>
                     <connections>
                         <outlet property="Ingredients" destination="rJL-qf-eJU" id="nWg-nC-x6q"/>
+                        <outlet property="imageDownloaded" destination="VV2-UW-x8W" id="Ywn-KM-Fzb"/>
                         <outlet property="recipeTitle" destination="DkK-l8-NZe" id="cXW-mn-fk6"/>
                     </connections>
                 </viewController>
