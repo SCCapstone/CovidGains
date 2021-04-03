@@ -14,6 +14,8 @@ import Foundation
 
 class RecipeTableView: UITableViewController {
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     let db = Firestore.firestore()
     var recipeData = [myRecipe]()
     
@@ -219,4 +221,11 @@ struct myRecipe{
     let ingredients: String
     let identifier: String
     
+}
+
+extension RecipeTableView : UISearchBarDelegate {
+    func searchBarSearchButtonClicked( searchBar: UISearchBar)
+    {
+        
+    }
 }
