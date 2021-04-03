@@ -16,19 +16,10 @@ class RecipeTableView: UITableViewController {
     
     let db = Firestore.firestore()
     var recipeData = [myRecipe]()
-    var recpID = "479101"
-    
-    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        searchBar.delegate = self
-        
-        let strArr: [String] = loadRecipeAPI(recpID: recpID)
-        for items in strArr {
-            print(items)
-        }
+       // loadRecipeAPI()
         loadRecipeData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -62,98 +53,19 @@ class RecipeTableView: UITableViewController {
         }
     }
     
-    func loadRecipeAPI(recpID: String) -> Array<String> {
-        var arrStr: [String] = ["lol"]
-        var ingreds = ""
-        var steps = ""
-        let headers = [
-            "x-rapidapi-key": "3989959899mshfeb4d8905d820ccp1dc37bjsn1049a6d50381",
-            "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
-        ]
-
-        let request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/" + recpID + "/information")! as URL,
-                                                cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
-        
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
-        
-        
-        
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-            if (error != nil) {
-                print("error" , error)
-            } else {
-            
-                
-                let json = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments)//whole RAW JSON object
-                
-                do {
-                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary { //converted JSON objec to dictonary
-                        
-                        if let analyzedInstrJSON = convertedJsonIntoDict["analyzedInstructions"] as? NSArray{
-                            if let analyzedStepsJSON = analyzedInstrJSON[0] as? NSDictionary{
-                                if let stepsSteps = analyzedStepsJSON["steps"] as? NSArray{
-
-                                    var i = 0
-                                    
-                                    for index in stepsSteps{
-                                        if let dictStep = stepsSteps[i] as? NSDictionary{
-                                            let step = dictStep["step"] as! String
-                                            steps += ("Step " + String(i+1) + ": " + step + "\n")
-                                            i += 1
-                                        }
-                                    }
-                                    arrStr.append(steps)
-                                }
-                            }
-                        }
-                    }
-                    
-                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary { //converted JSON objec to dictonary
-
-                        if let extendedIngredJSON = convertedJsonIntoDict["extendedIngredients"] as? NSArray{
-                            var j = 0
-                            
-                            for index in extendedIngredJSON
-                            {
-                                if let embeddedIngredJSON = extendedIngredJSON[j] as? NSDictionary{
-                                    if let ingred = embeddedIngredJSON["original"] {
-                                            ingreds += (ingred as! String) + "\n"
-                                    }
-                                }
-                                j += 1
-                            }
-                            arrStr.append(ingreds)
-                        
-                        }
-                        
-                    }
-                } catch let error as NSError {
-                           print(error.localizedDescription)
-                 }
-            }
-        })
-        
-        dataTask.resume()
-        
-        return arrStr
-        
-        
-    }
     
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return recipeData.count
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rCell", for: indexPath)
@@ -164,20 +76,91 @@ class RecipeTableView: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let recp = storyboard?.instantiateViewController(identifier: "Detail") as? RecipeDetailViewController else{
-             return
-         }
         
-
-        recp.recipName = recipeData[indexPath.row].recipeName // first line = apples
-        recp.recipeIngredients = recipeData[indexPath.row].ingredients
-        recp.recipeDetails = recipeData[indexPath.row].directions
-        //cell.detailTextLabel?.text = formatter.string(from: date)
+        guard let recp = self.storyboard?.instantiateViewController(identifier: "Detail") as? RecipeDetailViewController else{
+            return
+        }
+        var recpID = "479101"
+        var name = "name:\n"
+        var ingreds = "Ingredients:\n"
+        var steps = "Instructions:\n"
+        let headers = [
+            "x-rapidapi-key": "3989959899mshfeb4d8905d820ccp1dc37bjsn1049a6d50381",
+            "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
+        ]
         
-        //third line = 5
-        navigationController?.pushViewController(recp, animated: true)
+        let request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/" + recpID + "/information")! as URL,cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+        
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+        
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request as URLRequest) { (data, response, error) in
+            if (error != nil && data == nil) {
+                print("error" , error)
+            } else {
+                
+                do {
+                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any] { //converted JSON objec to dictonary
+                        let name = convertedJsonIntoDict["title"] as! String
+                        
+                        if let analyzedInstrJSON = convertedJsonIntoDict["analyzedInstructions"] as? NSArray{
+                            if let analyzedStepsJSON = analyzedInstrJSON[0] as? NSDictionary{
+                                if let stepsSteps = analyzedStepsJSON["steps"] as? NSArray{
+                                    
+                                    var i = 0
+                                    
+                                    for index in stepsSteps{
+                                        if let dictStep = stepsSteps[i] as? NSDictionary{
+                                            let step = dictStep["step"] as! String
+                                            steps += ("Step " + String(i+1) + ": " + step + "\n")
+                                            i += 1
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                        }
+                    }
+                    
+                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary { //converted JSON objec to dictonary
+                        
+                        if let extendedIngredJSON = convertedJsonIntoDict["extendedIngredients"] as? NSArray{
+                            var j = 0
+                            
+                            for index in extendedIngredJSON
+                            {
+                                if let embeddedIngredJSON = extendedIngredJSON[j] as? NSDictionary{
+                                    if let ingred = embeddedIngredJSON["original"] {
+                                        ingreds += (ingred as! String) + "\n"
+                                    }
+                                }
+                                j += 1
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                    
+                    DispatchQueue.main.async {
+                        //recp.recipeTitle = steps
+                        recp.recipeIngredients = ingreds
+                        recp.recipeDetails = steps
+                        self.navigationController?.pushViewController(recp, animated: true)
+                    }
+                    
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                }
+                
+            }
+        }
+        
+        dataTask.resume() //API call made!
+        
     }
-
+    
 }
 
 struct myRecipe{
@@ -186,9 +169,4 @@ struct myRecipe{
     let ingredients: String
     let identifier: String
     
-}
-
-extension RecipeTableView : UISearchBarDelegate {
-    func searchBarSearchButtonClicked( searchBar: UISearchBar){
-}
 }
