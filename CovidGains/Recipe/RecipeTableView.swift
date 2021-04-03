@@ -14,11 +14,17 @@ import Foundation
 
 class RecipeTableView: UITableViewController {
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     let db = Firestore.firestore()
     var recipeData = [myRecipe]()
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
        // loadRecipeAPI()
         loadRecipeData()
         // Uncomment the following line to preserve selection between presentations
@@ -169,4 +175,11 @@ struct myRecipe{
     let ingredients: String
     let identifier: String
     
+}
+
+extension RecipeTableView : UISearchBarDelegate {
+    func searchBarSearchButtonClicked( searchBar: UISearchBar)
+    {
+        
+    }
 }
