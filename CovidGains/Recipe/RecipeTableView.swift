@@ -159,8 +159,7 @@ class RecipeTableView: UITableViewController {
 //        }
 //
 //        dataTask.resume() //API call made!
-        
-    }
+        }
     
 }
 
