@@ -21,6 +21,7 @@ class RecipeTableView: UITableViewController {
         super.viewDidLoad()
        // loadRecipeAPI()
         loadRecipeData()
+        //getNutrition()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -51,6 +52,56 @@ class RecipeTableView: UITableViewController {
                 }
             }
         }
+    }
+    
+    
+    
+    func getNutrition(){
+        var calories: String = ""
+        var carbs: String = ""
+        var fat: String = ""
+        var protein: String = ""
+        
+        let headers = [
+            "x-rapidapi-key": "3989959899mshfeb4d8905d820ccp1dc37bjsn1049a6d50381",
+            "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
+        ]
+
+        let request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/1003464/nutritionWidget.json")! as URL,
+                                                cachePolicy: .useProtocolCachePolicy,
+                                            timeoutInterval: 10.0)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            if (error != nil) {
+                print(error)
+            } else {
+                
+                do {
+                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary{ //converted JSON objec to dictonary
+                        let calories = convertedJsonIntoDict["calories"] as! String
+                        let carbs = convertedJsonIntoDict["carbs"] as! String
+                        let fat = convertedJsonIntoDict["fat"] as! String
+                        let protein = convertedJsonIntoDict["protein"] as! String
+                        
+//                        print("calories", calories)
+//                        print("carbs", carbs)
+//                        print("fat", fat)
+//                        print("protein", protein)
+                    }
+
+                    DispatchQueue.main.async {
+                    }
+
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                }
+            }
+        })
+
+        dataTask.resume()
     }
     
     
@@ -142,11 +193,6 @@ class RecipeTableView: UITableViewController {
 //                        }
 //
 //                    }
-//
-        //                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any] { //converted JSON objec to 
-        //                    }
-        
-//
 //                    DispatchQueue.main.async {
 //                        //recp.recipeTitle = steps
 //                        recp.recipeIngredients = ingreds
