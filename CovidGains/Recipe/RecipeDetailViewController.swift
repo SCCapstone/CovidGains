@@ -27,9 +27,10 @@ class RecipeDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        recipeTitle.text = recipName
-        Ingredients.text = recipeIngredients
-        Directions.text = recipeDetails
+        recipeTitle.text = "Test Lable"
+        Ingredients.text = "On the Job: Pan Roasted Cauliflower From Food52 is a <b>dairy free</b> side dish. One portion of this dish contains roughly <b>7g of protein</b>, <b>26g of fat</b>, and a total of <b>350 calories</b>. This recipe serves 4. For <b>$1.99 per serving</b>, this recipe <b>covers 20%</b> of your daily requirements of vitamins and minerals. This recipe is liked by 225 foodies and cooks. A mixture of breadcrumbs, rosemary, sea salt, and a handful of other ingredients are all it takes to make this recipe so tasty. From preparation to the plate, this recipe takes around <b>20 minutes</b>. All things considered, we decided this recipe <b>deserves a spoonacular score of 97%</b>. This score is tremendous. Food52's Roasted Broccoli with Smoked Paprika Vinaigrette and Marconan Almonds</a>,spoonacular.com/recipes/sheet-pan-chicken-cauliflower-921598 onacular.com/recipes/sheet-pan-roasted-broccoli-918006"
+        
+        Directions.text = "On the Job: Pan Roasted Cauliflower From Food52 is a <b>dairy free</b> side dish. One portion of this dish contains roughly <b>7g of protein</b>, <b>26g of fat</b>, and a total of <b>350 calories</b>. This recipe serves 4. For <b>$1.99 per serving</b>, this recipe <b>covers 20%</b> of your daily requirements of vitamins and minerals. This recipe is liked by 225 foodies and cooks. A mixture of breadcrumbs, rosemary, sea salt, and a handful of other ingredients are all it takes to make this recipe so tasty. From preparation to the plate, this recipe takes around <b>20 minutes</b>. All things considered, we decided this recipe <b>deserves a spoonacular score of 97%</b>. This score is tremendous. Food52's Roasted Broccoli with Smoked Paprika Vinaigrette and Marconan Almonds</a>,spoonacular.com/recipes/sheet-pan-chicken-cauliflower-921598 onacular.com/recipes/sheet-pan-roasted-broccoli-918006"
         
         let storage = Storage.storage()
         let storageRef = storage.reference()
