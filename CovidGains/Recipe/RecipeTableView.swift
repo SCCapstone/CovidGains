@@ -14,17 +14,11 @@ import Foundation
 
 class RecipeTableView: UITableViewController {
     
-    @IBOutlet weak var searchBar: UISearchBar!
-    
     let db = Firestore.firestore()
     var recipeData = [myRecipe]()
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchBar.delegate = self
        // loadRecipeAPI()
         loadRecipeData()
         // Uncomment the following line to preserve selection between presentations
@@ -149,6 +143,9 @@ class RecipeTableView: UITableViewController {
 //
 //                    }
 //
+        //                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any] { //converted JSON objec to 
+        //                    }
+        
 //
 //                    DispatchQueue.main.async {
 //                        //recp.recipeTitle = steps
@@ -165,7 +162,8 @@ class RecipeTableView: UITableViewController {
 //        }
 //
 //        dataTask.resume() //API call made!
-        }
+        
+    }
     
 }
 
@@ -175,11 +173,4 @@ struct myRecipe{
     let ingredients: String
     let identifier: String
     
-}
-
-extension RecipeTableView : UISearchBarDelegate {
-    func searchBarSearchButtonClicked( searchBar: UISearchBar)
-    {
-        
-    }
 }
