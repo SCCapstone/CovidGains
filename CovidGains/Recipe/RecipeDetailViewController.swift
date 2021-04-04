@@ -14,8 +14,6 @@ class RecipeDetailViewController: UIViewController {
     var recipName = ""
     var recipeIngredients = ""
     var recipeImage = ""
-
-
     
     @IBOutlet var recipeTitle: UILabel!
     
@@ -29,8 +27,7 @@ class RecipeDetailViewController: UIViewController {
         
         let urlYourURL = URL(string: "https://spoonacular.com/recipeImages/char-grilled-beef-tenderloin-with-three-herb-chimichurri-156992.jpg")
         
-        self.imageDownloaded.loadurl(url: urlYourURL!)
-        
+ 
         recipeTitle.text = "recipName"
         Ingredients.text = "recipeIngredients"
         

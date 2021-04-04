@@ -23,6 +23,7 @@ class RecipeTableView: UITableViewController {
         super.viewDidLoad()
        // loadRecipeAPI()
         loadRecipeData()
+        searchBar.delegate = self
         //getNutrition()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -83,10 +84,10 @@ class RecipeTableView: UITableViewController {
                 
                 do {
                     if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary{ //converted JSON objec to dictonary
-                        let calories = convertedJsonIntoDict["calories"] as! String
-                        let carbs = convertedJsonIntoDict["carbs"] as! String
-                        let fat = convertedJsonIntoDict["fat"] as! String
-                        let protein = convertedJsonIntoDict["protein"] as! String
+                        calories = convertedJsonIntoDict["calories"] as! String
+                        carbs = convertedJsonIntoDict["carbs"] as! String
+                        fat = convertedJsonIntoDict["fat"] as! String
+                        protein = convertedJsonIntoDict["protein"] as! String
                         
 //                        print("calories", calories)
 //                        print("carbs", carbs)
@@ -133,6 +134,7 @@ class RecipeTableView: UITableViewController {
         guard let recp = self.storyboard?.instantiateViewController(identifier: "Detail") as? RecipeDetailViewController else{
             return
         }
+        self.navigationController?.pushViewController(recp, animated: true)
 //        var recpID = "479101"
 //        var name = ""
 //        var image = ""
@@ -156,11 +158,11 @@ class RecipeTableView: UITableViewController {
 //
 //                do {
 //                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any] { //converted JSON objec to dictonary
-//                       
+//
 //                        name = convertedJsonIntoDict["title"] as! String
-//                        
+//
 //                        image = convertedJsonIntoDict["image"] as! String
-//                        
+//
 //                        if let analyzedInstrJSON = convertedJsonIntoDict["analyzedInstructions"] as? NSArray{
 //                            if let analyzedStepsJSON = analyzedInstrJSON[0] as? NSDictionary{
 //                                if let stepsSteps = analyzedStepsJSON["steps"] as? NSArray{
@@ -198,13 +200,13 @@ class RecipeTableView: UITableViewController {
 //                        }
 //
 //                    }
-//                    
+//
 //                    DispatchQueue.main.async {
 //                        recp.recipName = name
-//                        
+//
 //                        recp.recipeIngredients = ingreds + "\n" +  steps
 //                        recp.recipeImage = image
-//                        
+//
 //                        self.navigationController?.pushViewController(recp, animated: true)
 //                    }
 //
@@ -230,8 +232,10 @@ struct myRecipe{
 }
 
 extension RecipeTableView : UISearchBarDelegate {
-    func searchBarSearchButtonClicked( searchBar: UISearchBar)
-    {
-        
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
+        guard let recipeSearch = searchBar.text else {
+            return
+        }
+        print(" I searched ",recipeSearch)
     }
 }
