@@ -6,21 +6,45 @@
 
 import UIKit
 import Firebase
+import Foundation
 
-class AddViewController: UIViewController {
-
-    let db = Firestore.firestore()
-    var ref: DocumentReference? = nil
-    var productData = [myProduct]()
-    
+class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet var titleField : UITextField! //product names
     @IBOutlet var bodyField : UITextField! //quantity
     @IBOutlet var datePicker : UIDatePicker! //date entered
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.productData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.productData[row].name
+      }
+
+      func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        titleField.text = self.productData[row].name
+      }
+   
+  
+    
+    let db = Firestore.firestore()
+    var ref: DocumentReference? = nil
+    var productData = [myProduct]()
     public var completion: ((String, String, Date)-> Void)?
+
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let pickerView = UIPickerView()
+        pickerView.delegate = self
+ 
+        titleField.inputView = pickerView
         
         titleField.clearButtonMode = .always
         bodyField.clearButtonMode = .always
@@ -32,6 +56,7 @@ class AddViewController: UIViewController {
         self.loadProductsData()
         
     }
+
     
     func loadProductsData()
     {
