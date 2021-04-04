@@ -55,26 +55,52 @@ class AddViewController: UIViewController {
     }
     
     @IBAction func tappedSave(_ sender: Any) {
+        var staleDays = 0
+        var dateComponent = DateComponents()
+        
         if let titleText = titleField.text, !titleText.isEmpty, let bodyText = bodyField.text, !bodyText.isEmpty{
             
-            let targetDate = datePicker.date
-            var dateComponent = DateComponents()
-            
-            var i = 0
-            
-            for item in productData {
-                if item.name == titleField.text! {
-                    dateComponent.day = item.expiration
+            self.db.collection("Products").getDocuments { (querySnapshot, error) in
+                if let e = error{
+                    print("The error is : \(e)")
+                    
+                }else{
+                    if let snapshotDocuments = querySnapshot?.documents {
+                        for doc in snapshotDocuments {
+                            let data = doc.data()
+                            let docID = doc.documentID
+                            
+                            if(docID == titleText ){
+                                staleDays = data["Expiration"] as! Int
+                                
+                                dateComponent.day = staleDays//to testExpiration
+                                print("i am date",dateComponent.day)
+                                
+                                
+                                let targetDate = self.datePicker.date
+                                
+                                //to add days to the current date
+                                let futureDate = Calendar.current.date(byAdding: dateComponent, to: targetDate)
+                                
+                                let date = targetDate
+                                let formatter = DateFormatter()
+                                formatter.dateFormat = "MM - dd - YYYY"
+                                print("Todays date",formatter.string(from: date))
+                                
+                                let newDate = futureDate!
+                                print("Upcoming date", formatter.string(from: newDate))
+                                
+                                
+                                self.completion?(titleText, bodyText, futureDate!)
+                            }
+                            
+                            
+                        }
+                    }
                 }
-                i += 1
             }
-            
-            //to add days to the current date
-            let futureDate = Calendar.current.date(byAdding: dateComponent, to: targetDate)
-            
-            completion?(titleText, bodyText, futureDate!)
 
-            }
+        }
         
     }
     
