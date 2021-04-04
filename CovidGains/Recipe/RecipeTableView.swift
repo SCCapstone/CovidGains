@@ -76,7 +76,7 @@ class RecipeTableView: UITableViewController {
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             if (error != nil) {
-                print(error)
+                print(error as Any)
             } else {
                 
                 do {
@@ -84,7 +84,7 @@ class RecipeTableView: UITableViewController {
                         if let searchResults = convertedJsonIntoDict["results"] as? NSArray{
                             var i = 0
                             var rname: String
-                            for index in searchResults {
+                            for _ in searchResults {
                                 if let recipe = searchResults[i] as? NSDictionary {
                                     rname = recipe["title"] as! String
                                     self.recipeData.append(rname)
@@ -137,7 +137,7 @@ class RecipeTableView: UITableViewController {
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             if (error != nil) {
-                print(error)
+                print(error as Any)
             } else {
                 
                 do {
@@ -209,7 +209,7 @@ class RecipeTableView: UITableViewController {
         var session = URLSession.shared
         var dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             if (error != nil) {
-                print(error)
+                print(error as Any)
             } else {
                 
                 do {
@@ -255,7 +255,7 @@ class RecipeTableView: UITableViewController {
         session = URLSession.shared
         dataTask = session.dataTask(with: request as URLRequest) { (data, response, error) in
             if (error != nil && data == nil) {
-                print("error" , error)
+                print("error" , error as Any)
             } else {
 
                 do {
@@ -271,7 +271,7 @@ class RecipeTableView: UITableViewController {
 
                                     var i = 0
 
-                                    for index in stepsSteps{
+                                    for _ in stepsSteps{
                                         if let dictStep = stepsSteps[i] as? NSDictionary{
                                             let step = dictStep["step"] as! String
                                             steps += ("Step " + String(i+1) + ": " + step + "\n")
@@ -289,7 +289,7 @@ class RecipeTableView: UITableViewController {
                         if let extendedIngredJSON = convertedJsonIntoDict["extendedIngredients"] as? NSArray{
                             var j = 0
 
-                            for index in extendedIngredJSON
+                            for _ in extendedIngredJSON
                             {
                                 if let embeddedIngredJSON = extendedIngredJSON[j] as? NSDictionary{
                                     if let ingred = embeddedIngredJSON["original"] {
