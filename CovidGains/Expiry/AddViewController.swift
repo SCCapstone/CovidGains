@@ -59,30 +59,18 @@ class AddViewController: UIViewController {
             
             let targetDate = datePicker.date
             var dateComponent = DateComponents()
-            //dateComponent.day = 0 //to test
             
             var i = 0
             
             for item in productData {
                 if item.name == titleField.text! {
                     dateComponent.day = item.expiration
-                    //print("dateComp",dateComponent)
-                    //prodStr += " (" + String(expirTime[i]) + " days)"
                 }
                 i += 1
             }
             
             //to add days to the current date
             let futureDate = Calendar.current.date(byAdding: dateComponent, to: targetDate)
- 
-            //let date = targetDate
-            //let formatter = DateFormatter()
-           // formatter.dateFormat = "MM - dd - YYYY"
-            //print("Todays date",formatter.string(from: date))
-
-            //let newDate = futureDate!
-            //print("Upcoming date", formatter.string(from: newDate))
-            
             
             completion?(titleText, bodyText, futureDate!)
 

@@ -36,12 +36,9 @@ class RegisterViewController: UIViewController{
         if let email = emailTextfield.text, let password = passwordTextfield.text {
             
             Auth.auth().createUser(withEmail: email, password: password) {  authResult, error in
-                //print("Registed user", email)
             
                 
                 if error != nil{
-                    //print(e.localizedDescription)
-                    //print(error?.localizedDescription)
                     self.errorL.text = error?.localizedDescription
                     self.errorL.alpha = 1
                     
@@ -54,17 +51,7 @@ class RegisterViewController: UIViewController{
                 }
                 
                 
-                
-                
-//                if let e = error
-//                {
-//
-//                }
-//                else{
-//
-//
-//                }
-            
+      
       
                 
                 

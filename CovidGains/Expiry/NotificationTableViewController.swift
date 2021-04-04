@@ -28,7 +28,6 @@ class NotificationTableViewController: UITableViewController {
                         let data = doc.data()
                         let docID = doc.documentID
                         
-                        //let timeStamp =
                         let stamp = data["Date"] as? Timestamp
                         let date = stamp?.dateValue()
 
@@ -149,7 +148,6 @@ class NotificationTableViewController: UITableViewController {
         let date = productData[indexPath.row].date
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM dd, YYYY 'at' hh:mm:ss a"
-        //cell.detailTextLabel?.text = formatter.string(from: date)
         moreVC.dateAddedString = formatter.string(from: date) //second line
         
         moreVC.productDetail = productData[indexPath.row].productDetail //third line = 5

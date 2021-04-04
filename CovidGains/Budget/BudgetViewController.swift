@@ -108,7 +108,6 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         if self.user != nil {
             self.db.collection(self.user!).document("BudgetAllow").setData(["allowance":allowance])
         }
-        // ?? = nil = 0 so default = 0
 
     }
     
