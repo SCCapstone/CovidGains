@@ -26,30 +26,6 @@ class RecipeTableView: UITableViewController {
     }
     
     
-//    func loadRecipeData()
-//    {
-//        self.db.collection("Recipes").getDocuments { (querySnapshot, error) in
-//            if let e = error{
-//                print("The error is : \(e)")
-//
-//            }else{
-//                if let snapshotDocuments = querySnapshot?.documents {
-//                    for doc in snapshotDocuments {
-//                        let data = doc.data()
-//                        let docID = doc.documentID
-//
-//                        let recipe = myRecipe(recipeName: docID, directions: data["directions"] as! String, ingredients: data["ingredients"] as! String, identifier: "id_\(docID)")
-//                        self.recipeData.append(recipe)
-//
-//                        DispatchQueue.main.async{
-//                            self.tableView.reloadData()
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
-    
     let query = ""
     func recipeSearch(query: String) {
         recipeData = []
