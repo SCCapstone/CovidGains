@@ -183,87 +183,89 @@ class RecipeTableView: UITableViewController {
         guard let recp = self.storyboard?.instantiateViewController(identifier: "Detail") as? RecipeDetailViewController else{
             return
         }
-        var name = ""
-        var image = ""
-        var ingreds = "Ingredients:\n"
-        var steps = "Instructions:\n"
-        let headers = [
-            "x-rapidapi-key": "3989959899mshfeb4d8905d820ccp1dc37bjsn1049a6d50381",
-            "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
-        ]
-        //print("out:", ID)
-        let request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/" + String(recipeData[indexPath.row].recipeID) + "/information")! as URL,cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+        self.navigationController?.pushViewController(recp, animated: true)
 
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
-
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: request as URLRequest) { (data, response, error) in
-            if (error != nil && data == nil) {
-                print("error" , error as Any)
-            } else {
-
-                do {
-                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary { //converted JSON objec to dictonary
-
-                        name = convertedJsonIntoDict["title"] as! String
-                        image = convertedJsonIntoDict["image"] as! String
-
-                        if let analyzedInstrJSON = convertedJsonIntoDict["analyzedInstructions"] as? NSArray{
-                            if let analyzedStepsJSON = analyzedInstrJSON[0] as? NSDictionary{
-                                if let stepsSteps = analyzedStepsJSON["steps"] as? NSArray{
-
-                                    var i = 0
-
-                                    for _ in stepsSteps{
-                                        if let dictStep = stepsSteps[i] as? NSDictionary{
-                                            let step = dictStep["step"] as! String
-                                            steps += ("Step " + String(i+1) + ": " + step + "\n")
-                                            i += 1
-                                        }
-                                    }
-
-                                }
-                            }
-                        }
-                    }
-
-                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary { //converted JSON objec to dictonary
-
-                        if let extendedIngredJSON = convertedJsonIntoDict["extendedIngredients"] as? NSArray{
-                            var j = 0
-
-                            for _ in extendedIngredJSON
-                            {
-                                if let embeddedIngredJSON = extendedIngredJSON[j] as? NSDictionary{
-                                    if let ingred = embeddedIngredJSON["original"] {
-                                        ingreds += (ingred as! String) + "\n"
-                                    }
-                                }
-                                j += 1
-                            }
-
-                        }
-
-                    }
-
-                    
-                    
-                    DispatchQueue.main.async {
-                        recp.recipName = name
-                        recp.recipeIngAndSteps = ingreds + "\n" +  steps
-                        recp.recipeImage = image
-                        self.navigationController?.pushViewController(recp, animated: true)
-                    }
-
-                } catch let error as NSError {
-                    print(error.localizedDescription)
-                }
-
-            }
-        }
-
-        dataTask.resume() //API call made!
+//        var name = ""
+//        var image = ""
+//        var ingreds = "Ingredients:\n"
+//        var steps = "Instructions:\n"
+//        let headers = [
+//            "x-rapidapi-key": "3989959899mshfeb4d8905d820ccp1dc37bjsn1049a6d50381",
+//            "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
+//        ]
+//        //print("out:", ID)
+//        let request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/" + String(recipeData[indexPath.row].recipeID) + "/information")! as URL,cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+//
+//        request.httpMethod = "GET"
+//        request.allHTTPHeaderFields = headers
+//
+//        let session = URLSession.shared
+//        let dataTask = session.dataTask(with: request as URLRequest) { (data, response, error) in
+//            if (error != nil && data == nil) {
+//                print("error" , error as Any)
+//            } else {
+//
+//                do {
+//                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary { //converted JSON objec to dictonary
+//
+//                        name = convertedJsonIntoDict["title"] as! String
+//                        image = convertedJsonIntoDict["image"] as! String
+//
+//                        if let analyzedInstrJSON = convertedJsonIntoDict["analyzedInstructions"] as? NSArray{
+//                            if let analyzedStepsJSON = analyzedInstrJSON[0] as? NSDictionary{
+//                                if let stepsSteps = analyzedStepsJSON["steps"] as? NSArray{
+//
+//                                    var i = 0
+//
+//                                    for _ in stepsSteps{
+//                                        if let dictStep = stepsSteps[i] as? NSDictionary{
+//                                            let step = dictStep["step"] as! String
+//                                            steps += ("Step " + String(i+1) + ": " + step + "\n")
+//                                            i += 1
+//                                        }
+//                                    }
+//
+//                                }
+//                            }
+//                        }
+//                    }
+//
+//                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary { //converted JSON objec to dictonary
+//
+//                        if let extendedIngredJSON = convertedJsonIntoDict["extendedIngredients"] as? NSArray{
+//                            var j = 0
+//
+//                            for _ in extendedIngredJSON
+//                            {
+//                                if let embeddedIngredJSON = extendedIngredJSON[j] as? NSDictionary{
+//                                    if let ingred = embeddedIngredJSON["original"] {
+//                                        ingreds += (ingred as! String) + "\n"
+//                                    }
+//                                }
+//                                j += 1
+//                            }
+//
+//                        }
+//
+//                    }
+//
+//
+//
+//                    DispatchQueue.main.async {
+//                        recp.recipName = name
+//                        recp.recipeIngAndSteps = ingreds + "\n" +  steps
+//                        recp.recipeImage = image
+//                        self.navigationController?.pushViewController(recp, animated: true)
+//                    }
+//
+//                } catch let error as NSError {
+//                    print(error.localizedDescription)
+//                }
+//
+//            }
+//        }
+//
+//        dataTask.resume() //API call made!
 
     }
     
@@ -280,6 +282,6 @@ extension RecipeTableView : UISearchBarDelegate {
         guard let query = searchBar.text else {
             return
         }
-        recipeSearch(query: query)
+        //recipeSearch(query: query)
     }
 }

@@ -25,11 +25,11 @@ class RecipeDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let urlYourURL = URL(string: recipeImage)
+        let urlYourURL = URL(string: "https://spoonacular.com/recipeImages/char-grilled-beef-tenderloin-with-three-herb-chimichurri-156992.jpg")
         self.imageDownloaded.loadurl(url: urlYourURL!)
  
-        recipeTitle.text = recipName
-        Ingredients.text = recipeIngAndSteps
+        recipeTitle.text = "recipName"
+        Ingredients.text = "recipeIngAndSteps"
 
         
         
