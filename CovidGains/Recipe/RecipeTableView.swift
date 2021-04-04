@@ -18,15 +18,71 @@ class RecipeTableView: UITableViewController {
     
     let db = Firestore.firestore()
     var recipeData = [myRecipe]()
-    
+    let query = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        randRecipes()
 
     }
     
     
-    let query = ""
+    func randRecipes() {
+        recipeData = []
+        let headers = [
+            "x-rapidapi-key": "3989959899mshfeb4d8905d820ccp1dc37bjsn1049a6d50381",
+            "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
+        ]
+
+        let request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=10")! as URL,
+                                                cachePolicy: .useProtocolCachePolicy,
+                                            timeoutInterval: 10.0)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            if (error != nil) {
+                print(error as Any)
+            } else {
+            
+                do {
+                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary{ //converted JSON objec to dictonary
+                        if let recipes = convertedJsonIntoDict["recipes"] as? NSArray{
+                            var i = 0
+                            for _ in recipes {
+                                if let recipe = recipes[i] as? NSDictionary {
+                                    let rname = recipe["title"] as! String
+                                    let ID = recipe["id"] as! Int
+                                    let recip = myRecipe(recipeName: rname, recipeID: ID)
+                                    self.recipeData.append(recip)
+                                }
+                                i += 1
+                            }
+                        }
+                        
+
+                    }
+
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                }
+                
+                
+                
+            }
+            
+            
+        })
+
+        dataTask.resume()
+        
+        
+    }
     func recipeSearch(query: String) {
         recipeData = []
         DispatchQueue.main.async{
