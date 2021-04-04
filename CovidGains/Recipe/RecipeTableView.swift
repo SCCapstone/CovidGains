@@ -17,18 +17,13 @@ class RecipeTableView: UITableViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     let db = Firestore.firestore()
-    var recipeData = [String]()
+    var recipeData = [myRecipe]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       // loadRecipeAPI()
         searchBar.delegate = self
-        //getNutrition()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+
     }
-    
     
     
 //    func loadRecipeData()
@@ -84,10 +79,13 @@ class RecipeTableView: UITableViewController {
                         if let searchResults = convertedJsonIntoDict["results"] as? NSArray{
                             var i = 0
                             var rname: String
+                            var ID: Int
                             for _ in searchResults {
                                 if let recipe = searchResults[i] as? NSDictionary {
                                     rname = recipe["title"] as! String
-                                    self.recipeData.append(rname)
+                                    ID = recipe["id"] as! Int
+                                    let recip = myRecipe(recipeName: rname, recipeID: ID)
+                                    self.recipeData.append(recip)
                                     
                                 }
                                 i += 1
@@ -98,10 +96,7 @@ class RecipeTableView: UITableViewController {
                             
                         }
                         
-//                        print("calories", calories)
-//                        print("carbs", carbs)
-//                        print("fat", fat)
-//                        print("protein", protein)
+
                     }
 
                     DispatchQueue.main.async {
@@ -147,10 +142,7 @@ class RecipeTableView: UITableViewController {
                         fat = convertedJsonIntoDict["fat"] as! String
                         protein = convertedJsonIntoDict["protein"] as! String
                         
-//                        print("calories", calories)
-//                        print("carbs", carbs)
-//                        print("fat", fat)
-//                        print("protein", protein)
+
                     }
 
                     DispatchQueue.main.async {
@@ -182,78 +174,31 @@ class RecipeTableView: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rCell", for: indexPath)
         
-        cell.textLabel?.text = recipeData[indexPath.row]
+        cell.textLabel?.text = recipeData[indexPath.row].recipeName
         // Configure the cell...
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var ID = 0
         guard let recp = self.storyboard?.instantiateViewController(identifier: "Detail") as? RecipeDetailViewController else{
             return
         }
-        
-        self.navigationController?.pushViewController(recp, animated: true)
-        
-        var headers = [
-            "x-rapidapi-key": "3989959899mshfeb4d8905d820ccp1dc37bjsn1049a6d50381",
-            "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
-        ]
-
-        var request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?query=" + query)! as URL,
-                                                cachePolicy: .useProtocolCachePolicy,
-                                            timeoutInterval: 10.0)
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
-
-        var session = URLSession.shared
-        var dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-            if (error != nil) {
-                print(error as Any)
-            } else {
-                
-                do {
-                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary{ //converted JSON objec to dictonary
-                        if let searchResults = convertedJsonIntoDict["results"] as? NSArray{
-                            
-                                if let recipe = searchResults[0] as? NSDictionary {
-                                    ID = recipe["id"] as! Int
-                                    print("in: ", ID)
-                                }
-                            
-                            
-                        }
-        
-                    }
-
-
-                } catch let error as NSError {
-                    print(error.localizedDescription)
-                }
-
-            }
-            
-        })
-
-        dataTask.resume()
-        
-        
         var name = ""
         var image = ""
         var ingreds = "Ingredients:\n"
         var steps = "Instructions:\n"
-        headers = [
+        let headers = [
             "x-rapidapi-key": "3989959899mshfeb4d8905d820ccp1dc37bjsn1049a6d50381",
             "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
         ]
-        print("out:", ID)
-        request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/" + String(ID) + "/information")! as URL,cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+        //print("out:", ID)
+        let request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/" + String(recipeData[indexPath.row].recipeID) + "/information")! as URL,cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
 
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
 
-        session = URLSession.shared
-        dataTask = session.dataTask(with: request as URLRequest) { (data, response, error) in
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request as URLRequest) { (data, response, error) in
             if (error != nil && data == nil) {
                 print("error" , error as Any)
             } else {
@@ -262,7 +207,6 @@ class RecipeTableView: UITableViewController {
                     if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary { //converted JSON objec to dictonary
 
                         name = convertedJsonIntoDict["title"] as! String
-
                         image = convertedJsonIntoDict["image"] as! String
 
                         if let analyzedInstrJSON = convertedJsonIntoDict["analyzedInstructions"] as? NSArray{
@@ -303,12 +247,12 @@ class RecipeTableView: UITableViewController {
 
                     }
 
+                    
+                    
                     DispatchQueue.main.async {
                         recp.recipName = name
-
-                        recp.recipeIngredients = ingreds + "\n" +  steps
+                        recp.recipeIngAndSteps = ingreds + "\n" +  steps
                         recp.recipeImage = image
-
                         self.navigationController?.pushViewController(recp, animated: true)
                     }
 
@@ -327,6 +271,7 @@ class RecipeTableView: UITableViewController {
 
 struct myRecipe{
     let recipeName: String
+    let recipeID: Int
     
 }
 
