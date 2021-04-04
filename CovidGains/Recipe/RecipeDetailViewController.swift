@@ -14,6 +14,7 @@ class RecipeDetailViewController: UIViewController {
     var recipName = ""
     var recipeIngAndSteps = ""
     var recipeImage = ""
+    var idNutrition = ""
     
     @IBOutlet var recipeTitle: UILabel!
     
@@ -30,13 +31,22 @@ class RecipeDetailViewController: UIViewController {
  
         recipeTitle.text = "recipName"
         Ingredients.text = "recipeIngAndSteps"
-
-        
-        
         
     }
     
 
+    @IBAction func nutritionClicked(_ sender: Any) {
+        guard let nutrionV = self.storyboard?.instantiateViewController(identifier: "nutritonDetail") as? NutritionViewController else{
+            return
+        }
+        nutrionV.getId = idNutrition
+        self.navigationController?.pushViewController(nutrionV, animated: true)
+        
+    }
+    
+    
+    
+    
 }
 extension UIImageView {
     func loadurl(url: URL){
