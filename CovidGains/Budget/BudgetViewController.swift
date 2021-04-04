@@ -120,7 +120,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
             addNewBudgetVC.navigationItem.largeTitleDisplayMode = .never
             addNewBudgetVC.comp = {bProductName, bProductCost in DispatchQueue.main.async{
                 self.navigationController?.popToRootViewController(animated: true)
-                let newBudget = MyBudget(bProductName: bProductName, bProductCost: bProductCost)
+                let newBudget = MyBudget(bProductName: bProductName, bProductCost: "$" + bProductCost)
                 self.budgetData.append(newBudget)
                 self.tableView.reloadData()
                 
