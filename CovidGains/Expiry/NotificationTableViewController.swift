@@ -19,6 +19,7 @@ class NotificationTableViewController: UITableViewController {
     }
     
     func loadData(){
+        
         self.db.collection((user)!).document("Expiry").collection("expiryList").getDocuments { (querySnapshot, error) in
             if let e = error{
                 print("There is issue retrieving data.\(e)")
@@ -30,28 +31,27 @@ class NotificationTableViewController: UITableViewController {
                         
                         let stamp = data["Date"] as? Timestamp
                         let date = stamp?.dateValue()
-
                         let new = MyReminder(productName: docID, productDetail: data["Quantity"] as! String, date: date! , identifier: "id_\(docID)")
                         self.productData.append(new)
-
+                        
                         DispatchQueue.main.async {
-                                self.tableView.reloadData()
+                            self.productData.sort{$0.date < $1.date }
+                            self.tableView.reloadData()
                         }
 
                     }
                 }
             }
         }
+        
     }
-    
-    
     
     @IBAction func didTapAdd(_ sender: UIBarButtonItem) {
        
         guard let addVC = storyboard?.instantiateViewController(identifier: "add") as? AddViewController else{
             return
         }
-        
+
         addVC.title = "New Reminder"
         addVC.navigationItem.largeTitleDisplayMode = .never
         addVC.completion = { productName, productDetail, date in
@@ -60,6 +60,7 @@ class NotificationTableViewController: UITableViewController {
                 self.navigationController?.popViewController(animated: true)
                 let new = MyReminder(productName: productName, productDetail: productDetail, date: date, identifier: "id_\(productName )")
                 self.productData.append(new)
+                self.productData.sort{$0.date < $1.date }
                 self.tableView.reloadData()
                 
                 //request
@@ -101,13 +102,11 @@ class NotificationTableViewController: UITableViewController {
                     }
                 }
             }
-
-
-            self.tableView.reloadData()
         
         }
         navigationController?.pushViewController(addVC, animated: true)
-
+        self.productData.sort{$0.date < $1.date }
+        self.tableView.reloadData()
     }
     
  
