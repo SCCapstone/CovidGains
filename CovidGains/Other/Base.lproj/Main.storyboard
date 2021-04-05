@@ -966,19 +966,53 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="load UP BOI" translatesAutoresizingMaskIntoConstraints="NO" id="cwX-Y8-Cfi">
-                                <rect key="frame" x="53" y="146" width="308" height="309"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1l-IW-UVW" customClass="CSAnimationView">
+                                <rect key="frame" x="20" y="114" width="374" height="389"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="load UP BOI" translatesAutoresizingMaskIntoConstraints="NO" id="tVl-xZ-FN6">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="389"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="tVl-xZ-FN6" firstAttribute="centerX" secondItem="x1l-IW-UVW" secondAttribute="centerX" id="NUT-1P-Zt2"/>
+                                    <constraint firstItem="tVl-xZ-FN6" firstAttribute="centerY" secondItem="x1l-IW-UVW" secondAttribute="centerY" id="Yax-RT-BKk"/>
+                                    <constraint firstItem="tVl-xZ-FN6" firstAttribute="top" secondItem="x1l-IW-UVW" secondAttribute="top" id="chR-w9-MpO"/>
+                                    <constraint firstItem="tVl-xZ-FN6" firstAttribute="leading" secondItem="x1l-IW-UVW" secondAttribute="leading" id="eLg-9Q-hcF"/>
+                                    <constraint firstAttribute="height" constant="389" id="hXb-kr-QU9"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="type" value="popAlpha"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="apG-IL-xe5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="apG-IL-xe5" firstAttribute="trailing" secondItem="UB7-Yk-aNM" secondAttribute="trailing" id="09H-MM-O2E"/>
+                            <constraint firstItem="x1l-IW-UVW" firstAttribute="top" secondItem="apG-IL-xe5" secondAttribute="top" constant="70" id="EXp-9x-83r"/>
+                            <constraint firstItem="apG-IL-xe5" firstAttribute="trailing" secondItem="x1l-IW-UVW" secondAttribute="trailing" constant="20" id="HDd-eH-AmZ"/>
+                            <constraint firstItem="x1l-IW-UVW" firstAttribute="leading" secondItem="apG-IL-xe5" secondAttribute="leading" constant="20" id="R2O-So-pSh"/>
+                            <constraint firstItem="UB7-Yk-aNM" firstAttribute="top" secondItem="x1l-IW-UVW" secondAttribute="bottom" constant="109" id="afy-eZ-hYK"/>
                             <constraint firstItem="apG-IL-xe5" firstAttribute="bottom" secondItem="UB7-Yk-aNM" secondAttribute="bottom" constant="60" id="hhj-sY-9hU"/>
                             <constraint firstItem="UB7-Yk-aNM" firstAttribute="centerX" secondItem="4Bx-4S-OuN" secondAttribute="centerX" id="hzI-my-xX2"/>
                             <constraint firstItem="UB7-Yk-aNM" firstAttribute="leading" secondItem="apG-IL-xe5" secondAttribute="leading" id="izg-OJ-27c"/>
+                            <constraint firstItem="x1l-IW-UVW" firstAttribute="centerX" secondItem="apG-IL-xe5" secondAttribute="centerX" id="v8M-zB-Sgm"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="type" value=""/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                <integer key="value" value="0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="99V-qS-yxB"/>
                 </viewController>
