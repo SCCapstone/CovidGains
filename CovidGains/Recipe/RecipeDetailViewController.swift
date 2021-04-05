@@ -14,23 +14,26 @@ class RecipeDetailViewController: UIViewController {
     var recipName = ""
     var recipeIngAndSteps = ""
     var recipeImage = ""
-    var idNutrition = ""
+    var idNutrition = 0
     
     @IBOutlet var recipeTitle: UILabel!
     
-    @IBOutlet var Ingredients: UILabel!
+   // @IBOutlet var Ingredients: UILabel!
     
     @IBOutlet var imageDownloaded: UIImageView!
     
+    @IBOutlet weak var ingSteps: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let urlYourURL = URL(string: "https://spoonacular.com/recipeImages/char-grilled-beef-tenderloin-with-three-herb-chimichurri-156992.jpg")
+        let urlYourURL = URL(string: recipeImage)
         self.imageDownloaded.loadurl(url: urlYourURL!)
  
-        recipeTitle.text = "recipName"
-        Ingredients.text = "recipeIngAndSteps"
+        recipeTitle.text = recipName
+        //Ingredients.text = recipeIngAndSteps
+        ingSteps.text = recipeIngAndSteps
+        
         
     }
     
@@ -39,7 +42,9 @@ class RecipeDetailViewController: UIViewController {
         guard let nutrionV = self.storyboard?.instantiateViewController(identifier: "nutritonDetail") as? NutritionViewController else{
             return
         }
+        print(idNutrition)
         nutrionV.getId = idNutrition
+        
         self.navigationController?.pushViewController(nutrionV, animated: true)
         
     }
