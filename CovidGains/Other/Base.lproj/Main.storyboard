@@ -846,7 +846,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="hWr-T7-8OU">
                                 <rect key="frame" x="32" y="295.5" width="350" height="305"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qrM-aV-o3I">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qrM-aV-o3I">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="A90-uZ-Fl3"/>
