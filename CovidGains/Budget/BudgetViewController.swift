@@ -75,6 +75,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
                 print(self.allowance); print(self.spent); print(self.safeAmount)
                 self.safeSpentLabel.text = "$\(self.safeAmount)"
                 self.spentLabel.text = "$\(self.spent)"
+                self.allowanceField.text = "$\(self.allowance)"
             } else {
                 print("Document does not exist")
             }
