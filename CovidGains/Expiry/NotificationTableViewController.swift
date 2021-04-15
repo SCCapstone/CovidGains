@@ -130,28 +130,28 @@ class NotificationTableViewController: UITableViewController {
         
         let date = productData[indexPath.row].date
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM, dd, YYYY at hh:mm a"
-        cell.detailTextLabel?.text = formatter.string(from: date)
+        formatter.dateFormat = "MMM dd, YYYY"
+        cell.detailTextLabel?.text = "Expiry date: " + formatter.string(from: date)
         
         //cell.detailTextLabel?.text = formatter.string(from: date)
 
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let moreVC = storyboard?.instantiateViewController(identifier: "more") as? DetailViewController else{
-             return
-         }
-        moreVC.productTitle = productData[indexPath.row].productName // first line = apples
-        
-        let date = productData[indexPath.row].date
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMM dd, YYYY 'at' hh:mm:ss a"
-        moreVC.dateAddedString = formatter.string(from: date) //second line
-        
-        moreVC.productDetail = productData[indexPath.row].productDetail //third line = 5
-        navigationController?.pushViewController(moreVC, animated: true)
-    }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        guard let moreVC = storyboard?.instantiateViewController(identifier: "more") as? DetailViewController else{
+//             return
+//         }
+//        moreVC.productTitle = productData[indexPath.row].productName // first line = apples
+//        
+//        let date = productData[indexPath.row].date
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "MMM dd, YYYY 'at' hh:mm:ss a"
+//        moreVC.dateAddedString = formatter.string(from: date) //second line
+//        
+//        moreVC.productDetail = productData[indexPath.row].productDetail //third line = 5
+//        navigationController?.pushViewController(moreVC, animated: true)
+//    }
 
     /*
     // Override to support conditional editing of the table view.
