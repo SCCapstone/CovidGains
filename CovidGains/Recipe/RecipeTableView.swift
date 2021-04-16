@@ -3,7 +3,6 @@
 //  CovidGains
 //
 //  Created by Praful Chunchu on 2/12/21.
-//
 
 import UIKit
 import Firebase
@@ -19,6 +18,7 @@ class RecipeTableView: UITableViewController {
     let db = Firestore.firestore()
     var recipeData = [myRecipe]()
     let query = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
@@ -83,6 +83,7 @@ class RecipeTableView: UITableViewController {
         
         
     }
+    
     func recipeSearch(query: String) {
         recipeData = []
         DispatchQueue.main.async{
@@ -183,7 +184,7 @@ class RecipeTableView: UITableViewController {
             "x-rapidapi-key": "3989959899mshfeb4d8905d820ccp1dc37bjsn1049a6d50381",
             "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
         ]
-        //print("out:", ID)
+
         let request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/" + String(recipeData[indexPath.row].recipeID) + "/information")! as URL,cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
 
         request.httpMethod = "GET"

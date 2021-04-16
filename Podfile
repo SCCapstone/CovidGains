@@ -11,6 +11,8 @@ target 'CovidGains' do
   pod 'Firebase/Storage'
   pod 'FirebaseUI/Storage'
   pod 'Canvas'
+  pod 'DropDown'
+  
 #target 'CovidGainsTests' do
 #  inherit! :search_paths
 end

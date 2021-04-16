@@ -219,6 +219,7 @@ PODS:
     - BoringSSL-GRPC/Interface (= 0.0.7)
   - BoringSSL-GRPC/Interface (0.0.7)
   - Canvas (0.1.2)
+  - DropDown (2.3.13)
   - Firebase/Auth (6.34.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.9.2)
@@ -317,6 +318,7 @@ PODS:
 
 DEPENDENCIES:
   - Canvas
+  - DropDown
   - Firebase/Auth
   - Firebase/Firestore
   - Firebase/Storage
@@ -327,6 +329,7 @@ SPEC REPOS:
     - abseil
     - BoringSSL-GRPC
     - Canvas
+    - DropDown
     - Firebase
     - FirebaseAuth
     - FirebaseCore
@@ -348,6 +351,7 @@ SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
   FirebaseAuth: c92d49ada7948d1a23466e3db17bc4c2039dddc3
   FirebaseCore: d3a978a3cfa3240bf7e4ba7d137fdf5b22b628ec
@@ -365,6 +369,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
 
-PODFILE CHECKSUM: 5cfe48e6882c99716d17535de8c822e78657adda
+PODFILE CHECKSUM: 6f286da42d794c6e500126ef710cb2c230b9019d
 
 COCOAPODS: 1.10.0
