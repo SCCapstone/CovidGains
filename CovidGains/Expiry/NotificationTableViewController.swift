@@ -10,6 +10,7 @@ class NotificationTableViewController: UITableViewController {
     let db = Firestore.firestore()
     var productData = [MyReminder]() //stores all the reminders
     let user = Auth.auth().currentUser?.email
+    var exp = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,14 +38,32 @@ class NotificationTableViewController: UITableViewController {
                         DispatchQueue.main.async {
                             self.productData.sort{$0.date < $1.date }
                             self.tableView.reloadData()
+                            
                         }
 
                     }
+                    //Sending first 3 items to recipe to generte random recipes
+                    self.productData.sort{$0.date < $1.date }
+                    pList.expiry1 = self.productData[0].productName
+                    pList.expiry2 = self.productData[1].productName
+                    pList.expiry3 = self.productData[2].productName
+                     
                 }
+                
+                
             }
         }
         
     }
+    
+    
+    
+    struct pList {
+        static var expiry1 = String()
+        static var expiry2 = String()
+        static var expiry3 = String()
+    }
+    
     
     @IBAction func didTapAdd(_ sender: UIBarButtonItem) {
        
@@ -208,3 +227,6 @@ struct MyReminder{
     let date: Date
     let identifier: String
 }
+
+
+

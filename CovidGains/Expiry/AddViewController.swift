@@ -99,7 +99,7 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
                                 staleDays = data["Expiration"] as! Int
                                 
                                 dateComponent.day = staleDays//to testExpiration
-                                print("i am date",dateComponent.day)
+                                //print("i am date",dateComponent.day)
                                 
                                 
                                 let targetDate = self.datePicker.date
@@ -110,10 +110,10 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
                                 let date = targetDate
                                 let formatter = DateFormatter()
                                 formatter.dateFormat = "MM - dd - YYYY"
-                                print("Todays date",formatter.string(from: date))
+                                //print("Todays date",formatter.string(from: date))
                                 
                                 let newDate = futureDate!
-                                print("Upcoming date", formatter.string(from: newDate))
+                                //print("Upcoming date", formatter.string(from: newDate))
                                 
                                 
                                 self.completion?(titleText, bodyText, futureDate!)

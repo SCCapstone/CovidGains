@@ -19,68 +19,67 @@ class RecipeTableView: UITableViewController {
     var recipeData = [myRecipe]()
     let query = ""
     
+    var gstr1 = ""
+    var gstr2 = ""
+    var gstr3 = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
-        randRecipes()
-
+        expProdRecip()
     }
     
-    
-    func randRecipes() {
-        recipeData = []
+    //generates recipies using top 3 expiry product
+    func expProdRecip(){
+        let ingredient1 = NotificationTableViewController.pList.expiry1
+        let ingredient2 =  NotificationTableViewController.pList.expiry2
+        let ingredient3 = NotificationTableViewController.pList.expiry3
+        
         let headers = [
             "x-rapidapi-key": "3989959899mshfeb4d8905d820ccp1dc37bjsn1049a6d50381",
             "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
         ]
-
-        let request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=10&limitLicense=true")! as URL,
-                                                cachePolicy: .useProtocolCachePolicy,
-                                            timeoutInterval: 10.0)
+        
+        let request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=" + ingredient1 + "%2C" + ingredient2 + "%2C" + ingredient3 + "&number=15&ranking=1&ignorePantry=true")! as URL,
+                                          cachePolicy: .useProtocolCachePolicy,
+                                          timeoutInterval: 10.0)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
-
+        
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             if (error != nil) {
                 print(error as Any)
             } else {
-            
+                
                 do {
-                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary{ //converted JSON objec to dictonary
-                        if let recipes = convertedJsonIntoDict["recipes"] as? NSArray{
-                            var i = 0
-                            for _ in recipes {
-                                if let recipe = recipes[i] as? NSDictionary {
-                                    let rname = recipe["title"] as! String
-                                    let ID = recipe["id"] as! Int
-                                    let recip = myRecipe(recipeName: rname, recipeID: ID)
-                                    self.recipeData.append(recip)
-                                }
-                                i += 1
-                            }
-                        }
+                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSArray{ //converted JSON objec to dictonary
                         
-
+                        var i = 0
+                        for _ in convertedJsonIntoDict{
+                            if let recipe = convertedJsonIntoDict[i] as? NSDictionary{
+                                let rname = recipe["title"] as! String
+                                let ID = recipe["id"] as! Int
+                                let recip = myRecipe(recipeName: rname, recipeID: ID)
+                                self.recipeData.append(recip)
+                            }
+                            i += 1
+                        }
                     }
-
+                    
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
-
+                    
                 } catch let error as NSError {
                     print(error.localizedDescription)
                 }
                 
                 
-                
             }
-            
-            
         })
-
-        dataTask.resume()
         
+        dataTask.resume()
         
     }
     
@@ -94,13 +93,13 @@ class RecipeTableView: UITableViewController {
             "x-rapidapi-key": "3989959899mshfeb4d8905d820ccp1dc37bjsn1049a6d50381",
             "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
         ]
-
+        
         let request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?query=" + query + "&limitLicense=true")! as URL,
-                                                cachePolicy: .useProtocolCachePolicy,
-                                            timeoutInterval: 10.0)
+                                          cachePolicy: .useProtocolCachePolicy,
+                                          timeoutInterval: 10.0)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
-
+        
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             if (error != nil) {
@@ -129,20 +128,20 @@ class RecipeTableView: UITableViewController {
                             
                         }
                         
-
+                        
                     }
-
+                    
                     DispatchQueue.main.async {
                     }
-
+                    
                 } catch let error as NSError {
                     print(error.localizedDescription)
                 }
-
+                
             }
             
         })
-
+        
         dataTask.resume()
     }
     
@@ -174,7 +173,7 @@ class RecipeTableView: UITableViewController {
             return
         }
         //self.navigationController?.pushViewController(recp, animated: true)
-
+        
         var name = ""
         var image = ""
         var ID = 0
@@ -184,30 +183,30 @@ class RecipeTableView: UITableViewController {
             "x-rapidapi-key": "3989959899mshfeb4d8905d820ccp1dc37bjsn1049a6d50381",
             "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
         ]
-
+        
         let request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/" + String(recipeData[indexPath.row].recipeID) + "/information")! as URL,cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
-
+        
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
-
+        
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest) { (data, response, error) in
             if (error != nil && data == nil) {
                 print("error" , error as Any)
             } else {
-
+                
                 do {
                     if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary { //converted JSON objec to dictonary
-
+                        
                         name = convertedJsonIntoDict["title"] as! String
                         image = convertedJsonIntoDict["image"] as! String
                         ID = convertedJsonIntoDict["id"] as! Int
                         if let analyzedInstrJSON = convertedJsonIntoDict["analyzedInstructions"] as? NSArray{
                             if let analyzedStepsJSON = analyzedInstrJSON[0] as? NSDictionary{
                                 if let stepsSteps = analyzedStepsJSON["steps"] as? NSArray{
-
+                                    
                                     var i = 0
-
+                                    
                                     for _ in stepsSteps{
                                         if let dictStep = stepsSteps[i] as? NSDictionary{
                                             let step = dictStep["step"] as! String
@@ -215,17 +214,17 @@ class RecipeTableView: UITableViewController {
                                             i += 1
                                         }
                                     }
-
+                                    
                                 }
                             }
                         }
                     }
-
+                    
                     if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary { //converted JSON objec to dictonary
-
+                        
                         if let extendedIngredJSON = convertedJsonIntoDict["extendedIngredients"] as? NSArray{
                             var j = 0
-
+                            
                             for _ in extendedIngredJSON
                             {
                                 if let embeddedIngredJSON = extendedIngredJSON[j] as? NSDictionary{
@@ -235,13 +234,13 @@ class RecipeTableView: UITableViewController {
                                 }
                                 j += 1
                             }
-
+                            
                         }
-
+                        
                     }
-
-
-
+                    
+                    
+                    
                     DispatchQueue.main.async {
                         recp.recipName = name
                         recp.recipeIngAndSteps = ingreds + "\n" +  steps
@@ -249,16 +248,16 @@ class RecipeTableView: UITableViewController {
                         recp.idNutrition = ID
                         self.navigationController?.pushViewController(recp, animated: true)
                     }
-
+                    
                 } catch let error as NSError {
                     print(error.localizedDescription)
                 }
-
+                
             }
         }
-
+        
         dataTask.resume() //API call made!
-
+        
     }
     
 }
