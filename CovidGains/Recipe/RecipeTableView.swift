@@ -26,7 +26,7 @@ class RecipeTableView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
-        //expProdRecip()
+        expProdRecip()
     }
     
     //generates recipies using top 3 expiry product
