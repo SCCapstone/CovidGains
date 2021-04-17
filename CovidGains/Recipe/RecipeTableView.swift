@@ -26,7 +26,7 @@ class RecipeTableView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
-        expProdRecip()
+        //expProdRecip()
     }
     
     //generates recipies using top 3 expiry product
@@ -273,6 +273,21 @@ extension RecipeTableView : UISearchBarDelegate {
         guard let query = searchBar.text else {
             return
         }
-        recipeSearch(query: query)
+        //recipeSearch(query: query)
+
+        
+        //Apple Pie = Apple%20Pie
+        
+        if(query.contains(" ")){
+            let brokenQuery = query.split(separator: " ", omittingEmptySubsequences: false)
+            let joinedQuery = brokenQuery.map(String.init).joined(separator: "%20")
+            recipeSearch(query: joinedQuery)
+        }else{
+            recipeSearch(query: query)
+
+        }
+        
+        
+        
     }
 }
