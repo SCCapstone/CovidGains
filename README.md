@@ -1,4 +1,8 @@
-
+<style>
+  body {
+    background-image: url('iu-2.jpeg');
+  }
+</style>
   
 # Covid Gains- Project Name: Grosh
 
