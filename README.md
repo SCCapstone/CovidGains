@@ -1,6 +1,4 @@
-<style>
-.reveal section img { background:none; border:none; box-shadow:none; }
-</style>
+
 # Covid Gains- Project Name: Grosh
 
 Grosh keeps track of all grocery related issues.  Grosh can track
@@ -10,7 +8,9 @@ weekly budget for groceries.  The app can also calculate price of items
 after certain discount or sales tax.  The app will keep track of grocery
 expirations, and suggest recipes with the ingredients set to expire before 
 they expire.
-
+<style>
+.reveal section img { background:none; border:none; box-shadow:none; }
+</style>
 ![load_UP_BOI-2-removebg-preview](https://user-images.githubusercontent.com/45469022/115594151-6737a100-a2a3-11eb-8bc6-fd542a355152.png)
 
 ## Final Demo (Placeholder)
