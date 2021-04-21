@@ -15,7 +15,7 @@ expirations, and suggest recipes with the ingredients set to expire before
 they expire.
 
 <p align = "center">
-<img src="docs/load-UP-BOI-unscreen.gif" alt="Grosh logo">
+<img src="load-UP-BOI-unscreen.gif" alt="Grosh logo">
 </p>
 
 ## Final Demo (Placeholder)
