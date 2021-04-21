@@ -12,7 +12,7 @@ they expire.
 .reveal section img { background:none; border:none; box-shadow:none; }
 </style>
 
-![load_UP_BOI-2-removebg-preview](https://user-images.githubusercontent.com/45469022/115595956-8e8f6d80-a2a5-11eb-92ce-7d09302b2a42.gif)
+![load-UP-BOI-unscreen](https://user-images.githubusercontent.com/45469022/115596304-f3e35e80-a2a5-11eb-9256-6239dec44d90.gif)
 
 ## Final Demo (Placeholder)
 
