@@ -86,7 +86,7 @@ To run the behavioral tests, go to the testing tab in XCode and press the play b
 
 
 
-
+# Screenshots
 <img width="695" alt="Screen Shot 2021-04-21 at 2 13 56 PM" src="https://user-images.githubusercontent.com/45469022/115601486-de713300-a2ab-11eb-80da-dc268093366c.png">
 </pre>
 
