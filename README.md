@@ -1,5 +1,4 @@
 
-<div style="background-image: url('iu-2.jpeg');">
   
 # Covid Gains- Project Name: Grosh
 
@@ -91,4 +90,3 @@ Nishat Tabassum - nishat@email.sc.edu
 Jeejun Kim - jeejun@email.sc.edu
 
 Robert Carey - rtcarey@email.sc.edu
-</div>
