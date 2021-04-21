@@ -66,7 +66,11 @@ To run the behavioral tests, go to the testing tab in XCode and press the play b
 # Authors
 
 Praful Chunchu - prafulchunchu@gmail.com
+
 Maitri Patel - maitri.patel293@gmail.com
+
 Nishat Tabassum - nishat@email.sc.edu
+
 Jeejun Kim - jeejun@email.sc.edu
+
 Robert Carey - rtcarey@email.sc.edu
