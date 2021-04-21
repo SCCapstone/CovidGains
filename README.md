@@ -8,6 +8,9 @@ after certain discount or sales tax.  The app will keep track of grocery
 expirations, and suggest recipes with the ingredients set to expire before 
 they expire.
 
+## Final Demo (Placeholder)
+
+https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
 ## External Requirements
 
