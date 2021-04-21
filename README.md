@@ -8,7 +8,7 @@ after certain discount or sales tax.  The app will keep track of grocery
 expirations, and suggest recipes with the ingredients set to expire before 
 they expire.
 
-![vecteezy_box-of-groceries-on-yellow-background_1229304](https://user-images.githubusercontent.com/45469022/115593225-402c9f80-a2a2-11eb-9e58-f43a959d4273.jpg)
+![load UP BOI@2x](https://user-images.githubusercontent.com/45469022/115593705-d791f280-a2a2-11eb-8741-43a248e31b9c.png)
 
 ## Final Demo (Placeholder)
 
