@@ -73,16 +73,8 @@ To run the behavioral tests, go to the testing tab in XCode and press the play b
 
 
 
-![Recipe sample](https://user-images.githubusercontent.com/45469022/115600783-0c09ac80-a2ab-11eb-8be9-f636bf5e2347.png)
+<img width="695" alt="Screen Shot 2021-04-21 at 2 13 56 PM" src="https://user-images.githubusercontent.com/45469022/115601486-de713300-a2ab-11eb-80da-dc268093366c.png">
 
-
-
-![Expiry reminders](https://user-images.githubusercontent.com/45469022/115600801-0f9d3380-a2ab-11eb-9582-d779c747563b.png)
-
-
-
-
-![notes screen](https://user-images.githubusercontent.com/45469022/115600817-11ff8d80-a2ab-11eb-92b7-496f6fc562df.png)
 
 # Authors
 
