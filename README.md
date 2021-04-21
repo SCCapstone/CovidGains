@@ -1,6 +1,6 @@
 <style>
   body {
-    background-image: url('iu-2.jpeg');
+    background-color: #990000;
   }
 </style>
   
