@@ -8,9 +8,6 @@ weekly budget for groceries.  The app can also calculate price of items
 after certain discount or sales tax.  The app will keep track of grocery
 expirations, and suggest recipes with the ingredients set to expire before 
 they expire.
-<style>
-.reveal section img { background:none; border:none; box-shadow:none; }
-</style>
 
 ![load-UP-BOI-unscreen](https://user-images.githubusercontent.com/45469022/115596304-f3e35e80-a2a5-11eb-9256-6239dec44d90.gif)
 
