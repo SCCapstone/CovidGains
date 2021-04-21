@@ -1,3 +1,6 @@
+<style>
+.reveal section img { background:none; border:none; box-shadow:none; }
+</style>
 # Covid Gains- Project Name: Grosh
 
 Grosh keeps track of all grocery related issues.  Grosh can track
