@@ -11,7 +11,7 @@ they expire.
 <style>
 .reveal section img { background:none; border:none; box-shadow:none; }
 </style>
-![load_UP_BOI-2-removebg-preview](https://user-images.githubusercontent.com/45469022/115594151-6737a100-a2a3-11eb-8bc6-fd542a355152.png)
+![load_UP_BOI-2-removebg-preview](https://user-images.githubusercontent.com/45469022/115595956-8e8f6d80-a2a5-11eb-92ce-7d09302b2a42.png)
 
 ## Final Demo (Placeholder)
 
