@@ -72,6 +72,18 @@ In order to run unit tests click the diamond next to the test you would like to 
 To run the behavioral tests, go to the testing tab in XCode and press the play button next to the file name.
 
 
+
+![Expiry reminders](https://user-images.githubusercontent.com/45469022/115600364-9ef61700-a2aa-11eb-9a15-245c0912354e.png)
+
+
+
+![notes screen](https://user-images.githubusercontent.com/45469022/115600373-a1587100-a2aa-11eb-8eb9-28f4efa3ae76.png)
+
+
+
+
+![Recipe sample](https://user-images.githubusercontent.com/45469022/115600341-9b629000-a2aa-11eb-82fe-dd9cc459210a.png)
+
 # Authors
 
 Praful Chunchu - prafulchunchu@gmail.com
