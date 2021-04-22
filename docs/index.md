@@ -18,17 +18,17 @@ they expire.
 <img src="load-UP-BOI-unscreen.gif" alt="Grosh logo">
 </p>
 
-### Final Demo (Placeholder)
+## Final Demo (Placeholder)
 
 <iframe width="850" height="605" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 
-### Screenshots
+# Screenshots
 <img width="695" alt="Screen Shot 2021-04-21 at 2 13 56 PM" src="https://user-images.githubusercontent.com/45469022/115601486-de713300-a2ab-11eb-80da-dc268093366c.png">
 
 
-### Authors
+# Authors
 
 Praful Chunchu - prafulchunchu@gmail.com
 
@@ -38,4 +38,4 @@ Nishat Tabassum - nishat@email.sc.edu
 
 Jeejun Kim - jeejun@email.sc.edu
 
-Robert Carey - rtcarey@email.sc.edu
+Robert Carey - rtcarey@email.sc.edu - www.linkedin.com/in/robert-carey-collegeofeng
