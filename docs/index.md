@@ -23,40 +23,6 @@ they expire.
 <iframe width="850" height="605" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-## External Requirements
-
-In order to build this project you first have to install:
-* xcode on Mac from the App store
-
-
-## Setup
-
-After cloning the repo, the user does not require any first-time
-configurations from the developer.
-
-## Running
-
-After cloning the repo, to run the app simply:
-Go to the CovidGains folder, then double click on CovidGains.xcodeproj.
-This will prompt xcode to open and set the dependencies.  Then to simulate the app:
-Click on the play button on top left, it will simulate the app on set virtual ios device.
-
-
-# Deployment
-
-
-The app is deployed locally.  To run it on a physical iOS phone, simply
-connect iOS device into Mac, using a lightning cable.  
-Open the project on Xcode, and go to Windows > Devices and Simulators.
-This will let you select your device and select connect via network checkbox
-this will pair your device.
-Run the project.
-
-To run the binary on emulator without a physical device.  Select emulator, and 
-select the generation of ios phone to run it.
-
-
-
 
 # Screenshots
 <img width="695" alt="Screen Shot 2021-04-21 at 2 13 56 PM" src="https://user-images.githubusercontent.com/45469022/115601486-de713300-a2ab-11eb-80da-dc268093366c.png">
