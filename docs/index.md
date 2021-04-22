@@ -4,7 +4,7 @@
   }
 </style>
   
-# Test Covid Gains- Project Name: Grosh
+# Covid Gains - Project Name: Grosh
 
 Grosh keeps track of all grocery related issues.  Grosh can track
 the items a user buys based upon the user-input item list.  Grosh 
