@@ -56,27 +56,6 @@ To run the binary on emulator without a physical device.  Select emulator, and
 select the generation of ios phone to run it.
 
 
-# Testing
-
-
-
-
-The unit tests are in `/CovidGains/CovidGainsTests`.
-
-The behavioral tests are in `/CovidGains/CovidGainsUITests`.
-
-
-## Testing Technology
-
-In some cases you need to install test runners, etc. Explain how.
-
-## Running Tests
-
-In order to run unit tests click the diamond next to the test you would like to run.
-
-To run the behavioral tests, go to the testing tab in XCode and press the play button next to the file name.
-
-
 
 
 # Screenshots
