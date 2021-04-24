@@ -65,7 +65,9 @@ In order to run unit tests click the diamond next to the test you would like to 
 To run the behavioral tests, go to the testing tab in XCode and press the play button next to the file name.
 
 
+# Website
 
+https://sccapstone.github.io/CovidGains/
 
 # Authors
 
