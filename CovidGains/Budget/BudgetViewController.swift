@@ -87,12 +87,17 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         
         if editingStyle == .delete {
             self.db.collection(self.user!).document("Budget").collection("budgetList").document(budgetData[indexPath.row].bProductName).delete()
-            self.spent -= (self.budgetData[indexPath.row].bProductCost as NSString).integerValue
+            let temp = self.budgetData[indexPath.row]
+            self.budgetData.remove(at: indexPath.row)
+            if self.budgetData.isEmpty {
+                self.spent = 0;
+            } else {
+                self.spent -= (temp.bProductCost as NSString).integerValue
+            }
             self.safeAmount = (self.allowance - self.spent)
             self.safeSpentLabel.text = "$\(self.safeAmount)"
             self.db.collection(self.user!).document("BudgetAllow").setData(["allowance":self.allowance,"spent":self.spent,"safetospend":self.safeAmount])
             self.spentLabel.text = "$\(self.spent)"
-            self.budgetData.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
 
@@ -103,12 +108,13 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     //user input
     @IBAction func allowancePressed(_ sender: Any) {
         allowance = Int (self.allowanceField.text ?? "") ?? 0
-        self.safeSpentLabel.text = "$\(self.allowance)"
+        self.safeSpentLabel.text = "$\(self.allowance-self.spent)"
         self.spentLabel.text = "$\(self.spent)"
         print("\(allowance)")
         if self.user != nil {
             self.db.collection(self.user!).document("BudgetAllow").setData(["allowance":allowance])
         }
+        // ?? = nil = 0 so default = 0
 
     }
     
@@ -120,7 +126,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
             addNewBudgetVC.navigationItem.largeTitleDisplayMode = .never
             addNewBudgetVC.comp = {bProductName, bProductCost in DispatchQueue.main.async{
                 self.navigationController?.popToRootViewController(animated: true)
-                let newBudget = MyBudget(bProductName: bProductName, bProductCost: "$" + bProductCost)
+                let newBudget = MyBudget(bProductName: bProductName, bProductCost: bProductCost)
                 self.budgetData.append(newBudget)
                 self.tableView.reloadData()
                 
