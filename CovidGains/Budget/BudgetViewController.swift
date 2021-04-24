@@ -127,6 +127,7 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
             addNewBudgetVC.comp = {bProductName, bProductCost in DispatchQueue.main.async{
                 self.navigationController?.popToRootViewController(animated: true)
                 let newBudget = MyBudget(bProductName: bProductName, bProductCost: bProductCost)
+            
                 self.budgetData.append(newBudget)
                 self.tableView.reloadData()
                 
@@ -188,7 +189,7 @@ extension BudgetViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellBudget", for: indexPath)
         cell.textLabel?.text = budgetData[indexPath.row].bProductName
-        cell.detailTextLabel?.text = budgetData[indexPath.row].bProductCost
+        cell.detailTextLabel?.text = "$"+budgetData[indexPath.row].bProductCost
         return cell
     }
 
