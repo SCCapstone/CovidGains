@@ -105,18 +105,18 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
                                 let targetDate = self.datePicker.date
                                 
                                 //to add days to the current date
-                                let futureDate = Calendar.current.date(byAdding: dateComponent, to: targetDate)
+//                                let futureDate = Calendar.current.date(byAdding: dateComponent, to: targetDate)
                                 
-                                let date = targetDate
-                                let formatter = DateFormatter()
-                                formatter.dateFormat = "MM - dd - YYYY"
+//                                let date = targetDate
+//                                let formatter = DateFormatter()
+//                                formatter.dateFormat = "MM - dd - YYYY"
                                 //print("Todays date",formatter.string(from: date))
                                 
-                                let newDate = futureDate!
+//                                let newDate = futureDate!
                                 //print("Upcoming date", formatter.string(from: newDate))
                                 
                                 
-                                self.completion?(titleText, bodyText, futureDate!)
+                                self.completion?(titleText, bodyText, targetDate)
                             }
                             
                             
