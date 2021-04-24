@@ -29,8 +29,8 @@ they expire.
 
 
 # Authors
-
-Praful Chunchu - prafulchunchu@gmail.com
+<p>
+Praful Chunchu - prafulchunchu@gmail.com - <a href = "https://www.linkedin.com/in/praful-chunchu-991b71178?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BnNJ8fnDzRO%2BXM%2BNRzhkoIQ%3D%3D">LinkedIn </a> </p>
 
 Maitri Patel - maitri.patel293@gmail.com
 
