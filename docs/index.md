@@ -38,4 +38,4 @@ Nishat Tabassum - nishat@email.sc.edu
 
 Jeejun Kim - jeejun@email.sc.edu
 
-Robert Carey - rtcarey@email.sc.edu - https://www.linkedin.com/in/robert-carey-collegeofeng/
+Robert Carey - rtcarey@email.sc.edu - <p> <a href = "https://www.linkedin.com/in/robert-carey-collegeofeng/">LinkedIn </a> </p>
