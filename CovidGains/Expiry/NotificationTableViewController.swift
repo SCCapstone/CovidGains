@@ -44,9 +44,11 @@ class NotificationTableViewController: UITableViewController {
                     }
                     //Sending first 3 items to recipe to generte random recipes
                     self.productData.sort{$0.date < $1.date }
-                    pList.expiry1 = self.productData[0].productName
-                    pList.expiry2 = self.productData[1].productName
-                    pList.expiry3 = self.productData[2].productName
+                    if self.productData.indices.contains(0) && self.productData.indices.contains(1) && self.productData.indices.contains(2) {
+                        pList.expiry1 = self.productData[0].productName
+                        pList.expiry2 = self.productData[1].productName
+                        pList.expiry3 = self.productData[2].productName
+                    }
                      
                 }
                 
