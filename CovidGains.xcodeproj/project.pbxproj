@@ -24,8 +24,9 @@
 		D8292895258AD43500D75DBA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8292894258AD43500D75DBA /* DetailViewController.swift */; };
 		D88D259325EB424E0020A30A /* AddNewBudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D259225EB424E0020A30A /* AddNewBudgetViewController.swift */; };
 		D89062102579ADC40062A2DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D890620F2579ADC40062A2DC /* GoogleService-Info.plist */; };
-		D893521B2579620E005F2F4C /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D893521A2579620E005F2F4C /* NotesTableViewController.swift */; };
-		D893521D2579688B005F2F4C /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D893521C2579688B005F2F4C /* EditNoteViewController.swift */; };
+		D8A45CE22635B92100F812EA /* NoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A45CE12635B92100F812EA /* NoteTableViewController.swift */; };
+		D8A45CE42635B95300F812EA /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A45CE32635B95300F812EA /* NewNoteViewController.swift */; };
+		D8A45CE62635BC7600F812EA /* EditNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A45CE52635BC7600F812EA /* EditNotesViewController.swift */; };
 		D8CCC893250ED1D10005C4B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CCC892250ED1D10005C4B3 /* AppDelegate.swift */; };
 		D8CCC895250ED1D10005C4B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CCC894250ED1D10005C4B3 /* SceneDelegate.swift */; };
 		D8CCC897250ED1D10005C4B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CCC896250ED1D10005C4B3 /* ViewController.swift */; };
@@ -76,8 +77,9 @@
 		D8292894258AD43500D75DBA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D88D259225EB424E0020A30A /* AddNewBudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewBudgetViewController.swift; sourceTree = "<group>"; };
 		D890620F2579ADC40062A2DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		D893521A2579620E005F2F4C /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
-		D893521C2579688B005F2F4C /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
+		D8A45CE12635B92100F812EA /* NoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewController.swift; sourceTree = "<group>"; };
+		D8A45CE32635B95300F812EA /* NewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
+		D8A45CE52635BC7600F812EA /* EditNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNotesViewController.swift; sourceTree = "<group>"; };
 		D8CCC88F250ED1D10005C4B3 /* CovidGains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidGains.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CCC892250ED1D10005C4B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8CCC894250ED1D10005C4B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -204,8 +206,9 @@
 		D8A30DB325776DE50011EDB7 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				D893521A2579620E005F2F4C /* NotesTableViewController.swift */,
-				D893521C2579688B005F2F4C /* EditNoteViewController.swift */,
+				D8A45CE52635BC7600F812EA /* EditNotesViewController.swift */,
+				D8A45CE12635B92100F812EA /* NoteTableViewController.swift */,
+				D8A45CE32635B95300F812EA /* NewNoteViewController.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -462,11 +465,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8292891258A716400D75DBA /* NotificationTableViewController.swift in Sources */,
+				D8A45CE22635B92100F812EA /* NoteTableViewController.swift in Sources */,
 				3F0173692579FD07006CC316 /* LoginViewController.swift in Sources */,
 				3FAAB7E325D74FAA0050193F /* RecipeTableView.swift in Sources */,
 				3FE593F2261A52BE00B273BE /* NutritionViewController.swift in Sources */,
+				D8A45CE42635B95300F812EA /* NewNoteViewController.swift in Sources */,
 				3FC8C5CA257B125A0006A932 /* SecondViewController.swift in Sources */,
-				D893521B2579620E005F2F4C /* NotesTableViewController.swift in Sources */,
 				D8CCC897250ED1D10005C4B3 /* ViewController.swift in Sources */,
 				D8CCC893250ED1D10005C4B3 /* AppDelegate.swift in Sources */,
 				D8292895258AD43500D75DBA /* DetailViewController.swift in Sources */,
@@ -477,7 +481,7 @@
 				3FC8C5C5257AEA740006A932 /* BMIViewController.swift in Sources */,
 				D8CCC895250ED1D10005C4B3 /* SceneDelegate.swift in Sources */,
 				3F0173662579E808006CC316 /* RegisterViewController.swift in Sources */,
-				D893521D2579688B005F2F4C /* EditNoteViewController.swift in Sources */,
+				D8A45CE62635BC7600F812EA /* EditNotesViewController.swift in Sources */,
 				D8DD73DE257553F30047EDDB /* noteSaving.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
