@@ -19,10 +19,10 @@ class AddNewBudgetViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(savePressed))
     }
     @objc func savePressed(){
-        if let tText = prodName.text, !tText.isEmpty, let bText = prodCost.text, !bText.isEmpty && Int(prodCost.text as! String) != nil {
+        if let tText = prodName.text, !tText.isEmpty, let bText = prodCost.text, !bText.isEmpty && Int(prodCost.text as! String) != nil && Int(prodCost.text as! String)! > 0 {
             comp?(tText, bText)
         } else {
-            let alertController:UIAlertController = UIAlertController(title: "Error", message: "Not a number!", preferredStyle: UIAlertController.Style.alert)
+            let alertController:UIAlertController = UIAlertController(title: "Error", message: "Not a valid number!", preferredStyle: UIAlertController.Style.alert)
             let alertAction:UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
             alertController.addAction(alertAction)
             present(alertController, animated: true, completion: nil)
