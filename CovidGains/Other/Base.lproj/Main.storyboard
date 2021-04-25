@@ -766,6 +766,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Notes" id="G9p-mO-xB8">
+                        <barButtonItem key="leftBarButtonItem" title="LogOut" id="GdB-BV-MfP">
+                            <connections>
+                                <action selector="logOut:" destination="OBg-zy-Eh7" id="aq6-sb-UZz"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="FtY-5I-zsh">
                             <connections>
                                 <action selector="newNotesButton:" destination="OBg-zy-Eh7" id="olf-Gt-fwg"/>

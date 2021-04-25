@@ -156,8 +156,8 @@
 		64CDCDE825C37D48005E552B /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				D8CCC898250ED1D10005C4B3 /* Main.storyboard */,
 				D8CCC896250ED1D10005C4B3 /* ViewController.swift */,
+				D8CCC898250ED1D10005C4B3 /* Main.storyboard */,
 				D8CCC894250ED1D10005C4B3 /* SceneDelegate.swift */,
 				D8CCC892250ED1D10005C4B3 /* AppDelegate.swift */,
 				D890620F2579ADC40062A2DC /* GoogleService-Info.plist */,
