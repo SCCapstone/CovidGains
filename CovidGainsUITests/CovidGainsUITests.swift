@@ -49,6 +49,21 @@ class CovidGainsUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
+    func testLogin() throws {
+        let app = XCUIApplication()
+        app.launch()
+        app.buttons["Login"].tap()
+        //app.buttons["Back"].tap()
+        //app.buttons["Register"].tap()
+        let testEmail = app.otherElements.textFields["Username"]
+        let testPass = app.otherElements.secureTextFields["Password"]
+        testEmail.tap()
+        testEmail.typeText("1@2.com")
+        testPass.tap()
+        testPass.typeText("123456")
+        app.buttons["Login"].tap()
+    }
+    
     
     
     func testNotes() throws {
