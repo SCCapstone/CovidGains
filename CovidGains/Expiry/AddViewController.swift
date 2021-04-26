@@ -7,33 +7,27 @@
 import UIKit
 import Firebase
 import Foundation
+import DropDown
 
-class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    @IBOutlet var titleField : UITextField! //product names
-    @IBOutlet var bodyField : UITextField! //quantity
-    @IBOutlet var datePicker : UIDatePicker! //date entered
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.productData.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.productData[row].name
-      }
-
-      func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        titleField.text = self.productData[row].name
-      }
-   
-  
-    
+class AddViewController: UIViewController, UISearchBarDelegate{
     let db = Firestore.firestore()
     var ref: DocumentReference? = nil
     var productData = [myProduct]()
     public var completion: ((String, String, Date)-> Void)?
+
+    @IBOutlet var bodyField : UITextField! //quantity
+    @IBOutlet var datePicker : UIDatePicker! //date entered
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var data: [String] = ["apple","appear","Azhar","code","BCom"]
+    var dataFiltered: [String] = []
+    var dropButton = DropDown()
+    
+    
+    /*let db = Firestore.firestore()
+    var ref: DocumentReference? = nil
+    var productData = [myProduct]()
+    public var completion: ((String, String, Date)-> Void)?*/
 
 
 
@@ -41,22 +35,55 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let pickerView = UIPickerView()
-        pickerView.delegate = self
- 
-        titleField.inputView = pickerView
+        searchBar.delegate = self
         
-        titleField.clearButtonMode = .always
-        bodyField.clearButtonMode = .always
-      
+        dataFiltered = data
 
-        titleField.clearButtonMode = .whileEditing
+        dropButton.anchorView = searchBar
+        dropButton.bottomOffset = CGPoint(x: 0, y:(dropButton.anchorView?.plainView.bounds.height)!)
+        dropButton.backgroundColor = .white
+        dropButton.direction = .bottom
+
+        dropButton.selectionAction = { [unowned self] (index: Int, item: String) in
+            print("Selected item: \(item) at index: \(index)") //Selected item: code at index: 0
+        }
+
+        bodyField.clearButtonMode = .always
         bodyField.clearButtonMode = .whileEditing
 
         self.loadProductsData()
         
     }
 
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        dataFiltered = searchText.isEmpty ? data : data.filter({ (dat) -> Bool in
+            dat.range(of: searchText, options: .caseInsensitive) != nil
+        })
+
+        dropButton.dataSource = dataFiltered
+        dropButton.show()
+    }
+
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+        for ob: UIView in ((searchBar.subviews[0] )).subviews {
+            if let z = ob as? UIButton {
+                let btn: UIButton = z
+                btn.setTitleColor(UIColor.white, for: .normal)
+            }
+        }
+    }
+
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchBar.text = ""
+        dataFiltered = data
+        dropButton.hide()
+    }
     
     func loadProductsData()
     {
@@ -83,7 +110,7 @@ class AddViewController: UIViewController, UIPickerViewDataSource, UIPickerViewD
         var staleDays = 0
         var dateComponent = DateComponents()
         
-        if let titleText = titleField.text, !titleText.isEmpty, let bodyText = bodyField.text, !bodyText.isEmpty{
+        if let titleText = searchBar.text, !titleText.isEmpty, let bodyText = bodyField.text, !bodyText.isEmpty{
             
             self.db.collection("Products").getDocuments { (querySnapshot, error) in
                 if let e = error{

@@ -34,6 +34,7 @@
 		D8CCC89C250ED1D30005C4B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8CCC89B250ED1D30005C4B3 /* Assets.xcassets */; };
 		D8DD73DE257553F30047EDDB /* noteSaving.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8DD73DC257553F30047EDDB /* noteSaving.xcdatamodeld */; };
 		E1C8D7CA257AA28800F6833C /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C8D7C9257AA28800F6833C /* BudgetViewController.swift */; };
+		FF4AB25526362CDA00A19BBB /* DropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4AB25426362CDA00A19BBB /* DropDown.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		D8DD73DD257553F30047EDDB /* noteSaving.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = noteSaving.xcdatamodel; sourceTree = "<group>"; };
 		DBB4CF8CE13FA0D31D30D5E6 /* Pods_CovidGains.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CovidGains.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C8D7C9257AA28800F6833C /* BudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetViewController.swift; sourceTree = "<group>"; };
+		FF4AB25426362CDA00A19BBB /* DropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF4AB25526362CDA00A19BBB /* DropDown.framework in Frameworks */,
 				370AADEDEBF4B3FE2F7DA27A /* Pods_CovidGains.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +124,7 @@
 		3C8735CF74233EDC8E9B230D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FF4AB25426362CDA00A19BBB /* DropDown.framework */,
 				DBB4CF8CE13FA0D31D30D5E6 /* Pods_CovidGains.framework */,
 			);
 			name = Frameworks;
@@ -156,8 +160,8 @@
 		64CDCDE825C37D48005E552B /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				D8CCC896250ED1D10005C4B3 /* ViewController.swift */,
 				D8CCC898250ED1D10005C4B3 /* Main.storyboard */,
+				D8CCC896250ED1D10005C4B3 /* ViewController.swift */,
 				D8CCC894250ED1D10005C4B3 /* SceneDelegate.swift */,
 				D8CCC892250ED1D10005C4B3 /* AppDelegate.swift */,
 				D890620F2579ADC40062A2DC /* GoogleService-Info.plist */,
