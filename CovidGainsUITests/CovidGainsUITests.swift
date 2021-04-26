@@ -66,37 +66,37 @@ class CovidGainsUITests: XCTestCase {
     
     
     
-    func testNotes() throws {
-        let app = XCUIApplication()
-        //Testing notes
-        app.tabBars["Notes"].tap()
-        app.buttons["Add"].tap()
-        app.typeText("Test Notes")
-        app.navigationBars.buttons.element(boundBy: 0).tap()
-        app.tables.element(boundBy: 0).cells.element(boundBy: 0).tap()
-        app.navigationBars.buttons.element(boundBy: 0).tap()
-        app.tables.element(boundBy: 0).cells.element(boundBy: 0).swipeLeft()
-        app.buttons["Delete"].tap()
-
-    }
+//    func testNotes() throws {
+//        let app = XCUIApplication()
+//        //Testing notes
+//        app.tabBars["Notes"].tap()
+//        app.buttons["Add"].tap()
+//        app.typeText("Test Notes")
+//        app.navigationBars.buttons.element(boundBy: 0).tap()
+//        app.tables.element(boundBy: 0).cells.element(boundBy: 0).tap()
+//        app.navigationBars.buttons.element(boundBy: 0).tap()
+//        app.tables.element(boundBy: 0).cells.element(boundBy: 0).swipeLeft()
+//        app.buttons["Delete"].tap()
+//
+//    }
     
-    func testExpiry() throws {
-        app.tabBars["Expiry"].tap()
-        app.buttons["Add"].tap()
-        app.typeText("Test Notes")
-        let searchBarElement = app.otherElements.searchFields["Search Bar"]
-        searchBarElement.tap()
-        searchBarElement.typeText("Banana")
-        let quantityField = app.otherElements.textFields["Body Field"]
-        quantityField.tap()
-        quantityField.typeText("5")
-        let datePicker = app.otherElements.datePickers["Date Picker"]
-        datePicker.tap()
-        //Incomplete
-        app.navigationBars.buttons.element(boundBy: 0).tap()
-        app.tables.element(boundBy: 0).cells.element(boundBy: 0).swipeLeft()
-        app.buttons["Delete"].tap()
-    }
+//    func testExpiry() throws {
+//        app.tabBars["Expiry"].tap()
+//        app.buttons["Add"].tap()
+//        app.typeText("Test Notes")
+//        let searchBarElement = app.otherElements.searchFields["Search Bar"]
+//        searchBarElement.tap()
+//        searchBarElement.typeText("Banana")
+//        let quantityField = app.otherElements.textFields["Body Field"]
+//        quantityField.tap()
+//        quantityField.typeText("5")
+//        let datePicker = app.otherElements.datePickers["Date Picker"]
+//        datePicker.tap()
+//        //Incomplete
+//        app.navigationBars.buttons.element(boundBy: 0).tap()
+//        app.tables.element(boundBy: 0).cells.element(boundBy: 0).swipeLeft()
+//        app.buttons["Delete"].tap()
+//    }
     
     func testSaveBudget() throws{
         
@@ -117,13 +117,35 @@ class CovidGainsUITests: XCTestCase {
         app.navigationBars["New Budget"].buttons["Save"].tap()
         
     }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
-                XCUIApplication().launch()
-            }
-        }
+    
+    func testRecipe() throws{
+        let app = XCUIApplication()
+        app.launch()
+        app.tabBars["Tab Bar"].buttons["Recipe"].tap()
+        app.tables["Empty list"].children(matching: .searchField).element.tap()
+        app.typeText("Ranch")
+        app/*@START_MENU_TOKEN@*/.buttons["Search"]/*[[".keyboards",".buttons[\"search\"]",".buttons[\"Search\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Chicken Ranch Burgers"]/*[[".cells.staticTexts[\"Chicken Ranch Burgers\"]",".staticTexts[\"Chicken Ranch Burgers\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        app.scrollViews.children(matching: .textView).element.swipeUp()
+        app/*@START_MENU_TOKEN@*/.textViews/*[[".scrollViews.textViews",".textViews"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.textViews["Step 4: Scoop and make 3 large burger patties."].tap()
+        
+        app.buttons["Recipes"].tap()
+        
+        
+        
+        
+        
     }
+    
+    
+
+//    func testLaunchPerformance() throws {
+//        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
+//            // This measures how long it takes to launch your application.
+//            measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
+//                XCUIApplication().launch()
+//            }
+//        }
+//    }
 }
