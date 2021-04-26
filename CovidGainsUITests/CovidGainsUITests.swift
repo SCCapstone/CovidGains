@@ -49,27 +49,73 @@ class CovidGainsUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    
-    
-    
-    func testExpiryRemove() throws {
-        XCUIApplication().tabBars.buttons["Expiry"].tap()
-        
 
-        app.tabBars.buttons["Expiry"].tap()
-        app.navigationBars["Reminders"].buttons["Add"].tap()
-        app.searchFields["Enter Product"].tap()
+    func testLogin() throws {
+        let app = XCUIApplication()
+        app.launch()
+        app.buttons["Login"].tap()
+        //app.buttons["Back"].tap()
+        //app.buttons["Register"].tap()
+        let testEmail = app.otherElements.textFields["Username"]
+        let testPass = app.otherElements.secureTextFields["Password"]
+        testEmail.tap()
+        testEmail.typeText("1@2.com")
+        testPass.tap()
+        testPass.typeText("123456")
+        app.buttons["Login"].tap()
+    }
+    
+    
+    
+    func testNotes() throws {
+        let app = XCUIApplication()
+        //Testing notes
+        app.tabBars["Notes"].tap()
+        app.buttons["Add"].tap()
+        app.typeText("Test Notes")
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        app.tables.element(boundBy: 0).cells.element(boundBy: 0).tap()
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        app.tables.element(boundBy: 0).cells.element(boundBy: 0).swipeLeft()
+        app.buttons["Delete"].tap()
+
+    }
+    
+    func testExpiry() throws {
+        app.tabBars["Expiry"].tap()
+        app.buttons["Add"].tap()
+        app.typeText("Test Notes")
+        let searchBarElement = app.otherElements.searchFields["Search Bar"]
+        searchBarElement.tap()
+        searchBarElement.typeText("Banana")
+        let quantityField = app.otherElements.textFields["Body Field"]
+        quantityField.tap()
+        quantityField.typeText("5")
+        let datePicker = app.otherElements.datePickers["Date Picker"]
+        datePicker.tap()
+        //Incomplete
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        app.tables.element(boundBy: 0).cells.element(boundBy: 0).swipeLeft()
+        app.buttons["Delete"].tap()
+    }
+    
+    func testSaveBudget() throws{
         
-        let app2 = app
-        app2/*@START_MENU_TOKEN@*/.tables.staticTexts["Custard-apple"]/*[[".otherElements[\"drop_down\"].tables",".cells.staticTexts[\"Custard-apple\"]",".staticTexts[\"Custard-apple\"]",".tables"],[[[-1,3,1],[-1,0,1]],[[-1,2],[-1,1]]],[0,0]]@END_MENU_TOKEN@*/.tap()
+        let app = XCUIApplication()
+        app.tabBars["Tab Bar"].buttons["Budget"].tap()
+        app.textFields["$0.00"].tap()
+        app.typeText("50.0")
+        app/*@START_MENU_TOKEN@*/.staticTexts["+"]/*[[".buttons[\"+\"].staticTexts[\"+\"]",".staticTexts[\"+\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         
-        let enterQuantityTextField = app.textFields["Enter Quantity"]
-        enterQuantityTextField.tap()
-        enterQuantityTextField.tap()
-        app2.datePickers/*@START_MENU_TOKEN@*/.pickerWheels["Today"]/*[[".pickers.pickerWheels[\"Today\"]",".pickerWheels[\"Today\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
-        app.navigationBars["New Reminder"].buttons["Save"].tap()
-            
-                        
+        let enterProductNameTextField = app.textFields["Enter Product Name"]
+        enterProductNameTextField.tap()
+        enterProductNameTextField.typeText("Apples")
+    
+        
+        let enterPriceTextField = app.textFields["Enter Price"]
+        enterPriceTextField.tap()
+        enterPriceTextField.typeText("3")
+        app.navigationBars["New Budget"].buttons["Save"].tap()
         
     }
 
