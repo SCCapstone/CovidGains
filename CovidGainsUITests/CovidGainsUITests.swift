@@ -49,6 +49,8 @@ class CovidGainsUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
+    
+    
     func testNotes() throws {
         let app = XCUIApplication()
         //Testing notes
@@ -64,7 +66,7 @@ class CovidGainsUITests: XCTestCase {
     }
     
     func testExpiry() throws {
-         app.tabBars["Expiry"].tap()
+        app.tabBars["Expiry"].tap()
         app.buttons["Add"].tap()
         app.typeText("Test Notes")
         let searchBarElement = app.otherElements.searchFields["Search Bar"]
@@ -79,6 +81,26 @@ class CovidGainsUITests: XCTestCase {
         app.navigationBars.buttons.element(boundBy: 0).tap()
         app.tables.element(boundBy: 0).cells.element(boundBy: 0).swipeLeft()
         app.buttons["Delete"].tap()
+    }
+    
+    func testSaveBudget() throws{
+        
+        let app = XCUIApplication()
+        app.tabBars["Tab Bar"].buttons["Budget"].tap()
+        app.textFields["$0.00"].tap()
+        app.typeText("50.0")
+        app/*@START_MENU_TOKEN@*/.staticTexts["+"]/*[[".buttons[\"+\"].staticTexts[\"+\"]",".staticTexts[\"+\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        let enterProductNameTextField = app.textFields["Enter Product Name"]
+        enterProductNameTextField.tap()
+        enterProductNameTextField.typeText("Apples")
+    
+        
+        let enterPriceTextField = app.textFields["Enter Price"]
+        enterPriceTextField.tap()
+        enterPriceTextField.typeText("3")
+        app.navigationBars["New Budget"].buttons["Save"].tap()
+        
     }
 
     func testLaunchPerformance() throws {
