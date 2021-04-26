@@ -12,7 +12,8 @@ import DropDown
 class AddViewController: UIViewController, UISearchBarDelegate{
     let db = Firestore.firestore()
     var ref: DocumentReference? = nil
-    var productData = [String]()
+    var productData = [myProduct]()
+    var productDataNames = [String]()
     public var completion: ((String, String, Date)-> Void)?
 
     @IBOutlet var bodyField : UITextField! //quantity
@@ -37,7 +38,7 @@ class AddViewController: UIViewController, UISearchBarDelegate{
     
         searchBar.delegate = self
         
-        dataFiltered = productData
+        dataFiltered = productDataNames
 
         dropButton.anchorView = searchBar
         dropButton.bottomOffset = CGPoint(x: 0, y:(dropButton.anchorView?.plainView.bounds.height)!)
@@ -45,6 +46,7 @@ class AddViewController: UIViewController, UISearchBarDelegate{
         dropButton.direction = .bottom
 
         dropButton.selectionAction = { [unowned self] (index: Int, item: String) in
+            searchBar.text = item
             print("Selected item: \(item) at index: \(index)") //Selected item: code at index: 0
         }
 
@@ -54,7 +56,7 @@ class AddViewController: UIViewController, UISearchBarDelegate{
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        dataFiltered = searchText.isEmpty ? productData : productData.filter({ (dat) -> Bool in
+        dataFiltered = searchText.isEmpty ? productDataNames : productDataNames.filter({ (dat) -> Bool in
             dat.range(of: searchText, options: .caseInsensitive) != nil
         })
 
@@ -79,7 +81,7 @@ class AddViewController: UIViewController, UISearchBarDelegate{
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         searchBar.text = ""
-        dataFiltered = productData
+        dataFiltered = productDataNames
         dropButton.hide()
     }
     
@@ -94,8 +96,9 @@ class AddViewController: UIViewController, UISearchBarDelegate{
                     for doc in snapshotDocuments {
                         let data = doc.data()
                         let docID = doc.documentID
-                        self.productData.append(docID)
-                        
+                        self.productDataNames.append(docID)
+                        let product = myProduct(name: docID, expiration: data["Expiration"] as! Int)
+                            self.productData.append(product)
                     }
                 }
             }
