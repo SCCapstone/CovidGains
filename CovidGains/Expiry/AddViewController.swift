@@ -12,14 +12,13 @@ import DropDown
 class AddViewController: UIViewController, UISearchBarDelegate{
     let db = Firestore.firestore()
     var ref: DocumentReference? = nil
-    var productData = [myProduct]()
+    var productData = [String]()
     public var completion: ((String, String, Date)-> Void)?
 
     @IBOutlet var bodyField : UITextField! //quantity
     @IBOutlet var datePicker : UIDatePicker! //date entered
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var data: [String] = ["apple","appear","Azhar","code","BCom"]
     var dataFiltered: [String] = []
     var dropButton = DropDown()
     
@@ -34,10 +33,11 @@ class AddViewController: UIViewController, UISearchBarDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.loadProductsData()
+    
         searchBar.delegate = self
         
-        dataFiltered = data
+        dataFiltered = productData
 
         dropButton.anchorView = searchBar
         dropButton.bottomOffset = CGPoint(x: 0, y:(dropButton.anchorView?.plainView.bounds.height)!)
@@ -51,12 +51,10 @@ class AddViewController: UIViewController, UISearchBarDelegate{
         bodyField.clearButtonMode = .always
         bodyField.clearButtonMode = .whileEditing
 
-        self.loadProductsData()
-        
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        dataFiltered = searchText.isEmpty ? data : data.filter({ (dat) -> Bool in
+        dataFiltered = searchText.isEmpty ? productData : productData.filter({ (dat) -> Bool in
             dat.range(of: searchText, options: .caseInsensitive) != nil
         })
 
@@ -81,7 +79,7 @@ class AddViewController: UIViewController, UISearchBarDelegate{
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         searchBar.text = ""
-        dataFiltered = data
+        dataFiltered = productData
         dropButton.hide()
     }
     
@@ -96,9 +94,7 @@ class AddViewController: UIViewController, UISearchBarDelegate{
                     for doc in snapshotDocuments {
                         let data = doc.data()
                         let docID = doc.documentID
-                        
-                        let product = myProduct(name: docID, expiration: data["Expiration"] as! Int)
-                        self.productData.append(product)
+                        self.productData.append(docID)
                         
                     }
                 }
