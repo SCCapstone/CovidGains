@@ -28,9 +28,27 @@
             // Put teardown code here. This method is called after the invocation of each test method in the class.
         }
 
-        func testRegister() throws {
 
-        }
+    
+    func testLogin() throws {
+        let app = XCUIApplication()
+        app.launch()
+        app.buttons["Login"].tap()
+        //app.buttons["Back"].tap()
+        //app.buttons["Register"].tap()
+        let testEmail = app.otherElements.textFields["Username"]
+        let testPass = app.otherElements.secureTextFields["Password"]
+        testEmail.tap()
+        testEmail.typeText("1@2.com")
+        testPass.tap()
+        testPass.typeText("123456")
+        app.buttons["Login"].tap()
+    }
+    
+    
+
+    
+
         
 
         
@@ -70,6 +88,7 @@
             
         }
         
+
         func testSaveBudget() throws{
             let app = XCUIApplication()
             
@@ -108,6 +127,26 @@
 
             
         }
+        
+        func testRecipe() throws{
+            let app = XCUIApplication()
+            app.launch()
+            app.tabBars["Tab Bar"].buttons["Recipe"].tap()
+            app.tables["Empty list"].children(matching: .searchField).element.tap()
+            app.typeText("Ranch")
+            app.buttons["Search"].tap()
+            app.tables/*@START_MENU_TOKEN@*/.staticTexts["Chicken Ranch Burgers"]/*[[".cells.staticTexts[\"Chicken Ranch Burgers\"]",".staticTexts[\"Chicken Ranch Burgers\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            
+            app.scrollViews.children(matching: .textView).element.swipeUp()
+            app/*@START_MENU_TOKEN@*/.textViews/*[[".scrollViews.textViews",".textViews"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.textViews["Step 4: Scoop and make 3 large burger patties."].tap()
+            
+            app.buttons["Recipes"].tap()
+            
+            
+            
+            
+            
+        }
 
         func testLaunchPerformance() throws {
             if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
@@ -118,3 +157,8 @@
             }
         }
     }
+
+    
+
+    
+
