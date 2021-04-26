@@ -46,7 +46,7 @@ class AddViewController: UIViewController, UISearchBarDelegate{
         dropButton.direction = .bottom
 
         dropButton.selectionAction = { [unowned self] (index: Int, item: String) in
-            searchBar.text = item
+            self.searchBar.text = item
             print("Selected item: \(item) at index: \(index)") //Selected item: code at index: 0
         }
 

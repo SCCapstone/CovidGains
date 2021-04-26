@@ -14,6 +14,7 @@ class TestBudgetViewController: XCTestCase {
     func testPressedAdd(){
         
         let budget = BudgetViewController()
+        budget.pressedAdd()
         
     }
 }
