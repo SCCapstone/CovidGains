@@ -10,7 +10,8 @@ import UIKit
 import Firebase
 
 class RegisterViewController: UIViewController{
-    
+    let db = Firestore.firestore()
+
     @IBOutlet weak var emailTextfield: UITextField!
     
     @IBOutlet weak var passwordTextfield: UITextField!
@@ -43,11 +44,22 @@ class RegisterViewController: UIViewController{
                     self.errorL.alpha = 1
                     
                 }else{
-                    
-                    //self.performSegue(withIdentifier: "RegisterToGrosh", sender: self)
+                    guard let uid = authResult?.user.uid else{
+                        return
+                    }
+                    self.db.collection("UserID").document(uid).setData(["UserID":uid, "email":email]) { (error) in
+                        if let e = error {
+                            print("there was an issue saving data to firestore, \(e)")
+                        } else {
+                            print("Successfully saved data")
+                        }
+                    }
                     let homeVC = self.storyboard?.instantiateViewController(identifier: "myTabBar")
                     self.view.window?.rootViewController = homeVC
                     self.view.window?.makeKeyAndVisible()
+                    self.dismiss(animated: true, completion: nil)
+                    
+
                 }
                 
                 

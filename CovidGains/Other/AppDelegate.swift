@@ -8,15 +8,20 @@ import CoreData
 import Firebase
 	
 @UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         
         FirebaseApp.configure()
-        let db = Firestore.firestore()
-        print(db)
+        //let db = Firestore.firestore()
+        
+        window = UIWindow()
+        window?.makeKeyAndVisible()
+        let navController = UINavigationController(rootViewController: NoteTableViewController())
+        window?.rootViewController = navController
+        
+        
         return true
     }
 

@@ -24,7 +24,6 @@ class LoginViewController: UIViewController{
         super.viewDidLoad()
         
         //calls to load data from firebase
-        isLoggedIn()
     }
     
     @IBAction func tappedCancel(_ sender: UIBarButtonItem) {
@@ -36,10 +35,6 @@ class LoginViewController: UIViewController{
         
         sceneDelegate.window?.rootViewController = outC
         
-    }
-    
-    fileprivate func isLoggedIn() -> Bool{
-        return UserDefaults.standard.bool(forKey: "isLoggedIn")
     }
     
     @IBAction func loginPressed(_ sender: UIButton) {
@@ -56,12 +51,19 @@ class LoginViewController: UIViewController{
 
                     
                 }else{
-                    //print("Still going to go !!")
-                    UserDefaults.standard.set(true, forKey: "isLoggedIn")
-                    UserDefaults.standard.synchronize()
-                    let homeVC = self.storyboard?.instantiateViewController(identifier: "myTabBar")
-                    self.view.window?.rootViewController = homeVC
-                    self.view.window?.makeKeyAndVisible()
+                    let myTabBar = self.storyboard?.instantiateViewController(identifier: "myTabBar")as? UITabBarController
+                    myTabBar?.selectedViewController = myTabBar?.viewControllers?[0]
+                     
+                    //inicating the tabbar
+                    guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else {
+                        return
+                    }
+                    //opens the window
+                    sceneDelegate.window?.rootViewController = myTabBar
+                    
+                    self.dismiss(animated: true, completion: nil)
+                    
+
                 }
 
             }
