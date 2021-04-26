@@ -7,6 +7,7 @@
 
 import XCTest
 import CovidGains
+import Firebase
 
 var app: XCUIApplication!
 
