@@ -48,6 +48,38 @@ class CovidGainsUITests: XCTestCase {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
+    
+    func testNotes() throws {
+        let app = XCUIApplication()
+        //Testing notes
+        app.tabBars["Notes"].tap()
+        app.buttons["Add"].tap()
+        app.typeText("Test Notes")
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        app.tables.element(boundBy: 0).cells.element(boundBy: 0).tap()
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        app.tables.element(boundBy: 0).cells.element(boundBy: 0).swipeLeft()
+        app.buttons["Delete"].tap()
+
+    }
+    
+    func testExpiry() throws {
+         app.tabBars["Expiry"].tap()
+        app.buttons["Add"].tap()
+        app.typeText("Test Notes")
+        let searchBarElement = app.otherElements.searchFields["Search Bar"]
+        searchBarElement.tap()
+        searchBarElement.typeText("Banana")
+        let quantityField = app.otherElements.textFields["Body Field"]
+        quantityField.tap()
+        quantityField.typeText("5")
+        let datePicker = app.otherElements.datePickers["Date Picker"]
+        datePicker.tap()
+        //Incomplete
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        app.tables.element(boundBy: 0).cells.element(boundBy: 0).swipeLeft()
+        app.buttons["Delete"].tap()
+    }
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
