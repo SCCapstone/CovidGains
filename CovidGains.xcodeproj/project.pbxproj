@@ -24,6 +24,8 @@
 		D8292891258A716400D75DBA /* NotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8292890258A716400D75DBA /* NotificationTableViewController.swift */; };
 		D8292893258A743000D75DBA /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8292892258A743000D75DBA /* AddViewController.swift */; };
 		D8292895258AD43500D75DBA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8292894258AD43500D75DBA /* DetailViewController.swift */; };
+		D8720B1126375AFC002566FB /* TestBudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8720B1026375AFC002566FB /* TestBudgetViewController.swift */; };
+		D8720B1326375E42002566FB /* TestNotificationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8720B1226375E42002566FB /* TestNotificationTableViewController.swift */; };
 		D88D259325EB424E0020A30A /* AddNewBudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D259225EB424E0020A30A /* AddNewBudgetViewController.swift */; };
 		D89062102579ADC40062A2DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D890620F2579ADC40062A2DC /* GoogleService-Info.plist */; };
 		D8A45CE22635B92100F812EA /* NoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A45CE12635B92100F812EA /* NoteTableViewController.swift */; };
@@ -85,6 +87,8 @@
 		D8292890258A716400D75DBA /* NotificationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewController.swift; sourceTree = "<group>"; };
 		D8292892258A743000D75DBA /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		D8292894258AD43500D75DBA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D8720B1026375AFC002566FB /* TestBudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBudgetViewController.swift; sourceTree = "<group>"; };
+		D8720B1226375E42002566FB /* TestNotificationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNotificationTableViewController.swift; sourceTree = "<group>"; };
 		D88D259225EB424E0020A30A /* AddNewBudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewBudgetViewController.swift; sourceTree = "<group>"; };
 		D890620F2579ADC40062A2DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8A45CE12635B92100F812EA /* NoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 				64CE591725C5D43E00E3CEC9 /* CovidGainsTests.swift */,
 				64CE592325C5EF1000E3CEC9 /* TestNotesTableViewController.swift */,
 				64CE591925C5D43E00E3CEC9 /* Info.plist */,
+				D8720B1026375AFC002566FB /* TestBudgetViewController.swift */,
+				D8720B1226375E42002566FB /* TestNotificationTableViewController.swift */,
 			);
 			path = CovidGainsTests;
 			sourceTree = "<group>";
@@ -560,7 +566,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8720B1126375AFC002566FB /* TestBudgetViewController.swift in Sources */,
 				64CE591825C5D43E00E3CEC9 /* CovidGainsTests.swift in Sources */,
+				D8720B1326375E42002566FB /* TestNotificationTableViewController.swift in Sources */,
 				64CE592425C5EF1000E3CEC9 /* TestNotesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
