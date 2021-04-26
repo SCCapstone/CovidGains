@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Firebase
 
 class NewNoteViewController: UIViewController {
-
+    let db = Firestore.firestore()
+    let user = Auth.auth().currentUser?.email
     @IBOutlet var titleField: UITextField!
     
     @IBOutlet var noteField: UITextView!
@@ -25,6 +27,7 @@ class NewNoteViewController: UIViewController {
 
     @IBAction func saveButton(_ sender: Any) {
         if let text = titleField.text, !text.isEmpty, !noteField.text.isEmpty{
+            self.db.collection(self.user!).document("Notes").collection("NotesList").document(titleField.text!).setData(["Note":noteField.text!])
             completion?(text, noteField.text)
         }
     }

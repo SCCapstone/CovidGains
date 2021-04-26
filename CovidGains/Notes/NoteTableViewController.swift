@@ -11,18 +11,46 @@ import Firebase
 class NoteTableViewController: UITableViewController {
 
     var noteArray: [(title: String, note: String)] = []
-    
+    let db = Firestore.firestore()
+    let user = Auth.auth().currentUser?.email
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    func loadData(){
+        
+        self.db.collection(self.user!).document("Notes").collection("NotesList").getDocuments { (querySnapshot, error) in
+            if let e = error{
+                print("There is issue retrieving data.\(e)")
+            }else{
+                if let snapshotDocuments = querySnapshot?.documents {
+                    for doc in snapshotDocuments {
+                        let data = doc.data()
+                        let docID = doc.documentID
+                        let context = data["Note"] as! String
+                        self.noteArray.append((title: docID, note: context))
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
 
+                    }
+                    //Sending first 3 items to recipe to generte random recipes
+                    
+                     
+                }
+                
+                
+            }
+        }
+        
+    }
     
     @IBAction func newNotesButton(_ sender: UIBarButtonItem) {
         guard let newNotesVC = storyboard?.instantiateViewController(identifier: "newNotes") as? NewNoteViewController else {
