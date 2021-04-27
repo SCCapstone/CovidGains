@@ -11,6 +11,7 @@
 		3F0173662579E808006CC316 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0173652579E808006CC316 /* RegisterViewController.swift */; };
 		3F0173692579FD07006CC316 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0173682579FD07006CC316 /* LoginViewController.swift */; };
 		3FA529612637A7CC004C34CA /* UrlPullTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA529602637A7CC004C34CA /* UrlPullTest.swift */; };
+		3FA529812637AFB3004C34CA /* TestRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA529802637AFB3004C34CA /* TestRegisterViewController.swift */; };
 		3FAAB7E325D74FAA0050193F /* RecipeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAAB7E225D74FAA0050193F /* RecipeTableView.swift */; };
 		3FAAB7FC25D851970050193F /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAAB7FB25D851970050193F /* RecipeDetailViewController.swift */; };
 		3FC8C5C5257AEA740006A932 /* BMIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC8C5C4257AEA740006A932 /* BMIViewController.swift */; };
@@ -66,6 +67,7 @@
 		3F0173652579E808006CC316 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3F0173682579FD07006CC316 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3FA529602637A7CC004C34CA /* UrlPullTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlPullTest.swift; sourceTree = "<group>"; };
+		3FA529802637AFB3004C34CA /* TestRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRegisterViewController.swift; sourceTree = "<group>"; };
 		3FAAB7E225D74FAA0050193F /* RecipeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableView.swift; sourceTree = "<group>"; };
 		3FAAB7FB25D851970050193F /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		3FC8C5C4257AEA740006A932 /* BMIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				D8720B1226375E42002566FB /* TestNotificationTableViewController.swift */,
 				D8720B1426379983002566FB /* TestRecipeDetailViewController.swift */,
 				3FA529602637A7CC004C34CA /* UrlPullTest.swift */,
+				3FA529802637AFB3004C34CA /* TestRegisterViewController.swift */,
 			);
 			path = CovidGainsTests;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8720B1126375AFC002566FB /* TestBudgetViewController.swift in Sources */,
+				3FA529812637AFB3004C34CA /* TestRegisterViewController.swift in Sources */,
 				64CE591825C5D43E00E3CEC9 /* CovidGainsTests.swift in Sources */,
 				3FA529612637A7CC004C34CA /* UrlPullTest.swift in Sources */,
 				D8720B1326375E42002566FB /* TestNotificationTableViewController.swift in Sources */,
