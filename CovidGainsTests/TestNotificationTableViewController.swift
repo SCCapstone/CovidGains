@@ -11,7 +11,7 @@ import XCTest
 
 class TestNotificationTableViewController: XCTestCase{
     func testFunc(){
-        let newVC = NotificationTableViewController()
+       
         
     }
 }

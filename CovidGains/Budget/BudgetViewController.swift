@@ -122,12 +122,12 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         guard let addNewBudgetVC = storyboard?.instantiateViewController(identifier: "addNewBudget") as? AddNewBudgetViewController else{
             return
         }
+        
             addNewBudgetVC.title = "New Budget"
             addNewBudgetVC.navigationItem.largeTitleDisplayMode = .never
             addNewBudgetVC.comp = {bProductName, bProductCost in DispatchQueue.main.async{
                 self.navigationController?.popToRootViewController(animated: true)
                 let newBudget = MyBudget(bProductName: bProductName, bProductCost: bProductCost)
-            
                 self.budgetData.append(newBudget)
                 self.tableView.reloadData()
                 
