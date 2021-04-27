@@ -68,6 +68,15 @@ class NoteTableViewController: UITableViewController {
     
     
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            self.db.collection(self.user!).document("Notes").collection("NotesList").document(noteArray[indexPath.row].title).delete()
+            self.noteArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+
+    }
     
     // MARK: - Table view data source
 
