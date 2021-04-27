@@ -182,11 +182,19 @@
         }
         
         func testRecipe() throws{
-
+            
+            let app = XCUIApplication()
+            let tabBarsQuery = app.tabBars
+            tabBarsQuery.buttons["Expiry"].tap()
+            tabBarsQuery.buttons["Recipe"].tap()
+            app.tables/*@START_MENU_TOKEN@*/.staticTexts["Kale & apple soup with walnuts"]/*[[".cells.staticTexts[\"Kale & apple soup with walnuts\"]",".staticTexts[\"Kale & apple soup with walnuts\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            
+            let textViewsQuery = app/*@START_MENU_TOKEN@*/.textViews/*[[".scrollViews.textViews",".textViews"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+            textViewsQuery.staticTexts["20g pack of dried apple crisps (optional)"].swipeUp()
+            
         }
         
-        func testNoteSave() throws
-        {
+        func testNoteSave() throws{
             
             let app = XCUIApplication()
             app.navigationBars["Notes"].buttons["Add"].tap()
@@ -231,7 +239,7 @@
             app.keys["e"]
             app.tap()
             
-            let spaceKey = app/*@START_MENU_TOKEN@*/.keys["space"]/*[[".keyboards.keys[\"space\"]",".keys[\"space\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+            let spaceKey = app.keys["space"]
             spaceKey.tap()
             
             

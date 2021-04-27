@@ -43,6 +43,7 @@ class RecipeTableView: UITableViewController {
         let request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=" + ingredient1 + "%2C" + ingredient2 + "%2C" + ingredient3 + "&number=15&ranking=1&ignorePantry=true")! as URL,
                                           cachePolicy: .useProtocolCachePolicy,
                                           timeoutInterval: 10.0)
+
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
         
