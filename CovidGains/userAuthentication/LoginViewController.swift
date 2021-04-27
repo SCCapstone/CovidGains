@@ -36,19 +36,29 @@ class LoginViewController: UIViewController{
         sceneDelegate.window?.rootViewController = outC
         
     }
+    func loginHelper(email: String, password: String){
+        Auth.auth().signIn(withEmail: email, password: password) {authResult, error in
+            if error != nil{
+                self.errorLabel.text = error?.localizedDescription
+                self.errorLabel.alpha = 1
+            }
+
+
+        }
+    }
     
     @IBAction func loginPressed(_ sender: UIButton) {
         
         if let email = emailTextfield.text, let password = passwordTextfield.text{
-           
-            Auth.auth().signIn(withEmail: email, password: password) {authResult, error in
+            
+                    Auth.auth().signIn(withEmail: email, password: password) {authResult, error in
                // print("Login user", email)
                 
                 if error != nil{
                     //print(error?.localizedDescription)
                     self.errorLabel.text = error?.localizedDescription
                     self.errorLabel.alpha = 1
-
+                    //return error
                     
                 }else{
                     let myTabBar = self.storyboard?.instantiateViewController(identifier: "myTabBar")as? UITabBarController

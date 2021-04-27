@@ -1,8 +1,8 @@
 //
-//  TestRegisterViewController.swift
+//  TestLoginViewController.swift
 //  CovidGainsTests
 //
-//  Created by Praful Chunchu on 4/26/21.
+//  Created by Maitri Patel on 4/26/21.
 //
 
 import XCTest
@@ -12,24 +12,21 @@ import FirebaseAuth
 
 @testable import CovidGains
 
-class TestRegisterViewController: XCTestCase {
+class TestLoginViewController: XCTestCase {
     
-    func testRegister()
+    func testLogIn()
     {
         FirebaseApp.configure()
         
-        let registerVC =  RegisterViewController()
+        let loginVC =  LoginViewController()
         
         let email = "1@2.com"
         let password = "12356"
         
-        registerVC.registerHelper(email: email, password: password)
+        loginVC.loginHelper(email: email, password: password)
         XCTAssertNotNil("")
                
         }
         
         
 }
-
-
-

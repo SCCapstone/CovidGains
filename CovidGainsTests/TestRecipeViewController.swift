@@ -7,7 +7,7 @@
 
 import XCTest
 @testable import CovidGains
-class UrlPullTest: XCTestCase {
+class TestRecipeViewController: XCTestCase {
 
     func testURLData() {
         

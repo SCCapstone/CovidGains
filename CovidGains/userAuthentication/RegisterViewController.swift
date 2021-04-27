@@ -32,6 +32,17 @@ class RegisterViewController: UIViewController{
         
         sceneDelegate.window?.rootViewController = outC
     }
+    func registerHelper(email: String, password: String) {
+        Auth.auth().createUser(withEmail: email, password: password) {  authResult, error in
+        
+            if error != nil{
+                self.errorL.text = error?.localizedDescription
+                self.errorL.alpha = 1
+                //return 1
+            }
+            //return 0
+        }
+    }
     
     @IBAction func registerPressed(_ sender: UIButton) {
         if let email = emailTextfield.text, let password = passwordTextfield.text {
